@@ -88,7 +88,9 @@ int main()
 	Platform platform6(nullptr, sf::Vector2f(45.0f, 35.0f), sf::Vector2f(85.0f, 180.0f));
 	Platform platform7(nullptr, sf::Vector2f(5.0f, 5.0f), sf::Vector2f(60.0f, 130.0f));
 	Platform platform8(nullptr, sf::Vector2f(55.0f, 30.0f), sf::Vector2f(250.0f, 140.0f));
-
+	Platform platform9(nullptr,sf::Vector2f(220.0f,100.0f),sf::Vector2f(370.0f,65.0f));
+	Platform platform10(nullptr, sf::Vector2f(50.0f, 35.0f), sf::Vector2f(1042.0f, 180.0f));
+	Platform platform11(nullptr, sf::Vector2f(45.0f, 35.0f), sf::Vector2f(1165.0f, 180.0f));
 	while (window.isOpen())
 	{
 		
@@ -109,6 +111,9 @@ int main()
 		//platform6.Draw(window);
 		//platform7.Draw(window);
 		//platform8.Draw(window);
+		//platform9.Draw(window);
+		//platform10.Draw(window);
+		//platform11.Draw(window);
 		
 		window.setView(view);
 		window.display();
@@ -182,6 +187,9 @@ int main()
 		platform6.GetCollision().CheckCollision(playerCollision, 1.0f);
 		platform7.GetCollision().CheckCollision(playerCollision, 1.0f);
 		platform8.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform9.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform10.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform11.GetCollision().CheckCollision(playerCollision, 1.0f);
 		//view.setCenter(player.GetPosition());
 		/*if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A))
 		{
