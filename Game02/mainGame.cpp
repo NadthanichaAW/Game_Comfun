@@ -87,6 +87,7 @@ int main()
 	Platform platform5(nullptr, sf::Vector2f(45.0f, 35.0f), sf::Vector2f(210.0f, 180.0f));
 	Platform platform6(nullptr, sf::Vector2f(45.0f, 35.0f), sf::Vector2f(85.0f, 180.0f));
 	Platform platform7(nullptr, sf::Vector2f(5.0f, 5.0f), sf::Vector2f(60.0f, 130.0f));
+	Platform platform8(nullptr, sf::Vector2f(55.0f, 30.0f), sf::Vector2f(250.0f, 140.0f));
 
 	while (window.isOpen())
 	{
@@ -107,6 +108,7 @@ int main()
 		//platform5.Draw(window);
 		//platform6.Draw(window);
 		//platform7.Draw(window);
+		//platform8.Draw(window);
 		
 		window.setView(view);
 		window.display();
@@ -179,6 +181,7 @@ int main()
 		platform5.GetCollision().CheckCollision(playerCollision, 1.0f);
 		platform6.GetCollision().CheckCollision(playerCollision, 1.0f);
 		platform7.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform8.GetCollision().CheckCollision(playerCollision, 1.0f);
 		//view.setCenter(player.GetPosition());
 		/*if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A))
 		{
