@@ -74,7 +74,7 @@ int main()
 	//const float gridSize = 50.0f;
 
 	//Animation
-	Player player(&playerTexture, sf::Vector2u(6, 4), 0.3f,120.0f);
+	Player player(&playerTexture, sf::Vector2u(6, 4), 0.3f,100.0f);
 	float deltaTime = 0.0f;
 	sf::Clock clock;
 	
@@ -88,13 +88,14 @@ int main()
 	Platform platform6(nullptr, sf::Vector2f(45.0f, 35.0f), sf::Vector2f(85.0f, 180.0f));
 	Platform platform7(nullptr, sf::Vector2f(5.0f, 5.0f), sf::Vector2f(60.0f, 130.0f));
 	Platform platform8(nullptr, sf::Vector2f(55.0f, 30.0f), sf::Vector2f(250.0f, 140.0f));
-	Platform platform9(nullptr,sf::Vector2f(220.0f,100.0f),sf::Vector2f(370.0f,65.0f));
+	Platform platform9(nullptr, sf::Vector2f(220.0f, 100.0f), sf::Vector2f(370.0f, 65.0f));
 	Platform platform10(nullptr, sf::Vector2f(50.0f, 35.0f), sf::Vector2f(1042.0f, 180.0f));
 	Platform platform11(nullptr, sf::Vector2f(45.0f, 35.0f), sf::Vector2f(1165.0f, 180.0f));
 	Platform platform12(nullptr, sf::Vector2f(5.0f, 5.0f), sf::Vector2f(1185.0f, 130.0f));
 	Platform platform13(nullptr, sf::Vector2f(55.0f, 30.0f), sf::Vector2f(1000.0f, 140.0f));
 	Platform platform14(nullptr, sf::Vector2f(220.0f, 100.0f), sf::Vector2f(880.0f, 65.0f));
 	Platform platform15(nullptr, sf::Vector2f(350.0f, 30.0f), sf::Vector2f(190.0f, 305.0f));
+	Platform platform16(nullptr, sf::Vector2f(220.0f, 65.0f), sf::Vector2f(460.0f, 285.0f));
 	while (window.isOpen())
 	{
 		
@@ -122,6 +123,7 @@ int main()
 		//platform13.Draw(window);
 		//platform14.Draw(window);
 		//platform15.Draw(window);
+		//platform16.Draw(window);
 		window.setView(view);
 		window.display();
 
@@ -201,7 +203,7 @@ int main()
 		platform13.GetCollision().CheckCollision(playerCollision, 1.0f);
 		platform14.GetCollision().CheckCollision(playerCollision, 1.0f);
 		platform15.GetCollision().CheckCollision(playerCollision, 1.0f);
-		//view.setCenter(player.GetPosition());
+		platform16.GetCollision().CheckCollision(playerCollision, 1.0f);
 		/*if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A))
 		{
 			sprite.move(-0.1f, 0.0f);
