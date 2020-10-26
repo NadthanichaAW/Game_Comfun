@@ -21,6 +21,5 @@ private:
 	bool faceRight;
 	bool faceTop;
 	bool faceDown;
-
 };
 

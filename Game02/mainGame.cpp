@@ -24,7 +24,7 @@ int main()
 	*/
 	//Texture
 	sf::Texture playerTexture;
-	playerTexture.loadFromFile("Textures/Martha2.png");
+	playerTexture.loadFromFile("Textures/Martha_Green.png");
 	
 	//View
 	/*view.setCenter(sf::Vector2f(0.0f, 0.0f));
@@ -43,35 +43,9 @@ int main()
 	sf::Texture bgTexture;
 	bgTexture.loadFromFile("Textures/bg4.png");
 	bg.setTexture(&bgTexture);
-	/*sf::Texture bgTexture;
-	sf::Sprite bg;
-	sf::Vector2u TextureSize;
-	sf::Vector2u WindowSize;
-	if (!bgTexture.loadFromFile("Textures/Texture01.png"))
-	{
-		return -1;
-	}
-	else
-	{
-		TextureSize = bgTexture.getSize();
-		WindowSize = window.getSize();
-		bg.setTextureRect(sf::IntRect(0, 0, 400, 333));
-		float scaleX = (float)WindowSize.x / TextureSize.x;
-		float scaleY = (float)WindowSize.y / TextureSize.y;
-		bg.setTexture(bgTexture);
-		bg.setScale(scaleX, scaleY);
-	}*/
-	//sprite
-	//textureSize.x /= 6;
-	//textureSize.y /= 4;
-	//player.setTextureRect(sf::IntRect(textureSize.x*4,textureSize.y*6,textureSize.x,textureSize.y));
-	//player.scale(0.5f, 0.5f);
-
+	
 	//Frame
 	window.setFramerateLimit(120);
-	//float dt;
-	//sf::Clock dt_clock;
-	//const float gridSize = 50.0f;
 
 	//Animation
 	Player player(&playerTexture, sf::Vector2u(6, 4), 0.3f,100.0f);
@@ -142,6 +116,11 @@ int main()
 				break;
 			}
 		}
+		/*if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
+		{
+			sf::Vector2i mousePos = sf::Mouse::getPosition(window);
+			std::cout << pos.x << ' ' << pos.y << '\n';
+		}*/
 		view.setCenter(player.GetPosition());//x=y
 		if (view.getCenter().x - 540.0f <= 0.0f)//front center window behide pic
 		{
@@ -220,11 +199,7 @@ int main()
 		{
 			sprite.move(0.0f, 0.1f);
 		}*/
-		/*if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
-		{
-			sf::Vector2i mousePos = sf::Mouse::getPosition(window);
-			player.setPosition((float)mousePos.x, (float)mousePos.y);
-		}*/
+
 		window.clear();
 	
 	}

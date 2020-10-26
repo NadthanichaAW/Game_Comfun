@@ -19,7 +19,7 @@ void Animation::Update(int row, float deltaTime, bool faceRight,bool faceTop)
 {
 	currentImage.y = row;
 	totalTime += deltaTime;
-
+	imageCount.x = 3;
 	if (totalTime >= switchTime)
 	{
 		totalTime -= switchTime;

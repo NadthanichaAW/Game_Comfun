@@ -42,18 +42,18 @@ void Player::Update(float deltaTime)
     {
         movement.y += speed * deltaTime;
     }
+    /*if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
+    {
+        movement.x += speed * deltaTime;
+        
+    }*/
 
-    if (movement.x == 0 && movement.y == 0)
-    {
-        row = 0;
-    }
-    else
-    {
-        if (movement.y != 0)
+    if (movement.y != 0)
         {
             row = 0;
             if (movement.y > 0.0f)
             {
+      
                 faceTop = false;
             }
             if (movement.y < 0.0f)
@@ -72,7 +72,7 @@ void Player::Update(float deltaTime)
             row = 2;
             faceRight = true;
         }
-    }
+    
     /*if (body.getPosition().x < 25.f)
     {
         body.setPosition(25.f, body.getPosition().y);
