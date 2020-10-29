@@ -2,6 +2,7 @@
 #include<SFML/Graphics.hpp>
 #include"Animation.h"
 #include "Collision.h"
+#include "Hitbox.h"
 class Player
 {
 public:
@@ -12,14 +13,16 @@ public:
 	void Draw(sf::RenderWindow& window);
 	sf::Vector2f GetPosition() { return body.getPosition(); }
 	Collision GetCollision() { return Collision(body); }
+	
 
 private:
 	sf::RectangleShape body;
 	Animation animation;
 	unsigned int row;
 	float speed  ;
-	bool faceRight;
-	bool faceTop;
-	bool faceDown;
+	int faceDirection;
+	bool attack;
+	int hitbox;
+	
 };
 

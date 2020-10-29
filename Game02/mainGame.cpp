@@ -18,13 +18,10 @@ int main()
 	sf::RenderWindow window(sf::VideoMode(1080, 720), "Chivalry Girl", sf::Style::Close | sf::Style::Titlebar | sf::Style::Resize);
 	sf::View view(sf::Vector2f(0.0f, 0.0f), sf::Vector2f(VIEW_HIGHT, VIEW_WIDE));
 	
-	/*sf::RectangleShape player(sf::Vector2f(100.0f, 100.0f));
-	player.setFillColor(sf::Color::Magenta);
-	player.setOrigin(50.0f, 50.0f);//ตำแหน่งเมาส์
-	*/
+
 	//Texture
 	sf::Texture playerTexture;
-	playerTexture.loadFromFile("Textures/Martha_Green.png");
+	playerTexture.loadFromFile("Textures/Martha9.png");
 	
 	//View
 	/*view.setCenter(sf::Vector2f(0.0f, 0.0f));
@@ -33,11 +30,6 @@ int main()
 	sf::Vector2u textureSize = playerTexture.getSize();
 
 	//Background
-	/*sf::Texture bgWorld;
-	sf::Sprite bg;
-	bgWorld.loadFromFile("Textures/bg3.png");
-	bg.setTexture(bgWorld);
-	*/
 	sf::RectangleShape bg(sf::Vector2f(1248.0f, 1329.0f));
 	bg.setPosition(0.0f, 0.0f);
 	sf::Texture bgTexture;
@@ -48,7 +40,7 @@ int main()
 	window.setFramerateLimit(120);
 
 	//Animation
-	Player player(&playerTexture, sf::Vector2u(6, 4), 0.3f,100.0f);
+	Player player(&playerTexture, sf::Vector2u(3, 8), 0.3f,100.0f);
 	float deltaTime = 0.0f;
 	sf::Clock clock;
 	
@@ -116,11 +108,7 @@ int main()
 				break;
 			}
 		}
-		/*if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
-		{
-			sf::Vector2i mousePos = sf::Mouse::getPosition(window);
-			std::cout << pos.x << ' ' << pos.y << '\n';
-		}*/
+
 		view.setCenter(player.GetPosition());//x=y
 		if (view.getCenter().x - 540.0f <= 0.0f)//front center window behide pic
 		{
@@ -183,22 +171,7 @@ int main()
 		platform14.GetCollision().CheckCollision(playerCollision, 1.0f);
 		platform15.GetCollision().CheckCollision(playerCollision, 1.0f);
 		platform16.GetCollision().CheckCollision(playerCollision, 1.0f);
-		/*if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A))
-		{
-			sprite.move(-0.1f, 0.0f);
-		}
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::D))
-		{
-			sprite.move(0.1f, 0.0f);
-		}
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::W))
-		{
-			sprite.move(0.0f, -0.1f);
-		}
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::S))
-		{
-			sprite.move(0.0f, 0.1f);
-		}*/
+
 
 		window.clear();
 	

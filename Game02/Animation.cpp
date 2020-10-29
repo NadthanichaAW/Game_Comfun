@@ -15,11 +15,11 @@ Animation::~Animation()
 {
 }
 
-void Animation::Update(int row, float deltaTime, bool faceRight,bool faceTop)
+void Animation::Update(int row, float deltaTime)
 {
 	currentImage.y = row;
 	totalTime += deltaTime;
-	imageCount.x = 3;
+
 	if (totalTime >= switchTime)
 	{
 		totalTime -= switchTime;
@@ -30,7 +30,9 @@ void Animation::Update(int row, float deltaTime, bool faceRight,bool faceTop)
 		}
 	}
 	uvRect.top = currentImage.y * uvRect.height;
-	if (faceRight)
+	uvRect.left = currentImage.x * uvRect.width;
+
+	/*if (direction)
 	{
 		uvRect.left = currentImage.x * uvRect.width;
 		uvRect.width = abs(uvRect.width);
@@ -39,5 +41,6 @@ void Animation::Update(int row, float deltaTime, bool faceRight,bool faceTop)
 	{
 		uvRect.left = (currentImage.x + 1) * abs(uvRect.width);
 		uvRect.width = -abs(uvRect.width);
-	}
+	}*/
 }
+
