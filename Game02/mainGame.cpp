@@ -3,6 +3,12 @@
 #include"Player.h"
 #include"Platform.h"
 #include"Item.h"
+#include "stdlib.h"
+#include <string>
+#include <sstream>
+#include <math.h>
+#include <vector>
+#include <fstream>
 
 static const float VIEW_HIGHT = 1080.0f;
 static const float VIEW_WIDE = 720.0f;
@@ -41,17 +47,43 @@ int main()
 	window.setFramerateLimit(120);
 
 	//Animation
-	Player player(&playerTexture, sf::Vector2u(3, 8), 0.3f,100.0f);
+	Player player(&playerTexture, sf::Vector2u(3, 8), 0.3f,200.0f);
 	float deltaTime = 0.0f;
 	sf::Clock clock;
+
+	//Point
+	int countPoint = 0;
+	sf::Font font;
+	font.loadFromFile("Textures/ALGER.ttf");
+	std::ostringstream point;
+	sf::Text Coin;
+	Coin.setCharacterSize(50);
+	Coin.setString(point.str());
+	Coin.setFont(font);
+	Coin.setFillColor(sf::Color::White);
 	
 	//Item
 	sf::Texture coin;
 	coin.loadFromFile("Textures/coin.png");
 	std::vector<Item>ItemVector;//ใช้เวกเตอร์เพราะมีหลายไอเท็ม
-	ItemVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 200.0f, 200.0f));
-	ItemVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 300.0f, 300.0f));
-	ItemVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 400.0f, 400.0f));
+	ItemVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 520.0f, 500.0f));
+	ItemVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 560.0f, 500.0f));
+	ItemVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 560.0f, 530.0f));
+	ItemVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 560.0f, 560.0f));
+	ItemVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 560.0f, 630.0f));
+	ItemVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 520.0f, 590.0f));
+	ItemVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 480.0f, 590.0f));
+	ItemVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 520.0f, 670.0f));
+	ItemVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 352.0f, 470.0f));
+	ItemVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 352.0f, 720.0f));
+	ItemVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 480.0f, 720.0f));
+	ItemVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 480.0f, 840.0f));
+	ItemVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 190.0f, 720.0f));
+	ItemVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 220.0f, 720.0f));
+	ItemVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 260.0f, 720.0f));
+	ItemVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 310.0f, 720.0f));
+
+
 
 
 	//Platform
@@ -81,12 +113,26 @@ int main()
 		//view.setSize(720.0f, 720.0f);
 		//view.zoom(0.5f);
 		window.draw(bg);
+		window.draw(Coin);
 		player.Draw(window);
 		
 		//Item
 		for (int i = 0; i < ItemVector.size(); i++)
 		{
 			ItemVector[i].drawItem(window);
+		}
+
+		//Point
+		point.str(" ");
+		point << "Coin : " << countPoint;
+		Coin.setString(point.str());
+		Coin.setPosition({ view.getCenter().x-540,view.getCenter().y-360});
+		for (int i = 0; i < ItemVector.size(); i++)
+		{
+			if (ItemVector[i].iscollide() == 1)
+			{
+				countPoint += 100;
+			}
 		}
 
 		//platformDraw
