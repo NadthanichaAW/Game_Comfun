@@ -8,6 +8,7 @@ public:
 	~Animation();
 
 	void Update(int row, float deltaTime);
+	void updateItem(int row, float deltaTime);
 
 public:
 	sf::IntRect uvRect;

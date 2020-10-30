@@ -2,6 +2,7 @@
 #include <iostream>
 #include"Player.h"
 #include"Platform.h"
+#include"Item.h"
 
 static const float VIEW_HIGHT = 1080.0f;
 static const float VIEW_WIDE = 720.0f;
@@ -44,6 +45,15 @@ int main()
 	float deltaTime = 0.0f;
 	sf::Clock clock;
 	
+	//Item
+	sf::Texture coin;
+	coin.loadFromFile("Textures/coin.png");
+	std::vector<Item>ItemVector;//ใช้เวกเตอร์เพราะมีหลายไอเท็ม
+	ItemVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 200.0f, 200.0f));
+	ItemVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 300.0f, 300.0f));
+	ItemVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 400.0f, 400.0f));
+
+
 	//Platform
 	Collision playerCollision = player.GetCollision();
 	Platform platform1(nullptr, sf::Vector2f(50.0f, 1329.0f), sf::Vector2f(5.0f, 664.5f));//อันแรกขนาดอันสองpos left
@@ -73,6 +83,12 @@ int main()
 		window.draw(bg);
 		player.Draw(window);
 		
+		//Item
+		for (int i = 0; i < ItemVector.size(); i++)
+		{
+			ItemVector[i].drawItem(window);
+		}
+
 		//platformDraw
 		//platform1.Draw(window);
 		platform2.Draw(window);
@@ -154,6 +170,12 @@ int main()
 		}
 
 		player.Update(deltaTime);
+
+		//Itemupdate
+		for (int i = 0; i < ItemVector.size(); i++)
+		{
+			ItemVector[i].update(deltaTime, player);
+		}
 		
 		platform1.GetCollision().CheckCollision(playerCollision, 1.0f);
 		platform2.GetCollision().CheckCollision(playerCollision, 1.0f);
