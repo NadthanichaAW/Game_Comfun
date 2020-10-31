@@ -1,4 +1,5 @@
 #include <SFML/Graphics.hpp>
+#include<SFML/Audio.hpp>
 #include <iostream>
 #include"Player.h"
 #include"Platform.h"
@@ -62,6 +63,13 @@ int main()
 	Coin.setFont(font);
 	Coin.setFillColor(sf::Color::White);
 	
+	//Sound
+	sf::SoundBuffer sound;
+	sound.loadFromFile("Textures/coin.wav");
+	sf::Sound soundCoin;
+	soundCoin.setBuffer(sound);
+	soundCoin.setVolume(50.0f);
+
 	//Item
 	sf::Texture coin;
 	coin.loadFromFile("Textures/coin.png");
@@ -82,9 +90,24 @@ int main()
 	ItemVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 220.0f, 720.0f));
 	ItemVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 260.0f, 720.0f));
 	ItemVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 310.0f, 720.0f));
-
-
-
+	ItemVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 352.0f, 840.0f));
+	ItemVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 312.0f, 880.0f));
+	ItemVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 312.0f, 930.0f));
+	ItemVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 160.0f, 930.0f));
+	ItemVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 200.0f, 930.0f));
+	ItemVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 260.0f, 925.0f));
+	ItemVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 145.0f, 800.0f));
+	ItemVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 145.0f, 750.0f));
+	ItemVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 145.0f, 700.0f));
+	ItemVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 145.0f, 650.0f));
+	ItemVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 145.0f, 600.0f));
+	ItemVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 145.0f, 550.0f));
+	ItemVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 145.0f, 500.0f));
+	ItemVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 145.0f, 450.0f));
+	ItemVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 145.0f, 400.0f));
+	ItemVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 100.0f, 1170.0f));
+	ItemVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 65.0f, 1000.0f));
+	ItemVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 312.0f, 1050.0f));
 
 	//Platform
 	Collision playerCollision = player.GetCollision();
@@ -131,6 +154,7 @@ int main()
 		{
 			if (ItemVector[i].iscollide() == 1)
 			{
+				soundCoin.play();
 				countPoint += 100;
 			}
 		}
@@ -152,6 +176,8 @@ int main()
 		//platform14.Draw(window);
 		//platform15.Draw(window);
 		//platform16.Draw(window);
+
+
 		window.setView(view);
 		window.display();
 
@@ -222,7 +248,8 @@ int main()
 		{
 			ItemVector[i].update(deltaTime, player);
 		}
-		
+
+		//PlatformCollision
 		platform1.GetCollision().CheckCollision(playerCollision, 1.0f);
 		platform2.GetCollision().CheckCollision(playerCollision, 1.0f);
 		platform3.GetCollision().CheckCollision(playerCollision, 1.0f);
@@ -239,7 +266,6 @@ int main()
 		platform14.GetCollision().CheckCollision(playerCollision, 1.0f);
 		platform15.GetCollision().CheckCollision(playerCollision, 1.0f);
 		platform16.GetCollision().CheckCollision(playerCollision, 1.0f);
-
 
 		window.clear();
 	
