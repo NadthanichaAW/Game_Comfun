@@ -45,17 +45,17 @@ int main()
 	bg.setTexture(&bgTexture);
 	
 	//Background_2
-	sf::RectangleShape bg2(sf::Vector2f(1248.0f, 664.5f));
+	sf::RectangleShape bg2(sf::Vector2f(1248.0f, 1329.0f));
 	bg2.setPosition(0.0f, 1329.0f);
 	sf::Texture bg2Texture;
-	bg2Texture.loadFromFile("Textures/BG_5.png");
+	bg2Texture.loadFromFile("Textures/BG_7.png");
 	bg2.setTexture(&bg2Texture);
 
 	//Frame
 	window.setFramerateLimit(120);
 
 	//Animation
-	Player player(&playerTexture, sf::Vector2u(3, 8), 0.3f,200.0f);
+	Player player(&playerTexture, sf::Vector2u(3, 8), 0.3f,500.0f);
 	float deltaTime = 0.0f;
 	sf::Clock clock;
 
@@ -274,6 +274,7 @@ int main()
 		{
 			u = 1;
 			player.SetPosition(625, 1410);
+			//player.SetPosition(958, 1671);
 		}if (u==1)
 		{
 			view.setCenter(player.GetPosition());//x=y
@@ -283,11 +284,11 @@ int main()
 				{
 					view.setCenter(540.0f, 360.0f);//window
 				}
-				if (view.getCenter().y + 360.0f >= 664.5f)
+				if (view.getCenter().y + 360.0f >= 2658.0f)
 				{
-					view.setCenter(540.0f, 1633.5f);//window
+					view.setCenter(540.0f, 2298.0f);//window
 				}
-				if (view.getCenter().y - 360.0f > 0.0f && view.getCenter().y + 360.0f < 664.5f)
+				if (view.getCenter().y - 360.0f > 0.0f && view.getCenter().y + 360.0f < 2658.0f)
 				{
 					view.setCenter(540.0f, player.GetPosition().y);
 				}
@@ -299,11 +300,11 @@ int main()
 				{
 					view.setCenter(708.0f, 360.0f);//window 1248-540 collision right 
 				}
-				if (view.getCenter().y + 360.0f >= 664.5f)
+				if (view.getCenter().y + 360.0f >= 2658.0f)
 				{
-					view.setCenter(708.0f, 1633.5f);//window 1248-540
+					view.setCenter(708.0f, 2298.0f);//window 1248-540
 				}
-				if (view.getCenter().y - 360.0f > 0.0f && view.getCenter().y + 360.0f < 664.5f)
+				if (view.getCenter().y - 360.0f > 0.0f && view.getCenter().y + 360.0f < 2658.0f)
 				{
 					view.setCenter(708.0f, player.GetPosition().y);
 				}
@@ -314,9 +315,9 @@ int main()
 				{
 					view.setCenter(player.GetPosition().x, 360.0f);
 				}
-				if (view.getCenter().y + 360.0f >= 664.5f)
+				if (view.getCenter().y + 360.0f >= 2658.0f)
 				{
-					view.setCenter(player.GetPosition().x, 1633.5f);
+					view.setCenter(player.GetPosition().x, 2298.0f);
 				}
 			}
 		}
