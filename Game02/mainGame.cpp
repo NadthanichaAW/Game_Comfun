@@ -283,11 +283,11 @@ int main()
 				{
 					view.setCenter(540.0f, 360.0f);//window
 				}
-				if (view.getCenter().y + 360.0f >= 1993.5f)
+				if (view.getCenter().y + 360.0f >= 664.5f)
 				{
 					view.setCenter(540.0f, 1633.5f);//window
 				}
-				if (view.getCenter().y - 360.0f > 0.0f && view.getCenter().y + 360.0f < 1993.5f)
+				if (view.getCenter().y - 360.0f > 0.0f && view.getCenter().y + 360.0f < 664.5f)
 				{
 					view.setCenter(540.0f, player.GetPosition().y);
 				}
@@ -299,11 +299,11 @@ int main()
 				{
 					view.setCenter(708.0f, 360.0f);//window 1248-540 collision right 
 				}
-				if (view.getCenter().y + 360.0f >= 1993.5f)
+				if (view.getCenter().y + 360.0f >= 664.5f)
 				{
 					view.setCenter(708.0f, 1633.5f);//window 1248-540
 				}
-				if (view.getCenter().y - 360.0f > 0.0f && view.getCenter().y + 360.0f < 1993.5f)
+				if (view.getCenter().y - 360.0f > 0.0f && view.getCenter().y + 360.0f < 664.5f)
 				{
 					view.setCenter(708.0f, player.GetPosition().y);
 				}
@@ -314,7 +314,7 @@ int main()
 				{
 					view.setCenter(player.GetPosition().x, 360.0f);
 				}
-				if (view.getCenter().y + 360.0f >= 1993.5f)
+				if (view.getCenter().y + 360.0f >= 664.5f)
 				{
 					view.setCenter(player.GetPosition().x, 1633.5f);
 				}
