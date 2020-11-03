@@ -333,7 +333,7 @@ int main()
 		//PlatformCollision
 		platform1.GetCollision().CheckCollision(playerCollision, 1.0f);
 		platform2.GetCollision().CheckCollision(playerCollision, 1.0f);
-		//platform3.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform3.GetCollision().CheckCollision(playerCollision, 1.0f);
 		platform4.GetCollision().CheckCollision(playerCollision, 1.0f);
 		platform5.GetCollision().CheckCollision(playerCollision, 1.0f);
 		platform6.GetCollision().CheckCollision(playerCollision, 1.0f);
