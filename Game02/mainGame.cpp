@@ -233,11 +233,11 @@ int main()
 			{
 				view.setCenter(540.0f, 360.0f);//window
 			}
-			if (view.getCenter().y + 360.0f >= 1993.5f)
+			if (view.getCenter().y + 360.0f >= 1329.0f)
 			{
-				view.setCenter(540.0f, 1633.5f);//window
+				view.setCenter(540.0f, 969.0f);//window
 			}
-			if (view.getCenter().y - 360.0f > 0.0f && view.getCenter().y + 360.0f < 1993.5f)
+			if (view.getCenter().y - 360.0f > 0.0f && view.getCenter().y + 360.0f < 1329.0f)
 			{
 				view.setCenter(540.0f, player.GetPosition().y);
 			}
@@ -249,11 +249,11 @@ int main()
 			{
 				view.setCenter(708.0f, 360.0f);//window 1248-540 collision right 
 			}
-			if (view.getCenter().y + 360.0f >= 1993.5f)
+			if (view.getCenter().y + 360.0f >= 1329.0f)
 			{
-				view.setCenter(708.0f, 1633.5f);//window 1248-540
+				view.setCenter(708.0f, 969.0f);//window 1248-540
 			}
-			if (view.getCenter().y - 360.0f > 0.0f && view.getCenter().y + 360.0f < 1993.5f)
+			if (view.getCenter().y - 360.0f > 0.0f && view.getCenter().y + 360.0f < 1329.0f)
 			{
 				view.setCenter(708.0f, player.GetPosition().y);
 			}
@@ -264,15 +264,61 @@ int main()
 			{
 				view.setCenter(player.GetPosition().x, 360.0f);
 			}
-			if (view.getCenter().y + 360.0f >= 1993.5f)
+			if (view.getCenter().y + 360.0f >= 1329.0f)
 			{
-				view.setCenter(player.GetPosition().x, 1633.5f);
+				view.setCenter(player.GetPosition().x, 969.0f);
 			}
 		}
 		//warp to bg2
 		if ((player.GetPosition().x > 592 && player.GetPosition().x < 660) && player.GetPosition().y >= 1271 && player.GetPosition().y <= 1299)
 		{
+			u = 1;
 			player.SetPosition(625, 1410);
+		}if (u==1)
+		{
+			view.setCenter(player.GetPosition());//x=y
+			if (view.getCenter().x - 540.0f <= 0.0f)//front center window behide pic
+			{
+				if (view.getCenter().y - 360.0f <= 0.0f)
+				{
+					view.setCenter(540.0f, 360.0f);//window
+				}
+				if (view.getCenter().y + 360.0f >= 1993.5f)
+				{
+					view.setCenter(540.0f, 1633.5f);//window
+				}
+				if (view.getCenter().y - 360.0f > 0.0f && view.getCenter().y + 360.0f < 1993.5f)
+				{
+					view.setCenter(540.0f, player.GetPosition().y);
+				}
+
+			}
+			if (view.getCenter().x + 540.0f >= 1248.0f)
+			{
+				if (view.getCenter().y - 360.0f <= 0.0f)
+				{
+					view.setCenter(708.0f, 360.0f);//window 1248-540 collision right 
+				}
+				if (view.getCenter().y + 360.0f >= 1993.5f)
+				{
+					view.setCenter(708.0f, 1633.5f);//window 1248-540
+				}
+				if (view.getCenter().y - 360.0f > 0.0f && view.getCenter().y + 360.0f < 1993.5f)
+				{
+					view.setCenter(708.0f, player.GetPosition().y);
+				}
+			}
+			if (view.getCenter().x - 540.0f > 0.0f && view.getCenter().x + 540.0f < 1248.0f)
+			{
+				if (view.getCenter().y - 360.0f <= 0.0f)
+				{
+					view.setCenter(player.GetPosition().x, 360.0f);
+				}
+				if (view.getCenter().y + 360.0f >= 1993.5f)
+				{
+					view.setCenter(player.GetPosition().x, 1633.5f);
+				}
+			}
 		}
 
 		player.Update(deltaTime);
