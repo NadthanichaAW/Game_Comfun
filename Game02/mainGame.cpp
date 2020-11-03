@@ -37,13 +37,20 @@ int main()
 	*/
 	sf::Vector2u textureSize = playerTexture.getSize();
 
-	//Background
+	//Background_1
 	sf::RectangleShape bg(sf::Vector2f(1248.0f, 1329.0f));
 	bg.setPosition(0.0f, 0.0f);
 	sf::Texture bgTexture;
 	bgTexture.loadFromFile("Textures/bg4.png");
 	bg.setTexture(&bgTexture);
 	
+	//Background_2
+	sf::RectangleShape bg2(sf::Vector2f(1040.0f, 557.0f));
+	bg2.setPosition(0.0f, 1329.0f);
+	sf::Texture bg2Texture;
+	bg2Texture.loadFromFile("Textures/BG_2");
+	bg2.setTexture(&bg2Texture);
+
 	//Frame
 	window.setFramerateLimit(120);
 
@@ -145,6 +152,7 @@ int main()
 		//view.setSize(720.0f, 720.0f);
 		//view.zoom(0.5f);
 		window.draw(bg);
+		window.draw(bg2);
 		window.draw(Coin);
 		player.Draw(window);
 		
@@ -250,6 +258,12 @@ int main()
 			}
 		}
 
+		//bg2
+		if ((player.GetPosition().x > 592 && player.GetPosition().x < 660) && player.GetPosition().y >= 1271 && player.GetPosition().y <= 1299)
+		{
+			player.SetPosition(1400, 200);
+
+		}
 		player.Update(deltaTime);
 
 		//Itemupdate
