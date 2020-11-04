@@ -62,7 +62,7 @@ int main()
 	window.setFramerateLimit(120);
 
 	//Animation
-	Player player(&playerTexture, sf::Vector2u(3, 8), 0.3f,500.0f);
+	Player player(&playerTexture, sf::Vector2u(3, 8), 0.3f,200.0f);
 	float deltaTime = 0.0f;
 	sf::Clock clock;
 
@@ -185,7 +185,7 @@ int main()
 		point.str(" ");
 		point << "Coin : " << countPoint;
 		Coin.setString(point.str());
-		Coin.setPosition({ view.getCenter().x-540,view.getCenter().y-360});
+		Coin.setPosition({ view.getCenter().x + 250,view.getCenter().y - 360 });
 		for (int i = 0; i < ItemVector.size(); i++)
 		{
 			if (ItemVector[i].iscollide() == 1)
