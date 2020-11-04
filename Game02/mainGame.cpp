@@ -51,6 +51,13 @@ int main()
 	bg2Texture.loadFromFile("Textures/BG_7.png");
 	bg2.setTexture(&bg2Texture);
 
+	//Background_3
+	sf::RectangleShape bg3(sf::Vector2f(1248.0f, 1329.0f));
+	bg3.setPosition(0.0f, 2658.0f);
+	sf::Texture bg3Texture;
+	bg3Texture.loadFromFile("Textures/BG_8.png");
+	bg3.setTexture(&bg3Texture);
+
 	//Frame
 	window.setFramerateLimit(120);
 
@@ -151,10 +158,9 @@ int main()
 		deltaTime = clock.restart().asSeconds();
 		sf::Vector2f pos = player.GetPosition();
 		std::cout << pos.x << ' ' << pos.y << '\n';
-		//view.setSize(720.0f, 720.0f);
-		//view.zoom(0.5f);
 		window.draw(bg);
 		window.draw(bg2);
+		window.draw(bg3);
 		
 		/*if ((player.GetPosition().x > 592 && player.GetPosition().x < 660) && player.GetPosition().y >= 1271 && player.GetPosition().y <= 1299)
 		{
@@ -322,6 +328,58 @@ int main()
 			}
 		}
 
+		//warp to bg3
+		if ((player.GetPosition().x > 580 && player.GetPosition().x < 660) && player.GetPosition().y >= 2520 && player.GetPosition().y <= 2550)
+		{
+			u = 2;
+			player.SetPosition(625, 2746);
+		}if (u == 2)
+		{
+			view.setCenter(player.GetPosition());//x=y
+			if (view.getCenter().x - 540.0f <= 0.0f)//front center window behide pic
+			{
+				if (view.getCenter().y - 360.0f <= 0.0f)
+				{
+					view.setCenter(540.0f, 360.0f);//window
+				}
+				if (view.getCenter().y + 360.0f >= 3987.0f)
+				{
+					view.setCenter(540.0f, 3627.0f);//window
+				}
+				if (view.getCenter().y - 360.0f > 0.0f && view.getCenter().y + 360.0f < 3987.0f)
+				{
+					view.setCenter(540.0f, player.GetPosition().y);
+				}
+
+			}
+			if (view.getCenter().x + 540.0f >= 1248.0f)
+			{
+				if (view.getCenter().y - 360.0f <= 0.0f)
+				{
+					view.setCenter(708.0f, 360.0f);//window 1248-540 collision right 
+				}
+				if (view.getCenter().y + 360.0f >= 3987.0f)
+				{
+					view.setCenter(708.0f, 3627.0f);//window 1248-540
+				}
+				if (view.getCenter().y - 360.0f > 0.0f && view.getCenter().y + 360.0f < 3987.0f)
+				{
+					view.setCenter(708.0f, player.GetPosition().y);
+				}
+			}
+			if (view.getCenter().x - 540.0f > 0.0f && view.getCenter().x + 540.0f < 1248.0f)
+			{
+				if (view.getCenter().y - 360.0f <= 0.0f)
+				{
+					view.setCenter(player.GetPosition().x, 360.0f);
+				}
+				if (view.getCenter().y + 360.0f >= 3987.0f)
+				{
+					view.setCenter(player.GetPosition().x, 3627.0f);
+				}
+			}
+		}
+		
 		player.Update(deltaTime);
 
 		//Itemupdate
