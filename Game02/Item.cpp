@@ -17,7 +17,7 @@ Item::~Item()
 
 }
 
-void Item::update(float deltatime, Player player)
+void Item::updateItem(float deltatime, Player player)
 {
 	animation.updateItem(row, deltatime);
 	body.setTextureRect(animation.uvRect);

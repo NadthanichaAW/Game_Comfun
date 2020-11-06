@@ -8,6 +8,7 @@ Player::Player(sf::Texture* texture, sf::Vector2u imageCount, float switchTime, 
 	row = 0;
     attack = false;
     faceDirection = 1; //row 1 หันหน้าลง 
+    r = 1;
     //hitbox = 0;
 
 	body.setSize(sf::Vector2f(65.0f, 65.0f));
@@ -33,24 +34,28 @@ void Player::Update(float deltaTime)
         faceDirection == 4;
         movement.x -= speed * deltaTime;
         attack = false;
+      
     }
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::D))
     {
         faceDirection == 3;
         movement.x += speed * deltaTime;
         attack = false;
+      
     }
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::W))
     {
         faceDirection == 2;
         movement.y -= speed * deltaTime;
         attack = false;
+     
     }
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::S))
     {
         faceDirection == 1;
         movement.y += speed * deltaTime;
         attack = false;
+      
     }
     if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
     {
@@ -63,39 +68,50 @@ void Player::Update(float deltaTime)
     {
         if (faceDirection==1)
         {
+            r == 1;
             row = 4;
+            
         }
         else if (faceDirection==2)
         {
+            r == 2;
             row = 7;
+        
         }
         else if (faceDirection==3)
         {
+            r == 3;
             row = 5;
+          
         }
         else if (faceDirection==4)
         {
+            r == 4;
             row = 6;
+        
         }      
     }
     else
     {
         if (movement.y > 0.0f)
-        {
+        {    
             faceDirection = 1;
             row = 0;
+          
         }
         else if (movement.y < 0.0f)
         {
             faceDirection = 2;
             row = 3;
+         
         }
-        else if (movement.x > 0.0f)
+        else if (movement.x > 0.0f )
         {
             faceDirection = 3;
             row = 1;
+         
         }
-        else if (movement.x < 0.0f)
+        else if (movement.x < 0.0f )
         {
             faceDirection = 4;
             row = 2;

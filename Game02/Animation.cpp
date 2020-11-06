@@ -48,7 +48,6 @@ void Animation::updateItem(int row, float deltaTime)
 {
 	currentImage.y = row;
 	totalTime += deltaTime;
-	//imageCount.x = 3;
 	if (totalTime >= switchTime)
 	{
 		totalTime -= switchTime;
@@ -61,4 +60,3 @@ void Animation::updateItem(int row, float deltaTime)
 	uvRect.top = currentImage.y * uvRect.height;
 	uvRect.left = currentImage.x * uvRect.width;
 }
-

@@ -24,6 +24,7 @@ private:
 	int faceDirection;
 	bool attack;
 	int hitbox;
+	int r;
 	
 };
 

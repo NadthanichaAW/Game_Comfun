@@ -62,7 +62,7 @@ int main()
 	window.setFramerateLimit(120);
 
 	//Animation
-	Player player(&playerTexture, sf::Vector2u(3, 8), 0.3f,200.0f);
+	Player player(&playerTexture, sf::Vector2u(3, 8), 0.3f,300.0f);
 	float deltaTime = 0.0f;
 	sf::Clock clock;
 
@@ -130,7 +130,11 @@ int main()
 	ItemVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 685.0f, 635.0f));
 	ItemVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 725.0f, 680.0f));
 
-
+	//Firepoint 
+	/*sf::Texture FirePoint;
+	FirePoint.loadFromFile("Textures/Firepoint.png");
+	ItemVector.push_back(Item(&FirePoint, sf::Vector2u(1, 4), 0.03, 554.0f, 84.0f));
+	*/
 
 	//Platform
 	Collision playerCollision = player.GetCollision();
@@ -150,6 +154,10 @@ int main()
 	Platform platform14(nullptr, sf::Vector2f(220.0f, 100.0f), sf::Vector2f(880.0f, 65.0f));
 	Platform platform15(nullptr, sf::Vector2f(350.0f, 30.0f), sf::Vector2f(190.0f, 305.0f));
 	Platform platform16(nullptr, sf::Vector2f(220.0f, 65.0f), sf::Vector2f(460.0f, 285.0f));
+
+	//Platform platform17(nullptr, sf::Vector2f(96.0f, 94.0f), sf::Vector2f(415.0f, 790.0f));
+
+	
 
 	int u = 0;
 	while (window.isOpen())
@@ -180,7 +188,6 @@ int main()
 		{
 			ItemVector[i].drawItem(window);
 		}
-
 		//Point
 		point.str(" ");
 		point << "Coin : " << countPoint;
@@ -385,7 +392,7 @@ int main()
 		//Itemupdate
 		for (int i = 0; i < ItemVector.size(); i++)
 		{
-			ItemVector[i].update(deltaTime, player);
+			ItemVector[i].updateItem(deltaTime, player);
 		}
 
 		//PlatformCollision
@@ -408,6 +415,7 @@ int main()
 
 		window.clear();
 	
+
 	}
 	return 0;
 }
