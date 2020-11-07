@@ -5,6 +5,7 @@
 #include"Platform.h"
 #include"Item.h"
 #include "stdlib.h"
+#include"FireItem.h"
 #include <string>
 #include <sstream>
 #include <math.h>
@@ -131,10 +132,11 @@ int main()
 	ItemVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 725.0f, 680.0f));
 
 	//Firepoint 
-	/*sf::Texture FirePoint;
-	FirePoint.loadFromFile("Textures/Firepoint.png");
-	ItemVector.push_back(Item(&FirePoint, sf::Vector2u(1, 4), 0.03, 554.0f, 84.0f));
-	*/
+	sf::Texture FirePoint;
+	std::vector<FireItem>ItemVectorFire;//ใช้เวกเตอร์เพราะมีหลายไอเท็ม
+	FirePoint.loadFromFile("Textures/Firepoint4.png");
+	ItemVectorFire.push_back(FireItem(&FirePoint, sf::Vector2u(4, 1), 0.30, 581.0f, 169.0f));
+	
 
 	//Platform
 	Collision playerCollision = player.GetCollision();
@@ -154,8 +156,7 @@ int main()
 	Platform platform14(nullptr, sf::Vector2f(220.0f, 100.0f), sf::Vector2f(880.0f, 65.0f));
 	Platform platform15(nullptr, sf::Vector2f(350.0f, 30.0f), sf::Vector2f(190.0f, 305.0f));
 	Platform platform16(nullptr, sf::Vector2f(220.0f, 65.0f), sf::Vector2f(460.0f, 285.0f));
-
-	//Platform platform17(nullptr, sf::Vector2f(96.0f, 94.0f), sf::Vector2f(415.0f, 790.0f));
+	Platform platform17(nullptr, sf::Vector2f(96.0f, 94.0f), sf::Vector2f(415.0f, 790.0f));
 
 	
 
@@ -168,18 +169,7 @@ int main()
 		std::cout << pos.x << ' ' << pos.y << '\n';
 		window.draw(bg);
 		window.draw(bg2);
-		window.draw(bg3);
-		
-		/*if ((player.GetPosition().x > 592 && player.GetPosition().x < 660) && player.GetPosition().y >= 1271 && player.GetPosition().y <= 1299)
-		{
-			u = 1;
-			player.SetPosition(140, 100);
-			//window.draw(bg2);
-		}
-		if (u == 1) {
-			window.draw(bg2);
-		}*/
-		
+		window.draw(bg3);	
 		window.draw(Coin);
 		player.Draw(window);
 		
@@ -188,6 +178,11 @@ int main()
 		{
 			ItemVector[i].drawItem(window);
 		}
+		for (int i = 0; i < ItemVectorFire.size(); i++)
+		{
+			ItemVectorFire[i].drawItemFire(window);
+		}
+
 		//Point
 		point.str(" ");
 		point << "Coin : " << countPoint;
@@ -201,7 +196,13 @@ int main()
 				countPoint += 100;
 			}
 		}
-
+		/*for (int i = 0; i < ItemVectorFire.size(); i++)
+		{
+			if (ItemVectorFire[i].iscollider() == 1)
+			{
+				player.SetPosition(140.0f, 100.0f);
+			}
+		}*/
 		//platformDraw
 		//platform1.Draw(window);
 		platform2.Draw(window);
@@ -394,6 +395,11 @@ int main()
 		{
 			ItemVector[i].updateItem(deltaTime, player);
 		}
+		for (int i = 0; i < ItemVectorFire.size(); i++)
+		{
+			ItemVectorFire[i].updateItemFire(deltaTime, player);
+		}
+
 
 		//PlatformCollision
 		platform1.GetCollision().CheckCollision(playerCollision, 1.0f);
@@ -412,6 +418,7 @@ int main()
 		platform14.GetCollision().CheckCollision(playerCollision, 1.0f);
 		platform15.GetCollision().CheckCollision(playerCollision, 1.0f);
 		platform16.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform17.GetCollision().CheckCollision(playerCollision, 1.0f);
 
 		window.clear();
 	

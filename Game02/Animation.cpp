@@ -1,4 +1,5 @@
 #include "Animation.h"
+#include <time.h>
 
 Animation::Animation(sf::Texture* texture, sf::Vector2u imageCount, float switchTime)
 {
@@ -45,6 +46,23 @@ void Animation::Update(int row, float deltaTime)
 }
 
 void Animation::updateItem(int row, float deltaTime)
+{
+	currentImage.y = row;
+	totalTime += deltaTime;
+	if (totalTime >= switchTime)
+	{
+		totalTime -= switchTime;
+		currentImage.x++;
+		if (currentImage.x >= imageCount.x)
+		{
+			currentImage.x = 0;
+		}
+	}
+	uvRect.top = currentImage.y * uvRect.height;
+	uvRect.left = currentImage.x * uvRect.width;
+}
+
+void Animation::updateFire(int row, float deltaTime)
 {
 	currentImage.y = row;
 	totalTime += deltaTime;

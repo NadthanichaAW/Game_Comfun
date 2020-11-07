@@ -70,7 +70,7 @@ void Player::Update(float deltaTime)
         {
             r == 1;
             row = 4;
-            
+    
         }
         else if (faceDirection==2)
         {

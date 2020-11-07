@@ -8,7 +8,7 @@ public:
 	~Platform();
 
 	void Draw(sf::RenderWindow& window);
-	Collision GetCollision() { return Collision(body); }
+	Collision GetCollision() { return Collision(body); } 
 
 private:
 	sf::RectangleShape body;
