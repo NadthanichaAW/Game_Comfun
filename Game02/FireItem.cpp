@@ -17,7 +17,7 @@ FireItem::~FireItem()
 
 void FireItem::updateItemFire(float deltatime, Player player)
 {
-	animation.updateItem(row, deltatime);
+	animation.updateFire(row, deltatime);
 	body.setTextureRect(animation.uvRect);
 
 	/*if (player.GetCollision().CheckCollision(this->GetCollider()))

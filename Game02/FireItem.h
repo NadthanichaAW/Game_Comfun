@@ -24,7 +24,6 @@ public:
 
 	Collision GetCollider() { return Collision(body); }
 private:
-	int hit;
 	int row;
 	sf::RectangleShape body;
 	Animation animation;

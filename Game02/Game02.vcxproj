@@ -147,7 +147,6 @@
   <ItemGroup>
     <ClCompile Include="Animation.cpp" />
     <ClCompile Include="Collision.cpp" />
-    <ClCompile Include="Enemies.cpp" />
     <ClCompile Include="FireItem.cpp" />
     <ClCompile Include="Item.cpp" />
     <ClCompile Include="mainGame.cpp" />
@@ -157,7 +156,6 @@
   <ItemGroup>
     <ClInclude Include="Animation.h" />
     <ClInclude Include="Collision.h" />
-    <ClInclude Include="Enemies.h" />
     <ClInclude Include="FireItem.h" />
     <ClInclude Include="Item.h" />
     <ClInclude Include="Platform.h" />

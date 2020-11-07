@@ -74,6 +74,7 @@ void Animation::updateFire(int row, float deltaTime)
 		{
 			currentImage.x = 0;
 		}
+	
 	}
 	uvRect.top = currentImage.y * uvRect.height;
 	uvRect.left = currentImage.x * uvRect.width;
