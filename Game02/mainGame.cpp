@@ -42,7 +42,7 @@ int main()
 	sf::RectangleShape bg(sf::Vector2f(1248.0f, 1329.0f));
 	bg.setPosition(0.0f, 0.0f);
 	sf::Texture bgTexture;
-	bgTexture.loadFromFile("Textures/bg4.png");
+	bgTexture.loadFromFile("Textures/BG_9.png");
 	bg.setTexture(&bgTexture);
 
 	//Background_2
@@ -88,6 +88,8 @@ int main()
 	//Item
 	sf::Texture coin;
 	coin.loadFromFile("Textures/coin.png");
+	sf::Texture clocker;
+	clocker.loadFromFile("Textures/clock.png");
 	std::vector<Item>ItemVector;//ใช้เวกเตอร์เพราะมีหลายไอเท็ม
 	ItemVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 520.0f, 500.0f));
 	ItemVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 560.0f, 500.0f));
@@ -130,6 +132,9 @@ int main()
 	ItemVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 780.0f, 600.0f));
 	ItemVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 685.0f, 635.0f));
 	ItemVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 725.0f, 680.0f));
+	
+	//---------------------------clock----------------------------------------------
+	ItemVector.push_back(Item(&clocker, sf::Vector2u(4, 1), 0.15f, 800.0f, 800.0f));
 
 	//Firepoint 
 	sf::Texture FirePoint;
