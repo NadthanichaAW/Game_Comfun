@@ -188,12 +188,41 @@ int main()
 	Platform platform45(nullptr, sf::Vector2f(62.0f, 122.0f), sf::Vector2f(537.0f, 1246.0f));
 	Platform platform46(nullptr, sf::Vector2f(62.0f, 122.0f), sf::Vector2f(703.0f, 1246.0f));
 	Platform platform47(nullptr, sf::Vector2f(105.0f, 65.0f), sf::Vector2f(738.0f, 1146.0f));
-	Platform platform48(nullptr, sf::Vector2f(220.0f, 65.0f), sf::Vector2f(788.99f, 285.0f));
-	Platform platform49(nullptr, sf::Vector2f(220.0f, 65.0f), sf::Vector2f(788.99f, 285.0f));
-	Platform platform50(nullptr, sf::Vector2f(220.0f, 65.0f), sf::Vector2f(788.99f, 285.0f));
-	Platform platform51(nullptr, sf::Vector2f(220.0f, 65.0f), sf::Vector2f(788.99f, 285.0f));
-	Platform platform52(nullptr, sf::Vector2f(220.0f, 65.0f), sf::Vector2f(788.99f, 285.0f));
+	Platform platform48(nullptr, sf::Vector2f(22.0f, 122.0f), sf::Vector2f(312.0f, 462.0f));
+	Platform platform49(nullptr, sf::Vector2f(22.0f, 122.0f), sf::Vector2f(104.0f, 462.0f));
+	Platform platform50(nullptr, sf::Vector2f(22.0f, 122.0f), sf::Vector2f(1186.0f,799.0f));
+	Platform platform51(nullptr, sf::Vector2f(30.0f, 5.0f), sf::Vector2f(208.0f, 531.0f));
+	Platform platform52(nullptr, sf::Vector2f(30.0f, 5.0f), sf::Vector2f(208.0f, 405.99f));
+	Platform platform53(nullptr, sf::Vector2f(30.0f, 5.0f), sf::Vector2f(1039.0f, 490.0f));
+	Platform platform54(nullptr, sf::Vector2f(30.0f, 5.0f), sf::Vector2f(1165.0f, 490.0f));
+	Platform platform55(nullptr, sf::Vector2f(30.0f, 5.0f), sf::Vector2f(1123.0f, 405.0f));
+	Platform platform56(nullptr, sf::Vector2f(30.0f, 5.0f), sf::Vector2f(957.0f, 405.0f));
+	Platform platform57(nullptr, sf::Vector2f(190.0f, 5.0f), sf::Vector2f(1065.0f, 739.99f));
+	Platform platform58(nullptr, sf::Vector2f(145.0f, 5.0f), sf::Vector2f(1040.0f, 821.99f));
+	Platform platform59(nullptr, sf::Vector2f(30.0f, 5.0f), sf::Vector2f(1039.0f, 1155.0f));
+	Platform platform60(nullptr, sf::Vector2f(30.0f, 5.0f), sf::Vector2f(1165.0f, 1155.0f));
+	Platform platform61(nullptr, sf::Vector2f(5.0f, 5.0f), sf::Vector2f(936.0f, 1155.0f));
+	Platform platform62(nullptr, sf::Vector2f(5.0f, 5.0f), sf::Vector2f(1019.0f, 1072.0f));
+	Platform platform63(nullptr, sf::Vector2f(5.0f, 5.0f), sf::Vector2f(1103.0f, 1072.0f));
+	Platform platform64(nullptr, sf::Vector2f(5.0f, 5.0f), sf::Vector2f(1186.0f, 1072.0f));
+	Platform platform65(nullptr, sf::Vector2f(5.0f, 45.0f), sf::Vector2f(936.0f, 1054.0f));
+	Platform platform66(nullptr, sf::Vector2f(30.0f, 85.0f), sf::Vector2f(888.0f, 987.99f));
+	Platform platform67(nullptr, sf::Vector2f(30.0f, 5.0f), sf::Vector2f(1144.0f, 864.0f));
+	Platform platform68(nullptr, sf::Vector2f(30.0f, 95.0f), sf::Vector2f(519.0f, 26.0f));
+	Platform platform69(nullptr, sf::Vector2f(30.0f, 95.0f), sf::Vector2f(732.0f, 26.0f));
 
+	Platform platform70(nullptr, sf::Vector2f(40.0f, 7.0f), sf::Vector2f(208.0f, 405.99f));
+	Platform platform71(nullptr, sf::Vector2f(40.0f, 7.0f), sf::Vector2f(208.0f, 405.99f));
+	Platform platform72(nullptr, sf::Vector2f(40.0f, 7.0f), sf::Vector2f(208.0f, 405.99f));
+	Platform platform73(nullptr, sf::Vector2f(40.0f, 7.0f), sf::Vector2f(208.0f, 405.99f));
+	Platform platform74(nullptr, sf::Vector2f(40.0f, 7.0f), sf::Vector2f(208.0f, 405.99f));
+	Platform platform75(nullptr, sf::Vector2f(40.0f, 7.0f), sf::Vector2f(208.0f, 405.99f));
+	Platform platform76(nullptr, sf::Vector2f(62.0f, 7.0f), sf::Vector2f(208.0f, 405.99f));
+	Platform platform77(nullptr, sf::Vector2f(62.0f, 7.0f), sf::Vector2f(208.0f, 405.99f));
+	Platform platform78(nullptr, sf::Vector2f(62.0f, 7.0f), sf::Vector2f(208.0f, 405.99f));
+	Platform platform79(nullptr, sf::Vector2f(62.0f, 7.0f), sf::Vector2f(208.0f, 405.99f));
+	Platform platform80(nullptr, sf::Vector2f(62.0f, 7.0f), sf::Vector2f(208.0f, 405.99f));
+	Platform platform81(nullptr, sf::Vector2f(62.0f, 7.0f), sf::Vector2f(208.0f, 405.99f));
 
 	int u = 0;
 	while (window.isOpen())
@@ -239,7 +268,7 @@ int main()
 		}*/
 		//platformDraw
 		//platform1.Draw(window);
-		platform2.Draw(window);
+		//platform2.Draw(window);
 		//platform3.Draw(window);
 		//platform4.Draw(window);
 		//platform5.Draw(window);
@@ -484,12 +513,41 @@ int main()
 			platform45.GetCollision().CheckCollision(playerCollision, 1.0f);
 			platform46.GetCollision().CheckCollision(playerCollision, 1.0f);
 			platform47.GetCollision().CheckCollision(playerCollision, 1.0f);
-			/*platform48.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform48.GetCollision().CheckCollision(playerCollision, 1.0f);
 			platform49.GetCollision().CheckCollision(playerCollision, 1.0f);
 			platform50.GetCollision().CheckCollision(playerCollision, 1.0f);
-			
-			*/
-			window.clear();
+			platform51.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform52.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform53.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform54.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform55.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform56.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform57.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform58.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform59.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform60.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform61.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform62.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform63.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform64.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform65.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform66.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform67.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform68.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform69.GetCollision().CheckCollision(playerCollision, 1.0f);
+			/*platform70.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform71.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform72.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform73.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform74.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform75.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform76.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform77.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform78.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform79.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform80.GetCollision().CheckCollision(playerCollision, 1.0f);
+	*/
+	window.clear();
 
 
 		}
