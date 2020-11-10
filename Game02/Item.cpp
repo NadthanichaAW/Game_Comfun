@@ -30,8 +30,7 @@ void Item::updateItem(float deltatime, Player player)
 		std::cout << "\t\t thisCollider";
 		body.setPosition(-1000.0f, 350.0f); //ชนแล้วไปอยู่หลังฉาก 
 
-	}
-	
+	}	
 }
 
 void Item::drawItem(sf::RenderWindow& window)

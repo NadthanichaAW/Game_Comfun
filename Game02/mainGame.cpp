@@ -6,6 +6,7 @@
 #include"Item.h"
 #include "stdlib.h"
 #include"FireItem.h"
+#include"Monster.h"
 #include <string>
 #include <sstream>
 #include <math.h>
@@ -54,7 +55,7 @@ int main()
 
 	//Background_3
 	sf::RectangleShape bg3(sf::Vector2f(1248.0f, 1329.0f));
-	bg3.setPosition(0.0f, 2658.0f);
+	bg3.setPosition(0.0f, 3000.0f);
 	sf::Texture bg3Texture;
 	bg3Texture.loadFromFile("Textures/BG_8.png");
 	bg3.setTexture(&bg3Texture);
@@ -70,20 +71,24 @@ int main()
 	//Point
 	int countCoin = 0;
 	sf::Font font;
-	font.loadFromFile("Textures/ALGER.ttf");
+	font.loadFromFile("Textures/4Bit.ttf");
 	std::ostringstream point;
 	sf::Text Coin;
 	Coin.setCharacterSize(50);
 	Coin.setString(point.str());
 	Coin.setFont(font);
 	Coin.setFillColor(sf::Color::White);
+	Coin.setOutlineColor(sf::Color(128, 128, 128));
+	Coin.setOutlineThickness(1.0f);
 
 	int countClock = 0;
 	sf::Text Clocke ;
 	Clocke.setCharacterSize(50);
 	Clocke.setString(point.str());
 	Clocke.setFont(font);
-	Clocke.setFillColor(sf::Color::Yellow);
+	Clocke.setFillColor(sf::Color::White);
+	Clocke.setOutlineColor(sf::Color(128, 128, 128));
+	Clocke.setOutlineThickness(1.0f);
 
 	//Sound
 	sf::SoundBuffer sound;
@@ -152,6 +157,24 @@ int main()
 	fireVector.push_back(FireItem(&FirePoint, sf::Vector2u(4, 1), 0.30, 581.0f, 169.0f));
 	fireVector.push_back(FireItem(&FirePoint, sf::Vector2u(4, 1), 0.30, 707.0f, 169.0f));
 
+	//Monster
+	sf::Texture monsterPoint;
+	monsterPoint.loadFromFile("Textures/01-neutral.png");
+	std::vector<Monster>monsterVector;
+	monsterVector.push_back(Monster(&monsterPoint, sf::Vector2u(4, 1), 0.30, sf::Vector2f(44.0f, 59.0f), 200.0f, 200.0f));
+
+	//Icon
+	sf::RectangleShape iconTimer(sf::Vector2f(355.0f, 126.0f));
+	sf::Texture guiTimer;
+	guiTimer.loadFromFile("Textures/timer.png");
+	iconTimer.setTexture(&guiTimer);
+	iconTimer.setSize(sf::Vector2f(167.5f, 63.0f));
+
+	sf::RectangleShape iconCoin(sf::Vector2f(335.0f, 126.0f));
+	sf::Texture guiCoin;
+	guiCoin.loadFromFile("Textures/coin02.png");
+	iconCoin.setTexture(&guiCoin);
+	iconCoin.setSize(sf::Vector2f(167.5f, 63.0f));
 
 	//Platform
 	Collision playerCollision = player.GetCollision();
@@ -248,10 +271,14 @@ int main()
 		window.draw(bg);
 		window.draw(bg2);
 		window.draw(bg3);
+		window.draw(iconTimer);	
+		window.draw(iconCoin);
 		window.draw(Coin);
 		window.draw(Clocke);
+		
+	
 		player.Draw(window);
-
+		
 		//Item
 		for (int i = 0; i < coinVector.size(); i++)
 		{
@@ -265,11 +292,16 @@ int main()
 		{
 			fireVector[i].drawItemFire(window);
 		}
+		for (int i = 0; i < monsterVector.size(); i++)
+		{
+			monsterVector[i].drawMonster(window);
+		}
 
 		point.str(" ");
-		point << "Coin : " << countCoin;
+		point << "  " << countCoin;
 		Coin.setString(point.str());
-		Coin.setPosition({ view.getCenter().x + 250,view.getCenter().y - 360 });
+		iconCoin.setPosition({ view.getCenter().x + 350,view.getCenter().y - 360 });
+		Coin.setPosition({ view.getCenter().x + 400,view.getCenter().y - 367 });
 		for (int i = 0; i < coinVector.size(); i++)
 		{
 			if (coinVector[i].pointCoins() == 1)
@@ -279,9 +311,10 @@ int main()
 			}
 		}
 		point.str(" ");
-		point << "Clock : " << countClock;
+		point << "  " << countClock;
 		Clocke.setString(point.str());
-		Clocke.setPosition({ view.getCenter().x - 540,view.getCenter().y - 360 });
+		iconTimer.setPosition({ view.getCenter().x + 150,view.getCenter().y - 360 });
+		Clocke.setPosition({ view.getCenter().x + 200,view.getCenter().y - 367 });
 		for (int i = 0; i < ClockVector.size(); i++)
 		{
 			if (ClockVector[i].pointClocks() == 1)
@@ -427,7 +460,7 @@ int main()
 		if ((player.GetPosition().x > 580 && player.GetPosition().x < 660) && player.GetPosition().y >= 2520 && player.GetPosition().y <= 2550)
 		{
 			u = 2;
-			player.SetPosition(625, 2746);
+			player.SetPosition(625, 3136);
 		}if (u == 2)
 		{
 			view.setCenter(player.GetPosition());//x=y
@@ -437,11 +470,11 @@ int main()
 				{
 					view.setCenter(540.0f, 360.0f);//window
 				}
-				if (view.getCenter().y + 360.0f >= 3987.0f)
+				if (view.getCenter().y + 360.0f >= 4329.0f)
 				{
-					view.setCenter(540.0f, 3627.0f);//window
+					view.setCenter(540.0f, 3969.0f);//window
 				}
-				if (view.getCenter().y - 360.0f > 0.0f && view.getCenter().y + 360.0f < 3987.0f)
+				if (view.getCenter().y - 360.0f > 0.0f && view.getCenter().y + 360.0f < 4329.0f)
 				{
 					view.setCenter(540.0f, player.GetPosition().y);
 				}
@@ -453,11 +486,11 @@ int main()
 				{
 					view.setCenter(708.0f, 360.0f);//window 1248-540 collision right 
 				}
-				if (view.getCenter().y + 360.0f >= 3987.0f)
+				if (view.getCenter().y + 360.0f >= 4329.0f)
 				{
-					view.setCenter(708.0f, 3627.0f);//window 1248-540
+					view.setCenter(708.0f, 3969.0f);//window 1248-540
 				}
-				if (view.getCenter().y - 360.0f > 0.0f && view.getCenter().y + 360.0f < 3987.0f)
+				if (view.getCenter().y - 360.0f > 0.0f && view.getCenter().y + 360.0f < 4329.0f)
 				{
 					view.setCenter(708.0f, player.GetPosition().y);
 				}
@@ -468,9 +501,9 @@ int main()
 				{
 					view.setCenter(player.GetPosition().x, 360.0f);
 				}
-				if (view.getCenter().y + 360.0f >= 3987.0f)
+				if (view.getCenter().y + 360.0f >= 4329.0f)
 				{
-					view.setCenter(player.GetPosition().x, 3627.0f);
+					view.setCenter(player.GetPosition().x, 3969.0f);
 				}
 			}
 		}
@@ -490,7 +523,10 @@ int main()
 		{
 			fireVector[i].updateItemFire(deltaTime, player);
 		}
-
+		for (int i = 0; i < monsterVector.size(); i++)
+		{
+			monsterVector[i].updateMonster(deltaTime, player);
+		}
 
 		//PlatformCollision
 		platform1.GetCollision().CheckCollision(playerCollision, 1.0f);

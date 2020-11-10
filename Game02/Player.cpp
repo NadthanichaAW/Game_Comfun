@@ -174,7 +174,7 @@ void Player::SetPosition(float x, float y)
     body.setPosition(x, y);
 }
 
-void Player::getSize(float w, float h)
+void Player::setSizes(float w, float h)
 {
     body.setSize(sf::Vector2f(w, h));
 

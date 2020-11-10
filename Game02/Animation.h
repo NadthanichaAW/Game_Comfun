@@ -10,6 +10,7 @@ public:
 	void Update(int row, float deltaTime);
 	void updateItem(int row, float deltaTime);
 	void updateFire(int row, float deltaTime);
+	void updateMonters(int row, float deltaTime);
 
 public:
 	sf::IntRect uvRect;
