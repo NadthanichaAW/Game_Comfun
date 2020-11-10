@@ -16,20 +16,27 @@ public:
 	~Item();
 	void updateItem(float deltatime, Player player);
 	void drawItem(sf::RenderWindow& window);
-	int iscollide()
-	{
-		if (Cstar == 1)
+	int pointCoins(){
+		if (Pcoin == 10)
 		{
-			Cstar--;
+			Pcoin-=10;
 			return 1;
 		}
 	}
-
+	int pointClocks()
+	{
+		if (Pclock == 1)
+		{
+			Pclock--;
+			return 1;
+		}
+	}
 	Collision GetCollider() { return Collision(body); }
 
 
 private:
-	int Cstar;
+	int Pclock;
+	int Pcoin;
 	int row;
 	sf::RectangleShape body;
 	Animation animation;

@@ -68,7 +68,7 @@ int main()
 	sf::Clock clock;
 
 	//Point
-	int countPoint = 0;
+	int countCoin = 0;
 	sf::Font font;
 	font.loadFromFile("Textures/ALGER.ttf");
 	std::ostringstream point;
@@ -77,6 +77,13 @@ int main()
 	Coin.setString(point.str());
 	Coin.setFont(font);
 	Coin.setFillColor(sf::Color::White);
+
+	int countClock = 0;
+	sf::Text Clocke ;
+	Clocke.setCharacterSize(50);
+	Clocke.setString(point.str());
+	Clocke.setFont(font);
+	Clocke.setFillColor(sf::Color::Yellow);
 
 	//Sound
 	sf::SoundBuffer sound;
@@ -90,58 +97,60 @@ int main()
 	coin.loadFromFile("Textures/coin.png");
 	sf::Texture clocker;
 	clocker.loadFromFile("Textures/clock.png");
-	std::vector<Item>ItemVector;//ใช้เวกเตอร์เพราะมีหลายไอเท็ม
-	ItemVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 520.0f, 500.0f));
-	ItemVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 560.0f, 500.0f));
-	ItemVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 560.0f, 530.0f));
-	ItemVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 560.0f, 560.0f));
-	ItemVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 560.0f, 630.0f));
-	ItemVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 520.0f, 590.0f));
-	ItemVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 480.0f, 590.0f));
-	ItemVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 520.0f, 670.0f));
-	ItemVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 352.0f, 470.0f));
-	ItemVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 352.0f, 720.0f));
-	ItemVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 480.0f, 720.0f));
-	ItemVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 480.0f, 840.0f));
-	ItemVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 190.0f, 720.0f));
-	ItemVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 220.0f, 720.0f));
-	ItemVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 260.0f, 720.0f));
-	ItemVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 310.0f, 720.0f));
-	ItemVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 352.0f, 840.0f));
-	ItemVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 312.0f, 880.0f));
-	ItemVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 312.0f, 930.0f));
-	ItemVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 160.0f, 930.0f));
-	ItemVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 200.0f, 930.0f));
-	ItemVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 260.0f, 925.0f));
-	ItemVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 145.0f, 800.0f));
-	ItemVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 145.0f, 750.0f));
-	ItemVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 145.0f, 700.0f));
-	ItemVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 145.0f, 650.0f));
-	ItemVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 145.0f, 600.0f));
-	ItemVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 145.0f, 550.0f));
-	ItemVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 145.0f, 500.0f));
-	ItemVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 145.0f, 450.0f));
-	ItemVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 145.0f, 400.0f));
-	ItemVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 100.0f, 1170.0f));
-	ItemVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 65.0f, 1000.0f));
-	ItemVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 312.0f, 1050.0f));
-	ItemVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 725.0f, 500.0f));
-	ItemVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 725.0f, 550.0f));
-	ItemVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 725.0f, 600.0f));
-	ItemVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 685.0f, 600.0f));
-	ItemVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 780.0f, 600.0f));
-	ItemVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 685.0f, 635.0f));
-	ItemVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 725.0f, 680.0f));
+	std::vector<Item>coinVector;//ใช้เวกเตอร์เพราะมีหลายไอเท็ม
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 520.0f, 500.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 560.0f, 500.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 560.0f, 530.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 560.0f, 560.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 560.0f, 630.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 520.0f, 590.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 480.0f, 590.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 520.0f, 670.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 352.0f, 470.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 352.0f, 720.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 480.0f, 720.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 480.0f, 840.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 190.0f, 720.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 220.0f, 720.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 260.0f, 720.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 310.0f, 720.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 352.0f, 840.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 312.0f, 880.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 312.0f, 930.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 160.0f, 930.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 200.0f, 930.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 260.0f, 925.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 145.0f, 800.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 145.0f, 750.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 145.0f, 700.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 145.0f, 650.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 145.0f, 600.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 145.0f, 550.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 145.0f, 500.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 145.0f, 450.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 145.0f, 400.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 100.0f, 1170.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 65.0f, 1000.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 312.0f, 1050.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 725.0f, 500.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 725.0f, 550.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 725.0f, 600.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 685.0f, 600.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 780.0f, 600.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 685.0f, 635.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 725.0f, 680.0f));
 	
 	//---------------------------clock----------------------------------------------
-	ItemVector.push_back(Item(&clocker, sf::Vector2u(4, 1), 0.15f, 800.0f, 800.0f));
+	std::vector<Item>ClockVector;
+	ClockVector.push_back(Item(&clocker, sf::Vector2u(4, 1), 0.15f, 800.0f, 800.0f));
+
 
 	//Firepoint 
 	sf::Texture FirePoint;
 	FirePoint.loadFromFile("Textures/Fireball.png");
-	std::vector<FireItem>ItemVectorFire;//ใช้เวกเตอร์เพราะมีหลายไอเท็ม
-	ItemVectorFire.push_back(FireItem(&FirePoint, sf::Vector2u(4, 1), 0.30, 581.0f, 169.0f));
-	ItemVectorFire.push_back(FireItem(&FirePoint, sf::Vector2u(4, 1), 0.30, 707.0f, 169.0f));
+	std::vector<FireItem>fireVector;//ใช้เวกเตอร์เพราะมีหลายไอเท็ม
+	fireVector.push_back(FireItem(&FirePoint, sf::Vector2u(4, 1), 0.30, 581.0f, 169.0f));
+	fireVector.push_back(FireItem(&FirePoint, sf::Vector2u(4, 1), 0.30, 707.0f, 169.0f));
 
 
 	//Platform
@@ -240,55 +249,66 @@ int main()
 		window.draw(bg2);
 		window.draw(bg3);
 		window.draw(Coin);
+		window.draw(Clocke);
 		player.Draw(window);
 
 		//Item
-		for (int i = 0; i < ItemVector.size(); i++)
+		for (int i = 0; i < coinVector.size(); i++)
 		{
-			ItemVector[i].drawItem(window);
+			coinVector[i].drawItem(window);
 		}
-		for (int i = 0; i < ItemVectorFire.size(); i++)
+		for (int i = 0; i < ClockVector.size(); i++)
 		{
-			ItemVectorFire[i].drawItemFire(window);
-		}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
-		//Point
+			ClockVector[i].drawItem(window);
+		}
+		for (int i = 0; i < fireVector.size(); i++)
+		{
+			fireVector[i].drawItemFire(window);
+		}
+
 		point.str(" ");
-		point << "Coin : " << countPoint;
+		point << "Coin : " << countCoin;
 		Coin.setString(point.str());
 		Coin.setPosition({ view.getCenter().x + 250,view.getCenter().y - 360 });
-		for (int i = 0; i < ItemVector.size(); i++)
+		for (int i = 0; i < coinVector.size(); i++)
 		{
-			if (ItemVector[i].iscollide() == 1)
+			if (coinVector[i].pointCoins() == 1)
 			{
 				soundCoin.play();
-				countPoint += 100;
+				countCoin += 100;
 			}
 		}
-		/*for (int i = 0; i < ItemVectorFire.size(); i++)
+		point.str(" ");
+		point << "Clock : " << countClock;
+		Clocke.setString(point.str());
+		Clocke.setPosition({ view.getCenter().x - 540,view.getCenter().y - 360 });
+		for (int i = 0; i < ClockVector.size(); i++)
 		{
-			if (ItemVectorFire[i].iscollider() == 1)
+			if (ClockVector[i].pointClocks() == 1)
 			{
-				player.SetPosition(140.0f, 100.0f);
+				soundCoin.play();
+				countClock += 10;
 			}
-		}*/
-		//platformDraw
-		//platform1.Draw(window);
-		//platform2.Draw(window);
-		//platform3.Draw(window);
-		//platform4.Draw(window);
-		//platform5.Draw(window);
-		//platform6.Draw(window);
-		//platform7.Draw(window);
-		//platform8.Draw(window);
-		//platform9.Draw(window);
-		//platform10.Draw(window);
-		//platform11.Draw(window);
-		//platform12.Draw(window);
-		//platform13.Draw(window);
-		//platform14.Draw(window);
-		//platform15.Draw(window);
-		//platform16.Draw(window);
+		}
 
+		//platformDraw
+		/*platform1.Draw(window);
+		platform2.Draw(window);
+		platform3.Draw(window);
+		platform4.Draw(window);
+		platform5.Draw(window);
+		platform6.Draw(window);
+		platform7.Draw(window);
+		platform8.Draw(window);
+		platform9.Draw(window);
+		platform10.Draw(window);
+		platform11.Draw(window);
+		platform12.Draw(window);
+		platform13.Draw(window);
+		platform14.Draw(window);
+		platform15.Draw(window);
+		platform16.Draw(window);
+		*/
 
 		window.setView(view);
 		window.display();
@@ -309,33 +329,83 @@ int main()
 			}
 		}
 		view.setCenter(player.GetPosition());//x=y
+		if (view.getCenter().x - 540.0f <= 0.0f)//front center window behide pic
+		{
+			if (view.getCenter().y - 360.0f <= 0.0f)
+			{
+				view.setCenter(540.0f, 360.0f);//window
+			}
+			if (view.getCenter().y + 360.0f >= 1329.0f)
+			{
+				view.setCenter(540.0f, 969.0f);//window
+			}
+			if (view.getCenter().y - 360.0f > 0.0f && view.getCenter().y + 360.0f < 1329.0f)
+			{
+				view.setCenter(540.0f, player.GetPosition().y);
+			}
+
+		}
+		if (view.getCenter().x + 540.0f >= 1248.0f)
+		{
+			if (view.getCenter().y - 360.0f <= 0.0f)
+			{
+				view.setCenter(708.0f, 360.0f);//window 1248-540 collision right
+			}
+			if (view.getCenter().y + 360.0f >= 1329.0f)
+			{
+				view.setCenter(708.0f, 969.0f);//window 1248-540
+			}
+			if (view.getCenter().y - 360.0f > 0.0f && view.getCenter().y + 360.0f < 1329.0f)
+			{
+				view.setCenter(708.0f, player.GetPosition().y);
+			}
+		}
+		if (view.getCenter().x - 540.0f > 0.0f && view.getCenter().x + 540.0f < 1248.0f)
+		{
+			if (view.getCenter().y - 360.0f <= 0.0f)
+			{
+				view.setCenter(player.GetPosition().x, 360.0f);
+			}
+			if (view.getCenter().y + 360.0f >= 1329.0f)
+			{
+				view.setCenter(player.GetPosition().x, 969.0f);
+			}
+		}
+		//warp to bg2
+		if ((player.GetPosition().x > 592 && player.GetPosition().x < 660) && player.GetPosition().y >= 1271 && player.GetPosition().y <= 1299)
+		{
+			u = 1;
+			player.SetPosition(625, 1410);
+			//player.SetPosition(958, 1671);
+		}if (u == 1)
+		{
+			view.setCenter(player.GetPosition());//x=y
 			if (view.getCenter().x - 540.0f <= 0.0f)//front center window behide pic
 			{
 				if (view.getCenter().y - 360.0f <= 0.0f)
 				{
 					view.setCenter(540.0f, 360.0f);//window
 				}
-				if (view.getCenter().y + 360.0f >= 1329.0f)
+				if (view.getCenter().y + 360.0f >= 2658.0f)
 				{
-					view.setCenter(540.0f, 969.0f);//window
+					view.setCenter(540.0f, 2298.0f);//window
 				}
-				if (view.getCenter().y - 360.0f > 0.0f && view.getCenter().y + 360.0f < 1329.0f)
+				if (view.getCenter().y - 360.0f > 0.0f && view.getCenter().y + 360.0f < 2658.0f)
 				{
 					view.setCenter(540.0f, player.GetPosition().y);
 				}
-
 			}
 			if (view.getCenter().x + 540.0f >= 1248.0f)
 			{
 				if (view.getCenter().y - 360.0f <= 0.0f)
 				{
-					view.setCenter(708.0f, 360.0f);//window 1248-540 collision right
+					view.setCenter(708.0f, 360.0f);//window 1248-540 collision right 
 				}
-				if (view.getCenter().y + 360.0f >= 1329.0f)
+				if (view.getCenter().y + 360.0f >= 2658.0f)
 				{
-					view.setCenter(708.0f, 969.0f);//window 1248-540
+					view.setCenter(708.0f, 2298.0f);//window 1248-540
 				}
-				if (view.getCenter().y - 360.0f > 0.0f && view.getCenter().y + 360.0f < 1329.0f)
+				if (view.getCenter().y - 360.0f > 0.0f && view.getCenter().y + 360.0f < 2658.0f)
 				{
 					view.setCenter(708.0f, player.GetPosition().y);
 				}
@@ -346,215 +416,170 @@ int main()
 				{
 					view.setCenter(player.GetPosition().x, 360.0f);
 				}
-				if (view.getCenter().y + 360.0f >= 1329.0f)
+				if (view.getCenter().y + 360.0f >= 2658.0f)
 				{
-					view.setCenter(player.GetPosition().x, 969.0f);
+					view.setCenter(player.GetPosition().x, 2298.0f);
 				}
 			}
-			//warp to bg2
-			if ((player.GetPosition().x > 592 && player.GetPosition().x < 660) && player.GetPosition().y >= 1271 && player.GetPosition().y <= 1299)
-			{
-				u = 1;
-				player.SetPosition(625, 1410);
-				//player.SetPosition(958, 1671);
-			}if (u == 1)
-			{
-				view.setCenter(player.GetPosition());//x=y
-				if (view.getCenter().x - 540.0f <= 0.0f)//front center window behide pic
-				{
-					if (view.getCenter().y - 360.0f <= 0.0f)
-					{
-						view.setCenter(540.0f, 360.0f);//window
-					}
-					if (view.getCenter().y + 360.0f >= 2658.0f)
-					{
-						view.setCenter(540.0f, 2298.0f);//window
-					}
-					if (view.getCenter().y - 360.0f > 0.0f && view.getCenter().y + 360.0f < 2658.0f)
-					{
-						view.setCenter(540.0f, player.GetPosition().y);
-					}
-
-				}
-				if (view.getCenter().x + 540.0f >= 1248.0f)
-				{
-					if (view.getCenter().y - 360.0f <= 0.0f)
-					{
-						view.setCenter(708.0f, 360.0f);//window 1248-540 collision right 
-					}
-					if (view.getCenter().y + 360.0f >= 2658.0f)
-					{
-						view.setCenter(708.0f, 2298.0f);//window 1248-540
-					}
-					if (view.getCenter().y - 360.0f > 0.0f && view.getCenter().y + 360.0f < 2658.0f)
-					{
-						view.setCenter(708.0f, player.GetPosition().y);
-					}
-				}
-				if (view.getCenter().x - 540.0f > 0.0f && view.getCenter().x + 540.0f < 1248.0f)
-				{
-					if (view.getCenter().y - 360.0f <= 0.0f)
-					{
-						view.setCenter(player.GetPosition().x, 360.0f);
-					}
-					if (view.getCenter().y + 360.0f >= 2658.0f)
-					{
-						view.setCenter(player.GetPosition().x, 2298.0f);
-					}
-				}
-			}
-
-			//warp to bg3
-			if ((player.GetPosition().x > 580 && player.GetPosition().x < 660) && player.GetPosition().y >= 2520 && player.GetPosition().y <= 2550)
-			{
-				u = 2;
-				player.SetPosition(625, 2746);
-			}if (u == 2)
-			{
-				view.setCenter(player.GetPosition());//x=y
-				if (view.getCenter().x - 540.0f <= 0.0f)//front center window behide pic
-				{
-					if (view.getCenter().y - 360.0f <= 0.0f)
-					{
-						view.setCenter(540.0f, 360.0f);//window
-					}
-					if (view.getCenter().y + 360.0f >= 3987.0f)
-					{
-						view.setCenter(540.0f, 3627.0f);//window
-					}
-					if (view.getCenter().y - 360.0f > 0.0f && view.getCenter().y + 360.0f < 3987.0f)
-					{
-						view.setCenter(540.0f, player.GetPosition().y);
-					}
-
-				}
-				if (view.getCenter().x + 540.0f >= 1248.0f)
-				{
-					if (view.getCenter().y - 360.0f <= 0.0f)
-					{
-						view.setCenter(708.0f, 360.0f);//window 1248-540 collision right 
-					}
-					if (view.getCenter().y + 360.0f >= 3987.0f)
-					{
-						view.setCenter(708.0f, 3627.0f);//window 1248-540
-					}
-					if (view.getCenter().y - 360.0f > 0.0f && view.getCenter().y + 360.0f < 3987.0f)
-					{
-						view.setCenter(708.0f, player.GetPosition().y);
-					}
-				}
-				if (view.getCenter().x - 540.0f > 0.0f && view.getCenter().x + 540.0f < 1248.0f)
-				{
-					if (view.getCenter().y - 360.0f <= 0.0f)
-					{
-						view.setCenter(player.GetPosition().x, 360.0f);
-					}
-					if (view.getCenter().y + 360.0f >= 3987.0f)
-					{
-						view.setCenter(player.GetPosition().x, 3627.0f);
-					}
-				}
-			}
-
-			player.Update(deltaTime);
-
-			//Itemupdate
-			for (int i = 0; i < ItemVector.size(); i++)
-			{
-				ItemVector[i].updateItem(deltaTime, player);
-			}
-			for (int i = 0; i < ItemVectorFire.size(); i++)
-			{
-				ItemVectorFire[i].updateItemFire(deltaTime, player);
-			}
-
-
-			//PlatformCollision
-			platform1.GetCollision().CheckCollision(playerCollision, 1.0f);
-			platform2.GetCollision().CheckCollision(playerCollision, 1.0f);
-			platform3.GetCollision().CheckCollision(playerCollision, 1.0f);
-			platform4.GetCollision().CheckCollision(playerCollision, 1.0f);
-			platform5.GetCollision().CheckCollision(playerCollision, 1.0f);
-			platform6.GetCollision().CheckCollision(playerCollision, 1.0f);
-			platform7.GetCollision().CheckCollision(playerCollision, 1.0f);
-			platform8.GetCollision().CheckCollision(playerCollision, 1.0f);
-			platform9.GetCollision().CheckCollision(playerCollision, 1.0f);
-			platform10.GetCollision().CheckCollision(playerCollision, 1.0f);
-			platform11.GetCollision().CheckCollision(playerCollision, 1.0f);
-			platform12.GetCollision().CheckCollision(playerCollision, 1.0f);
-			platform13.GetCollision().CheckCollision(playerCollision, 1.0f);
-			platform14.GetCollision().CheckCollision(playerCollision, 1.0f);
-			platform15.GetCollision().CheckCollision(playerCollision, 1.0f);
-			platform16.GetCollision().CheckCollision(playerCollision, 1.0f);
-			platform17.GetCollision().CheckCollision(playerCollision, 1.0f);
-			platform18.GetCollision().CheckCollision(playerCollision, 1.0f);
-			platform18.GetCollision().CheckCollision(playerCollision, 1.0f);
-			platform19.GetCollision().CheckCollision(playerCollision, 1.0f);
-			platform20.GetCollision().CheckCollision(playerCollision, 1.0f);
-			platform21.GetCollision().CheckCollision(playerCollision, 1.0f);
-			platform22.GetCollision().CheckCollision(playerCollision, 1.0f);
-			platform23.GetCollision().CheckCollision(playerCollision, 1.0f);
-			platform24.GetCollision().CheckCollision(playerCollision, 1.0f);
-			platform25.GetCollision().CheckCollision(playerCollision, 1.0f);
-			platform26.GetCollision().CheckCollision(playerCollision, 1.0f);
-			platform27.GetCollision().CheckCollision(playerCollision, 1.0f);
-			platform28.GetCollision().CheckCollision(playerCollision, 1.0f);
-			platform29.GetCollision().CheckCollision(playerCollision, 1.0f);
-			platform30.GetCollision().CheckCollision(playerCollision, 1.0f);
-			platform31.GetCollision().CheckCollision(playerCollision, 1.0f);
-			platform32.GetCollision().CheckCollision(playerCollision, 1.0f);
-			platform33.GetCollision().CheckCollision(playerCollision, 1.0f);
-			platform34.GetCollision().CheckCollision(playerCollision, 1.0f);
-			platform35.GetCollision().CheckCollision(playerCollision, 1.0f);
-			platform36.GetCollision().CheckCollision(playerCollision, 1.0f);
-			platform37.GetCollision().CheckCollision(playerCollision, 1.0f);
-			platform38.GetCollision().CheckCollision(playerCollision, 1.0f);
-			platform39.GetCollision().CheckCollision(playerCollision, 1.0f);
-			platform40.GetCollision().CheckCollision(playerCollision, 1.0f);
-			platform41.GetCollision().CheckCollision(playerCollision, 1.0f);
-			platform42.GetCollision().CheckCollision(playerCollision, 1.0f);
-			platform43.GetCollision().CheckCollision(playerCollision, 1.0f);
-			platform44.GetCollision().CheckCollision(playerCollision, 1.0f);
-			platform45.GetCollision().CheckCollision(playerCollision, 1.0f);
-			platform46.GetCollision().CheckCollision(playerCollision, 1.0f);
-			platform47.GetCollision().CheckCollision(playerCollision, 1.0f);
-			platform48.GetCollision().CheckCollision(playerCollision, 1.0f);
-			platform49.GetCollision().CheckCollision(playerCollision, 1.0f);
-			platform50.GetCollision().CheckCollision(playerCollision, 1.0f);
-			platform51.GetCollision().CheckCollision(playerCollision, 1.0f);
-			platform52.GetCollision().CheckCollision(playerCollision, 1.0f);
-			platform53.GetCollision().CheckCollision(playerCollision, 1.0f);
-			platform54.GetCollision().CheckCollision(playerCollision, 1.0f);
-			platform55.GetCollision().CheckCollision(playerCollision, 1.0f);
-			platform56.GetCollision().CheckCollision(playerCollision, 1.0f);
-			platform57.GetCollision().CheckCollision(playerCollision, 1.0f);
-			platform58.GetCollision().CheckCollision(playerCollision, 1.0f);
-			platform59.GetCollision().CheckCollision(playerCollision, 1.0f);
-			platform60.GetCollision().CheckCollision(playerCollision, 1.0f);
-			platform61.GetCollision().CheckCollision(playerCollision, 1.0f);
-			platform62.GetCollision().CheckCollision(playerCollision, 1.0f);
-			platform63.GetCollision().CheckCollision(playerCollision, 1.0f);
-			platform64.GetCollision().CheckCollision(playerCollision, 1.0f);
-			platform65.GetCollision().CheckCollision(playerCollision, 1.0f);
-			platform66.GetCollision().CheckCollision(playerCollision, 1.0f);
-			platform67.GetCollision().CheckCollision(playerCollision, 1.0f);
-			platform68.GetCollision().CheckCollision(playerCollision, 1.0f);
-			platform69.GetCollision().CheckCollision(playerCollision, 1.0f);
-			/*platform70.GetCollision().CheckCollision(playerCollision, 1.0f);
-			platform71.GetCollision().CheckCollision(playerCollision, 1.0f);
-			platform72.GetCollision().CheckCollision(playerCollision, 1.0f);
-			platform73.GetCollision().CheckCollision(playerCollision, 1.0f);
-			platform74.GetCollision().CheckCollision(playerCollision, 1.0f);
-			platform75.GetCollision().CheckCollision(playerCollision, 1.0f);
-			platform76.GetCollision().CheckCollision(playerCollision, 1.0f);
-			platform77.GetCollision().CheckCollision(playerCollision, 1.0f);
-			platform78.GetCollision().CheckCollision(playerCollision, 1.0f);
-			platform79.GetCollision().CheckCollision(playerCollision, 1.0f);
-			platform80.GetCollision().CheckCollision(playerCollision, 1.0f);
-	*/
-	window.clear();
-
-
 		}
-		return 0;
+
+		//warp to bg3
+		if ((player.GetPosition().x > 580 && player.GetPosition().x < 660) && player.GetPosition().y >= 2520 && player.GetPosition().y <= 2550)
+		{
+			u = 2;
+			player.SetPosition(625, 2746);
+		}if (u == 2)
+		{
+			view.setCenter(player.GetPosition());//x=y
+			if (view.getCenter().x - 540.0f <= 0.0f)//front center window behide pic
+			{
+				if (view.getCenter().y - 360.0f <= 0.0f)
+				{
+					view.setCenter(540.0f, 360.0f);//window
+				}
+				if (view.getCenter().y + 360.0f >= 3987.0f)
+				{
+					view.setCenter(540.0f, 3627.0f);//window
+				}
+				if (view.getCenter().y - 360.0f > 0.0f && view.getCenter().y + 360.0f < 3987.0f)
+				{
+					view.setCenter(540.0f, player.GetPosition().y);
+				}
+
+			}
+			if (view.getCenter().x + 540.0f >= 1248.0f)
+			{
+				if (view.getCenter().y - 360.0f <= 0.0f)
+				{
+					view.setCenter(708.0f, 360.0f);//window 1248-540 collision right 
+				}
+				if (view.getCenter().y + 360.0f >= 3987.0f)
+				{
+					view.setCenter(708.0f, 3627.0f);//window 1248-540
+				}
+				if (view.getCenter().y - 360.0f > 0.0f && view.getCenter().y + 360.0f < 3987.0f)
+				{
+					view.setCenter(708.0f, player.GetPosition().y);
+				}
+			}
+			if (view.getCenter().x - 540.0f > 0.0f && view.getCenter().x + 540.0f < 1248.0f)
+			{
+				if (view.getCenter().y - 360.0f <= 0.0f)
+				{
+					view.setCenter(player.GetPosition().x, 360.0f);
+				}
+				if (view.getCenter().y + 360.0f >= 3987.0f)
+				{
+					view.setCenter(player.GetPosition().x, 3627.0f);
+				}
+			}
+		}
+
+		player.Update(deltaTime);
+
+		//Itemupdate
+		for (int i = 0; i < coinVector.size(); i++)
+		{
+			coinVector[i].updateItem(deltaTime, player);
+		}
+		for (int i = 0; i < ClockVector.size(); i++)
+		{
+			ClockVector[i].updateItem(deltaTime, player);
+		}
+		for (int i = 0; i < fireVector.size(); i++)
+		{
+			fireVector[i].updateItemFire(deltaTime, player);
+		}
+
+
+		//PlatformCollision
+		platform1.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform2.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform3.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform4.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform5.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform6.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform7.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform8.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform9.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform10.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform11.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform12.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform13.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform14.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform15.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform16.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform17.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform18.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform18.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform19.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform20.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform21.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform22.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform23.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform24.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform25.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform26.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform27.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform28.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform29.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform30.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform31.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform32.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform33.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform34.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform35.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform36.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform37.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform38.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform39.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform40.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform41.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform42.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform43.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform44.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform45.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform46.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform47.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform48.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform49.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform50.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform51.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform52.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform53.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform54.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform55.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform56.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform57.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform58.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform59.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform60.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform61.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform62.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform63.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform64.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform65.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform66.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform67.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform68.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform69.GetCollision().CheckCollision(playerCollision, 1.0f);
+		/*platform70.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform71.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform72.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform73.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform74.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform75.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform76.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform77.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform78.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform79.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform80.GetCollision().CheckCollision(playerCollision, 1.0f);
+*/
+		window.clear();
+
 	}
+		
+	return 0;
+
+}
+	

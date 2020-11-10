@@ -14,7 +14,7 @@ public:
 	void SetPosition(float x, float y);
 	sf::Vector2f GetPosition() { return body.getPosition(); }
 	Collision GetCollision() { return Collision(body); }
-
+	void getSize(float w, float h);
 
 private:
 	sf::RectangleShape body;
