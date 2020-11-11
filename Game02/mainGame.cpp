@@ -160,8 +160,12 @@ int main()
 	//Monster
 	sf::Texture monsterPoint;
 	monsterPoint.loadFromFile("Textures/01-neutral.png");
+	sf::Texture monsterSlim;
+	monsterSlim.loadFromFile("Textures/Idle.png");
 	std::vector<Monster>monsterVector;
-	monsterVector.push_back(Monster(&monsterPoint, sf::Vector2u(4, 1), 0.30, sf::Vector2f(44.0f, 59.0f), 200.0f, 200.0f));
+	monsterVector.push_back(Monster(&monsterPoint, sf::Vector2u(4, 1), 0.30,sf::Vector2f(52.0f,50.0f), 200.0f, 200.0f));
+	
+	monsterVector.push_back(Monster(&monsterSlim, sf::Vector2u(11, 1), 0.08f, sf::Vector2f(52.0f, 50.0f), 300.0f, 300.0f));
 
 	//Icon
 	sf::RectangleShape iconTimer(sf::Vector2f(355.0f, 126.0f));
@@ -510,6 +514,7 @@ int main()
 
 		player.Update(deltaTime);
 
+
 		//Itemupdate
 		for (int i = 0; i < coinVector.size(); i++)
 		{
@@ -526,6 +531,7 @@ int main()
 		for (int i = 0; i < monsterVector.size(); i++)
 		{
 			monsterVector[i].updateMonster(deltaTime, player);
+			monsterVector[i].updateX(deltaTime);
 		}
 
 		//PlatformCollision
