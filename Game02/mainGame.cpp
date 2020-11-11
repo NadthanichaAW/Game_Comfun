@@ -482,7 +482,6 @@ int main()
 				{
 					view.setCenter(540.0f, player.GetPosition().y);
 				}
-
 			}
 			if (view.getCenter().x + 540.0f >= 1248.0f)
 			{
@@ -513,7 +512,7 @@ int main()
 		}
 
 		player.Update(deltaTime);
-
+		player.updateMonster(deltaTime, monsterVector);
 
 		//Itemupdate
 		for (int i = 0; i < coinVector.size(); i++)
@@ -530,7 +529,6 @@ int main()
 		}
 		for (int i = 0; i < monsterVector.size(); i++)
 		{
-			monsterVector[i].updateMonster(deltaTime, player);
 			monsterVector[i].updateX(deltaTime);
 		}
 

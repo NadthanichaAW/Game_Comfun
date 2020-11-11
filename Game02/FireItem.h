@@ -13,14 +13,7 @@ public:
 
 	void updateItemFire(float deltatime, Player player);
 	void drawItemFire(sf::RenderWindow& window);
-	/*int iscollider()
-	{
-		if (hit == 1)
-		{
-			hit--;
-			return 1;
-		}
-	}*/
+	
 
 	Collision GetCollider() { return Collision(body); }
 private:

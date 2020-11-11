@@ -36,13 +36,6 @@ void Monster::updateX(float deltatime)
 
 }
 
-void Monster::updateMonster(float deltatime, Player player)
-{
-	
-	animation.updateItem(row, deltatime);
-	body.setTextureRect(animation.uvRect);
-}
-
 void Monster::drawMonster(sf::RenderWindow& window)
 {
 	window.draw(body);

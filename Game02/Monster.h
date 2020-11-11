@@ -1,6 +1,5 @@
 #pragma once
 #include<SFML/Graphics.hpp>
-#include"Player.h"
 #include"Animation.h"
 #include"Collision.h"
 class Monster
@@ -10,8 +9,8 @@ public:
 	~Monster();
 
 	void updateX(float deltatime);
-	void updateMonster(float deltatime, Player player);
 	void drawMonster(sf::RenderWindow& window);
+	
 
 	Collision GetCollider() { return Collision(body); }
 

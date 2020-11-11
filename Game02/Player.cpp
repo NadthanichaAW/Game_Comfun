@@ -179,3 +179,17 @@ void Player::setSizes(float w, float h)
     body.setSize(sf::Vector2f(w, h));
 
 }
+
+void Player::updateMonster(float deltatime, std::vector<Monster>& monsterVector)
+{
+    for (int i = 0; i < monsterVector.size(); i++)
+    {
+        if (this->GetCollision().CheckCollision(monsterVector[i].GetCollider()))
+        {
+            body.setPosition(140.0f, 100.0f);            
+        }
+    }
+    animation.updateItem(row, deltatime);
+    body.setTextureRect(animation.uvRect);
+
+}
