@@ -161,9 +161,9 @@ int main()
 	sf::Texture monsterPoint;
 	monsterPoint.loadFromFile("Textures/01-neutral.png");
 	sf::Texture monsterSlim;
-	monsterSlim.loadFromFile("Textures/Idle.png");
+	monsterSlim.loadFromFile("Textures/Idle2.png");
 	std::vector<Monster>monsterVector;
-	monsterVector.push_back(Monster(&monsterPoint, sf::Vector2u(4, 1), 0.30,sf::Vector2f(52.0f,50.0f), 200.0f, 200.0f));
+	monsterVector.push_back(Monster(&monsterPoint, sf::Vector2u(4, 1), 0.30,sf::Vector2f(52.0f,50.0f), 188.0f, 711.0f));
 	
 	monsterVector.push_back(Monster(&monsterSlim, sf::Vector2u(11, 1), 0.08f, sf::Vector2f(52.0f, 50.0f), 300.0f, 300.0f));
 
@@ -275,10 +275,6 @@ int main()
 		window.draw(bg);
 		window.draw(bg2);
 		window.draw(bg3);
-		window.draw(iconTimer);	
-		window.draw(iconCoin);
-		window.draw(Coin);
-		window.draw(Clocke);
 		
 	
 		player.Draw(window);
@@ -300,6 +296,10 @@ int main()
 		{
 			monsterVector[i].drawMonster(window);
 		}
+		window.draw(iconTimer);
+		window.draw(iconCoin);
+		window.draw(Coin);
+		window.draw(Clocke);
 
 		point.str(" ");
 		point << "  " << countCoin;
