@@ -174,19 +174,40 @@ void Player::SetPosition(float x, float y)
     body.setPosition(x, y);
 }
 
-void Player::setSizes(float w, float h)
+void Player::updateMonster(float deltatime, std::vector<Monster>& monsterFVector)
 {
-    body.setSize(sf::Vector2f(w, h));
+    for (int i = 0; i < monsterFVector.size(); i++)
+    {
+        if (this->GetCollision().CheckCollision(monsterFVector[i].GetCollider()))
+        {
+            body.setPosition(140.0f, 100.0f);            
+        }
+    }
+    animation.updateItem(row, deltatime);
+    body.setTextureRect(animation.uvRect);
 
 }
 
-void Player::updateMonster(float deltatime, std::vector<Monster>& monsterVector)
+void Player::updateSlimP(float deltatime, std::vector<Monster>& slimPvector)
+{
+    for (int i = 0; i < slimPvector.size(); i++)
+    {
+        if (this->GetCollision().CheckCollision(slimPvector[i].GetCollider()))
+        {
+            body.setPosition(140.0f, 100.0f);
+        }
+    }
+    animation.updateItem(row, deltatime);
+    body.setTextureRect(animation.uvRect);
+}
+
+void Player::updateMonS(float deltatime, std::vector<Monster>& monsterVector)
 {
     for (int i = 0; i < monsterVector.size(); i++)
     {
         if (this->GetCollision().CheckCollision(monsterVector[i].GetCollider()))
         {
-            body.setPosition(140.0f, 100.0f);            
+            body.setPosition(140.0f, 100.0f);
         }
     }
     animation.updateItem(row, deltatime);

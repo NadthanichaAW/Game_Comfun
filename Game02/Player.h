@@ -16,8 +16,9 @@ public:
 	void SetPosition(float x, float y);
 	sf::Vector2f GetPosition() { return body.getPosition(); }
 	Collision GetCollision() { return Collision(body); }
-	void setSizes(float w,float h);
-	void updateMonster(float deltatime,std::vector<Monster>& monsterVector);
+	void updateMonster(float deltatime,std::vector<Monster>& monsterFVector);
+	void updateSlimP(float deltatime, std::vector<Monster>& slimPvector);
+	void updateMonS(float deltatime, std::vector<Monster>& monsterVector);
 
 private:
 	int hMons;

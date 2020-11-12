@@ -20,6 +20,7 @@ void Animation::Update(int row, float deltaTime)
 {
 	currentImage.y = row;
 	totalTime += deltaTime;
+	switchTime = 0.5f;
 
 	if (totalTime >= switchTime)
 	{
@@ -32,17 +33,6 @@ void Animation::Update(int row, float deltaTime)
 	}
 	uvRect.top = currentImage.y * uvRect.height;
 	uvRect.left = currentImage.x * uvRect.width;
-
-	/*if (direction)
-	{
-		uvRect.left = currentImage.x * uvRect.width;
-		uvRect.width = abs(uvRect.width);
-	}
-	else
-	{
-		uvRect.left = (currentImage.x + 1) * abs(uvRect.width);
-		uvRect.width = -abs(uvRect.width);
-	}*/
 }
 
 void Animation::updateItem(int row, float deltaTime)

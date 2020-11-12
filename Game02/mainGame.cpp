@@ -64,7 +64,7 @@ int main()
 	window.setFramerateLimit(120);
 
 	//Animation
-	Player player(&playerTexture, sf::Vector2u(3, 8), 0.3f, 300.0f);
+	Player player(&playerTexture, sf::Vector2u(3, 8), 0.3f, 150.0f);
 	float deltaTime = 0.0f;
 	sf::Clock clock;
 
@@ -158,14 +158,21 @@ int main()
 	fireVector.push_back(FireItem(&FirePoint, sf::Vector2u(4, 1), 0.30, 707.0f, 169.0f));
 
 	//Monster
-	sf::Texture monsterPoint;
-	monsterPoint.loadFromFile("Textures/01-neutral.png");
 	sf::Texture monsterSlim;
-	monsterSlim.loadFromFile("Textures/Idle2.png");
+	monsterSlim.loadFromFile("Textures/Idle4.png");
+	sf::Texture monstersFire;
+	monstersFire.loadFromFile("Textures/firecommon.png");
+	sf::Texture slimPurple;
+	slimPurple.loadFromFile("Textures/slimpurple3.png");
 	std::vector<Monster>monsterVector;
-	monsterVector.push_back(Monster(&monsterPoint, sf::Vector2u(4, 1), 0.30,sf::Vector2f(52.0f,50.0f), 188.0f, 711.0f));
-	
-	monsterVector.push_back(Monster(&monsterSlim, sf::Vector2u(11, 1), 0.08f, sf::Vector2f(52.0f, 50.0f), 300.0f, 300.0f));
+	monsterVector.push_back(Monster(&monsterSlim, sf::Vector2u(13, 2), 0.20f, sf::Vector2f(52.0f, 50.0f), 188.0f, 711.0f));
+	monsterVector.push_back(Monster(&monsterSlim, sf::Vector2u(13, 2), 0.20f, sf::Vector2f(52.0f, 50.0f), 886.0f, 580.0f));
+
+	std::vector<Monster>monsterFVector;
+	monsterFVector.push_back(Monster(&monstersFire, sf::Vector2u(7, 1), 0.30f, sf::Vector2f(52.0f, 50.0f), 928.0f, 255.0f));
+
+	std::vector<Monster>slimPvector;
+	slimPvector.push_back(Monster(&slimPurple, sf::Vector2u(7, 2), 0.30, sf::Vector2f(52.0f, 50.0f), 500.0f, 500.0f));
 
 	//Icon
 	sf::RectangleShape iconTimer(sf::Vector2f(355.0f, 126.0f));
@@ -275,8 +282,6 @@ int main()
 		window.draw(bg);
 		window.draw(bg2);
 		window.draw(bg3);
-		
-	
 		player.Draw(window);
 		
 		//Item
@@ -292,7 +297,15 @@ int main()
 		{
 			fireVector[i].drawItemFire(window);
 		}
-		for (int i = 0; i < monsterVector.size(); i++)
+		for (int i = 0; i < monsterFVector.size(); i++)
+		{
+			monsterFVector[i].drawMonster(window);
+		}
+		for (int i = 0; i < slimPvector.size(); i++)
+		{
+			slimPvector[i].drawMonster(window);
+		}
+		for (size_t i = 0; i < monsterVector.size(); i++)
 		{
 			monsterVector[i].drawMonster(window);
 		}
@@ -512,7 +525,9 @@ int main()
 		}
 
 		player.Update(deltaTime);
-		player.updateMonster(deltaTime, monsterVector);
+		player.updateMonster(deltaTime, monsterFVector);
+		player.updateSlimP(deltaTime, slimPvector);
+		player.updateMonS(deltaTime, monsterVector);
 
 		//Itemupdate
 		for (int i = 0; i < coinVector.size(); i++)
@@ -527,9 +542,17 @@ int main()
 		{
 			fireVector[i].updateItemFire(deltaTime, player);
 		}
+		for (int i = 0; i < monsterFVector.size(); i++)
+		{
+			monsterFVector[i].updateX(deltaTime);
+		}
+		for (int i = 0; i < slimPvector.size(); i++)
+		{
+			slimPvector[i].updateXslim(deltaTime);
+		}
 		for (int i = 0; i < monsterVector.size(); i++)
 		{
-			monsterVector[i].updateX(deltaTime);
+			monsterVector[i].updateXMons(deltaTime);
 		}
 
 		//PlatformCollision
