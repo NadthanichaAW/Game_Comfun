@@ -116,49 +116,7 @@ void Player::Update(float deltaTime)
             faceDirection = 4;
             row = 2;
         }
-    }
-   /* if (movement.y != 0)
-        {
-            row = 0;
-            if (movement.y > 0.0f)
-            {
-      
-                faceTop = false;
-            }
-            if (movement.y < 0.0f)
-            {
-                faceTop = true;
-                row = 3;
-            }
-        }
-        if (movement.x > 0.0f && movement.y == 0.0f)
-        {
-            row = 1;
-            faceRight = true;
-        }
-        if (movement.x < 0 && movement.y == 0.0f)
-        {
-            row = 2;
-            faceRight = true;
-        }
-    
-    if (body.getPosition().x < 25.f)
-    {
-        body.setPosition(25.f, body.getPosition().y);
-    } 
-    if (body.getPosition().y< 25.f)
-    {
-        body.setPosition(body.getPosition().x,25.f);
-    }
-    if (body.getPosition().x + body.getGlobalBounds().width > 745.0f)
-    {
-        body.setPosition(745.0f - body.getGlobalBounds().width, body.getPosition().y);
-    } 
-    if (body.getPosition().y + body.getGlobalBounds().height > 745.0f)
-    {
-        body.setPosition(body.getPosition().x, 745.0f - body.getGlobalBounds().height);
-    }*/
-  
+    }  
 	animation.Update(row, deltaTime);
 	body.setTextureRect(animation.uvRect);
 	body.move(movement);
@@ -213,4 +171,17 @@ void Player::updateMonS(float deltatime, std::vector<Monster>& monsterVector)
     animation.updateItem(row, deltatime);
     body.setTextureRect(animation.uvRect);
 
+}
+
+void Player::updateEnermies(float deltatime, std::vector<Monster>& enermyVector)
+{
+    for (int i = 0; i < enermyVector.size(); i++)
+    {
+        if (this->GetCollision().CheckCollision(enermyVector[i].GetCollider()))
+        {
+            body.setPosition(140.0f, 100.0f);
+        }
+    }
+    animation.updateItem(row, deltatime);
+    body.setTextureRect(animation.uvRect);
 }

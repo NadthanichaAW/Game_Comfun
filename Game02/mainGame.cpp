@@ -12,6 +12,7 @@
 #include <math.h>
 #include <vector>
 #include <fstream>
+#include <time.h>
 
 static const float VIEW_HIGHT = 1080.0f;
 static const float VIEW_WIDE = 720.0f;
@@ -64,7 +65,7 @@ int main()
 	window.setFramerateLimit(120);
 
 	//Animation
-	Player player(&playerTexture, sf::Vector2u(3, 8), 0.3f, 150.0f);
+	Player player(&playerTexture, sf::Vector2u(3, 8), 0.9f, 150.0f);
 	float deltaTime = 0.0f;
 	sf::Clock clock;
 
@@ -98,6 +99,7 @@ int main()
 	soundCoin.setVolume(50.0f);
 
 	//Item
+	srand(time(NULL));
 	sf::Texture coin;
 	coin.loadFromFile("Textures/coin.png");
 	sf::Texture clocker;
@@ -144,10 +146,56 @@ int main()
 	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 780.0f, 600.0f));
 	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 685.0f, 635.0f));
 	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 725.0f, 680.0f));
-	
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 737.0f, 722.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 787.0f, 722.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 837.0f, 722.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 887.0f, 722.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 937.0f, 722.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 987.0f, 722.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 1037.0f, 722.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 1087.0f, 722.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 890.0f, 590.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 940.0f, 590.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 990.0f, 590.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 1040.0f, 590.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 1090.0f, 590.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 1140.0f, 590.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 890.0f, (rand() % 60 + 451)));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 940.0f, (rand() % 60 + 451)));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 995.0f, 464.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 1045.0f, 464.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 1095.0f, 464.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 1145.0f, 464.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 907.0f, 382.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 957.0f, 382.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 1007.0f, 382.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 1057.0f, 382.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 1107.0f, 382.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 973.0f, 1051.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 1023.0f, 1051.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 1073.0f, 1051.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 1123.0f, 1051.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 957.0f, 1019.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 148.0f, 1019.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 198.0f, 1019.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 248.0f, 1019.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 298.0f, 1019.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 66.0f, 1215.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 116.0f, 1215.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 166.0f, 1215.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 216.0f, 1215.0f));
+	/*coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 725.0f, 382.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 725.0f, 382.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 725.0f, 680.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 725.0f, 680.0f));*/
+
 	//---------------------------clock----------------------------------------------
 	std::vector<Item>ClockVector;
-	ClockVector.push_back(Item(&clocker, sf::Vector2u(4, 1), 0.15f, 800.0f, 800.0f));
+	ClockVector.push_back(Item(&clocker, sf::Vector2u(4, 1), 0.15f, 892.0f, 1093.0f));
+	ClockVector.push_back(Item(&clocker, sf::Vector2u(4, 1), 0.15f, (rand() % 70 + 58), 920.0f));
+	ClockVector.push_back(Item(&clocker, sf::Vector2u(4, 1), 0.15f, 55.0f, (rand() % 200 + 385)));
+	ClockVector.push_back(Item(&clocker, sf::Vector2u(4, 1), 0.15f, (rand() % 40 + 472), 1046.0f));
+	/**/
 
 
 	//Firepoint 
@@ -164,6 +212,10 @@ int main()
 	monstersFire.loadFromFile("Textures/firecommon.png");
 	sf::Texture slimPurple;
 	slimPurple.loadFromFile("Textures/slimpurple3.png");
+	sf::Texture enermyP;
+	enermyP.loadFromFile("Textures/EnermyP.png");
+	sf::Texture enermyS;
+	enermyS.loadFromFile("Textures/monsterS.png");
 	std::vector<Monster>monsterVector;
 	monsterVector.push_back(Monster(&monsterSlim, sf::Vector2u(13, 2), 0.20f, sf::Vector2f(52.0f, 50.0f), 188.0f, 711.0f));
 	monsterVector.push_back(Monster(&monsterSlim, sf::Vector2u(13, 2), 0.20f, sf::Vector2f(52.0f, 50.0f), 886.0f, 580.0f));
@@ -173,6 +225,11 @@ int main()
 
 	std::vector<Monster>slimPvector;
 	slimPvector.push_back(Monster(&slimPurple, sf::Vector2u(7, 2), 0.30, sf::Vector2f(52.0f, 50.0f), 500.0f, 500.0f));
+
+	std::vector<Monster>enermyVector;
+	enermyVector.push_back(Monster(&enermyP, sf::Vector2u(3, 2), 0.30, sf::Vector2f(62.0f, 60.0f), 500.0f, 500.0f));
+
+	enermyVector.push_back(Monster(&enermyS, sf::Vector2u(3, 2), 0.30, sf::Vector2f(62.0f, 60.0f), 600.0f, 600.0f));
 
 	//Icon
 	sf::RectangleShape iconTimer(sf::Vector2f(355.0f, 126.0f));
@@ -258,19 +315,17 @@ int main()
 	Platform platform67(nullptr, sf::Vector2f(30.0f, 5.0f), sf::Vector2f(1144.0f, 864.0f));
 	Platform platform68(nullptr, sf::Vector2f(30.0f, 95.0f), sf::Vector2f(519.0f, 26.0f));
 	Platform platform69(nullptr, sf::Vector2f(30.0f, 95.0f), sf::Vector2f(732.0f, 26.0f));
+	Platform platform70(nullptr, sf::Vector2f(166.0f, 32.0f), sf::Vector2f(607.0f, 9.0f));
+	Platform platform71(nullptr, sf::Vector2f(32.0f, 81.0f), sf::Vector2f(539.0f, 30.0f));
+	Platform platform72(nullptr, sf::Vector2f(32.0f, 81.0f), sf::Vector2f(690.0f,30.0f));
+	Platform platform73(nullptr, sf::Vector2f(208.0f, 34.0f), sf::Vector2f(1092.0f, 9.0f));
+	Platform platform74(nullptr, sf::Vector2f(208.0f, 34.0f), sf::Vector2f(128.0f, 9.0f));
+	
+	Platform platform75(nullptr, sf::Vector2f(57.0f, 36.0f), sf::Vector2f(1088.0f, 8.0f));
+	Platform platform76(nullptr, sf::Vector2f(57.0f, 36.0f), sf::Vector2f(129.0f, 8.0f));
+	Platform platform77(nullptr, sf::Vector2f(64.0f, 50.0f), sf::Vector2f(196.0f, 19.0f));
+	Platform platform78(nullptr, sf::Vector2f(64.0f, 50.0f), sf::Vector2f(62.0f, 19.0f));
 
-	Platform platform70(nullptr, sf::Vector2f(40.0f, 7.0f), sf::Vector2f(208.0f, 405.99f));
-	Platform platform71(nullptr, sf::Vector2f(40.0f, 7.0f), sf::Vector2f(208.0f, 405.99f));
-	Platform platform72(nullptr, sf::Vector2f(40.0f, 7.0f), sf::Vector2f(208.0f, 405.99f));
-	Platform platform73(nullptr, sf::Vector2f(40.0f, 7.0f), sf::Vector2f(208.0f, 405.99f));
-	Platform platform74(nullptr, sf::Vector2f(40.0f, 7.0f), sf::Vector2f(208.0f, 405.99f));
-	Platform platform75(nullptr, sf::Vector2f(40.0f, 7.0f), sf::Vector2f(208.0f, 405.99f));
-	Platform platform76(nullptr, sf::Vector2f(62.0f, 7.0f), sf::Vector2f(208.0f, 405.99f));
-	Platform platform77(nullptr, sf::Vector2f(62.0f, 7.0f), sf::Vector2f(208.0f, 405.99f));
-	Platform platform78(nullptr, sf::Vector2f(62.0f, 7.0f), sf::Vector2f(208.0f, 405.99f));
-	Platform platform79(nullptr, sf::Vector2f(62.0f, 7.0f), sf::Vector2f(208.0f, 405.99f));
-	Platform platform80(nullptr, sf::Vector2f(62.0f, 7.0f), sf::Vector2f(208.0f, 405.99f));
-	Platform platform81(nullptr, sf::Vector2f(62.0f, 7.0f), sf::Vector2f(208.0f, 405.99f));
 
 	int u = 0;
 	while (window.isOpen())
@@ -305,9 +360,13 @@ int main()
 		{
 			slimPvector[i].drawMonster(window);
 		}
-		for (size_t i = 0; i < monsterVector.size(); i++)
+		for (int i = 0; i < monsterVector.size(); i++)
 		{
 			monsterVector[i].drawMonster(window);
+		}
+		for (int i = 0; i < enermyVector.size(); i++)
+		{
+			enermyVector[i].drawMonster(window);
 		}
 		window.draw(iconTimer);
 		window.draw(iconCoin);
@@ -528,6 +587,7 @@ int main()
 		player.updateMonster(deltaTime, monsterFVector);
 		player.updateSlimP(deltaTime, slimPvector);
 		player.updateMonS(deltaTime, monsterVector);
+		player.updateEnermies(deltaTime, enermyVector);
 
 		//Itemupdate
 		for (int i = 0; i < coinVector.size(); i++)
@@ -553,6 +613,10 @@ int main()
 		for (int i = 0; i < monsterVector.size(); i++)
 		{
 			monsterVector[i].updateXMons(deltaTime);
+		}
+		for (int i = 0; i < enermyVector.size(); i++)
+		{
+			enermyVector[i].updateEnermy(deltaTime);
 		}
 
 		//PlatformCollision
@@ -626,12 +690,12 @@ int main()
 		platform67.GetCollision().CheckCollision(playerCollision, 1.0f);
 		platform68.GetCollision().CheckCollision(playerCollision, 1.0f);
 		platform69.GetCollision().CheckCollision(playerCollision, 1.0f);
-		/*platform70.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform70.GetCollision().CheckCollision(playerCollision, 1.0f);
 		platform71.GetCollision().CheckCollision(playerCollision, 1.0f);
 		platform72.GetCollision().CheckCollision(playerCollision, 1.0f);
 		platform73.GetCollision().CheckCollision(playerCollision, 1.0f);
 		platform74.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform75.GetCollision().CheckCollision(playerCollision, 1.0f);
+		/*platform75.GetCollision().CheckCollision(playerCollision, 1.0f);
 		platform76.GetCollision().CheckCollision(playerCollision, 1.0f);
 		platform77.GetCollision().CheckCollision(playerCollision, 1.0f);
 		platform78.GetCollision().CheckCollision(playerCollision, 1.0f);

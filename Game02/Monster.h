@@ -11,6 +11,7 @@ public:
 	void updateX(float deltatime);
 	void updateXslim(float deltatime);
 	void updateXMons(float deltatime);
+	void updateEnermy(float deltatime);
 	void drawMonster(sf::RenderWindow& window);
 	
 

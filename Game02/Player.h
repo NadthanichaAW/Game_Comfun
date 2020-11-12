@@ -19,6 +19,7 @@ public:
 	void updateMonster(float deltatime,std::vector<Monster>& monsterFVector);
 	void updateSlimP(float deltatime, std::vector<Monster>& slimPvector);
 	void updateMonS(float deltatime, std::vector<Monster>& monsterVector);
+	void updateEnermies(float deltatime, std::vector<Monster>& enermyVector);
 
 private:
 	int hMons;

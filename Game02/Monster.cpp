@@ -80,6 +80,27 @@ void Monster::updateXMons(float deltatime)
 	body.setTextureRect(animation.uvRect);
 }
 
+
+void Monster::updateEnermy(float deltatime)
+{
+	float positionY = body.getPosition().y;
+	velocity.x = 0;
+	velocity.y = 40;
+	if (positionY < this->posY)//thar pos mons < pos start hai mons move down
+	{
+		row = 0;
+		this->face = 1;
+	}
+	else if (positionY > this->posY + 250)
+	{
+		row = 1;
+		this->face = -1;
+	}
+	body.move(this->face * velocity * deltatime);
+	animation.updateItem(row, deltatime);
+	body.setTextureRect(animation.uvRect);
+}
+
 void Monster::drawMonster(sf::RenderWindow& window)
 {
 	window.draw(body);
