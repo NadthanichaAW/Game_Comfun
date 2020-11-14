@@ -23,13 +23,11 @@ void Monster::updateX(float deltatime)
 	velocity.x = 40;
 	velocity.y = 0;
 	if (positionX < this->posX)//thar pos mons < pos start hai mons move right 
-	{
-		
+	{	
 		this->face = 1;
 	}
 	else if (positionX > this->posX + 250)
-	{
-		
+	{	
 		this->face = -1;
 	}
 	body.move(this->face * velocity * deltatime);
@@ -91,7 +89,7 @@ void Monster::updateEnermy(float deltatime)
 		row = 0;
 		this->face = 1;
 	}
-	else if (positionY > this->posY + 250)
+	else if (positionY > this->posY + 200)
 	{
 		row = 1;
 		this->face = -1;

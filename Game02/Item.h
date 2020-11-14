@@ -9,14 +9,14 @@
 class Item
 {
 public:
-	Item(sf::Texture* texture, sf::Vector2u imageCount, float switchTime, float x, float y);//2 back position 
+	Item(sf::Texture* texture, sf::Vector2u imageCount, float switchTime, sf::Vector2f size, float x, float y);//2 back position 
 	~Item();
 	void updateItem(float deltatime, Player player);
 	void drawItem(sf::RenderWindow& window);
 	int pointCoins(){
-		if (Pcoin == 10)
+		if (Pcoin == 1)
 		{
-			Pcoin-=10;
+			Pcoin--;
 			return 1;
 		}
 	}
@@ -28,10 +28,16 @@ public:
 			return 1;
 		}
 	}
+	void chestHit(float deltatime, Player player);
+	bool drawDia() { return this->checkDia; }
 	Collision GetCollider() { return Collision(body); }
 
 
 private:
+	bool checkHit;
+	bool checkDia;
+	float nubTime;
+	float twoTime;
 	int Pclock;
 	int Pcoin;
 	int row;

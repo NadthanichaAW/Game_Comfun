@@ -1,6 +1,7 @@
 #pragma once
 #include<SFML/Graphics.hpp>
-#include "Hitbox.h"
+#include<time.h>
+
 class Animation
 {
 public:
@@ -16,6 +17,9 @@ public:
 	sf::IntRect uvRect;
 
 private:
+	sf::Time delayTime = sf::milliseconds(0.05);
+	sf::Clock clock;
+	sf::Clock time;
 	sf::Vector2u imageCount;
 	sf::Vector2u currentImage;
 	float totalTime ;

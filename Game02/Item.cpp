@@ -1,14 +1,19 @@
 #include "Item.h"
 #include <iostream>
+#include <math.h>
 
-Item::Item(sf::Texture* texture, sf::Vector2u imageCount, float switchTime, float x, float y)
+Item::Item(sf::Texture* texture, sf::Vector2u imageCount, float switchTime, sf::Vector2f size, float x, float y)
 : animation(texture,imageCount,switchTime)
 {
+	this->checkHit = false;
+	this->checkDia = false;
+	this->nubTime = 0;
+	this->twoTime = 0;
 	Pclock = 0;
 	Pcoin = 0;
 	row = 0;
-	body.setSize(sf::Vector2f(35.0f, 44.0f));
-	body.setOrigin(body.getSize() / 2.0f);
+	body.setSize(size);
+	body.setOrigin(size / 2.0f);
 	body.setPosition(x, y);
 	body.setTexture(texture);
 }
@@ -26,7 +31,7 @@ void Item::updateItem(float deltatime, Player player)
 	if (player.GetCollision().CheckCollision(this->GetCollider()))
 	{
 		Pclock += 1;
-		Pcoin += 10;
+		Pcoin += 1;
 		std::cout << "\t\t thisCollider";
 		body.setPosition(-1000.0f, 350.0f); //ชนแล้วไปอยู่หลังฉาก 
 
@@ -36,4 +41,38 @@ void Item::updateItem(float deltatime, Player player)
 void Item::drawItem(sf::RenderWindow& window)
 {
 	window.draw(body);
+}
+
+void Item::chestHit(float deltatime, Player player)
+{
+	animation.updateItem(row, deltatime);
+	body.setTextureRect(animation.uvRect);
+	if ((abs(player.GetPosition().x - body.getPosition().x)<= 70 && abs(player.GetPosition().y - body.getPosition().y) <= 70)&& sf::Mouse::isButtonPressed(sf::Mouse::Left))//check position abs <- check two way left and right
+	{
+		this->checkHit = true;
+	}
+	if (this->checkHit==true)
+	{
+		nubTime += deltatime;
+		if (nubTime >= 4)
+		{
+			nubTime = 0;
+			row = 1;
+		}
+		if (row==1)
+		{
+			twoTime += deltatime;
+			if (twoTime >= 1)
+			{
+				twoTime = 0;
+				body.setPosition(-1000.0f, 500.0f);
+				this->checkHit = false;//pic lost
+				if (this->checkHit == false)
+				{
+					this->checkDia = true;
+				}
+			}
+		}
+	}
+
 }

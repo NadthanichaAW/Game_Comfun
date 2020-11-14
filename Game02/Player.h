@@ -4,7 +4,8 @@
 #include "Collision.h"
 #include "Hitbox.h"
 #include "Monster.h"
-
+#include "FireItem.h"
+#include<time.h>
 class Player
 {
 public:
@@ -16,12 +17,15 @@ public:
 	void SetPosition(float x, float y);
 	sf::Vector2f GetPosition() { return body.getPosition(); }
 	Collision GetCollision() { return Collision(body); }
-	void updateMonster(float deltatime,std::vector<Monster>& monsterFVector);
+	void updateSlimFire(float deltatime,std::vector<Monster>& monsterFVector);
 	void updateSlimP(float deltatime, std::vector<Monster>& slimPvector);
 	void updateMonS(float deltatime, std::vector<Monster>& monsterVector);
 	void updateEnermies(float deltatime, std::vector<Monster>& enermyVector);
-
+	void updateFire(float deltatime, std::vector<FireItem>& fireVector);
+	void updateEnermies2(float deltatime, std::vector<Monster>& enermyVector, std::vector<Monster>& monsterVector);
+	int hpHeart() { return this->hpCount; }
 private:
+	int hpCount;
 	int hMons;
 	sf::RectangleShape body;
 	Animation animation;
@@ -29,8 +33,7 @@ private:
 	float speed  ;
 	int faceDirection;
 	bool attack;
-	int hitbox;
-	int r;
+
 	
 };
 

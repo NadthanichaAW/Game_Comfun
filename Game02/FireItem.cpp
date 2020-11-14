@@ -15,16 +15,10 @@ FireItem::~FireItem()
 {
 }
 
-void FireItem::updateItemFire(float deltatime, Player player)
+void FireItem::updateItemFire(float deltatime)
 {
 	animation.updateFire(row, deltatime);
 	body.setTextureRect(animation.uvRect);
-
-	/*if (player.GetCollision().CheckCollision(this->GetCollider()))
-	{
-		std::cout << "\t\t thisCollider";
-		//player.SetPosition(140.0f, 100.0f); //ª¹áÅéÇä»ÍÂÙèËÅÑ§©Ò¡ 
-	}*/
 }
 
 void FireItem::drawItemFire(sf::RenderWindow& window)
