@@ -33,7 +33,7 @@ void Item::updateItem(float deltatime, Player player)
 		Pclock += 1;
 		Pcoin += 1;
 		std::cout << "\t\t thisCollider";
-		body.setPosition(-1000.0f, 350.0f); //ชนแล้วไปอยู่หลังฉาก 
+		body.setPosition(-1000.0f, 350.0f); //chon laew pai yhu back bg 
 
 	}	
 }
@@ -47,12 +47,13 @@ void Item::chestHit(float deltatime, Player player)
 {
 	animation.updateItem(row, deltatime);
 	body.setTextureRect(animation.uvRect);
-	if ((abs(player.GetPosition().x - body.getPosition().x)<= 70 && abs(player.GetPosition().y - body.getPosition().y) <= 70)&& sf::Mouse::isButtonPressed(sf::Mouse::Left))//check position abs <- check two way left and right
+	if ((abs(player.GetPosition().x - body.getPosition().x)<= 50 && abs(player.GetPosition().y - body.getPosition().y) <= 50)&& sf::Mouse::isButtonPressed(sf::Mouse::Left))//check position abs <- check two way left and right
 	{
 		this->checkHit = true;
 	}
 	if (this->checkHit==true)
 	{
+		
 		nubTime += deltatime;
 		if (nubTime >= 4)
 		{
@@ -75,4 +76,15 @@ void Item::chestHit(float deltatime, Player player)
 		}
 	}
 
+}
+
+void Item::updateDiamond(float deltatime, Player player)
+{
+	animation.updateItem(row, deltatime);
+	body.setTextureRect(animation.uvRect);
+
+	if (player.GetCollision().CheckCollision(this->GetCollider()))
+	{
+		body.setPosition(-1500.0f, 500.0f); //chon laew pai yhu back bg 
+	}
 }

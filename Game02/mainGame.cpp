@@ -52,7 +52,7 @@ int main()
 	sf::RectangleShape bg2(sf::Vector2f(1248.0f, 1329.0f));
 	bg2.setPosition(0.0f, 1329.0f);
 	sf::Texture bg2Texture;
-	bg2Texture.loadFromFile("Textures/BG_7.png");
+	bg2Texture.loadFromFile("Textures/BG_10.png");
 	bg2.setTexture(&bg2Texture);
 
 	//Background_3
@@ -91,13 +91,6 @@ int main()
 	Clocke.setFillColor(sf::Color::White);
 	Clocke.setOutlineColor(sf::Color(128, 128, 128));
 	Clocke.setOutlineThickness(1.0f);
-
-	//Sound
-	sf::SoundBuffer sound;
-	sound.loadFromFile("Textures/coin.wav");
-	sf::Sound soundCoin;
-	soundCoin.setBuffer(sound);
-	soundCoin.setVolume(50.0f);
 
 	//Item
 	sf::Texture coin;
@@ -202,12 +195,24 @@ int main()
 	//-------------------------chest------------------------------------------------
 	std::vector<Item>ChestVector;
 	ChestVector.push_back(Item(&chest, sf::Vector2u(3, 2), 0.15f, sf::Vector2f(42.0f, 42.0f), 450.0f, 200.0f));
+	ChestVector.push_back(Item(&chest, sf::Vector2u(3, 2), 0.15f, sf::Vector2f(42.0f, 42.0f), 550.0f, 200.0f));
 
 	//diamond
 	sf::Texture diamond;
-	diamond.loadFromFile("Textures/diamond.png");
+	diamond.loadFromFile("Textures/diamond2.png");
 	std::vector<Item>diaVector;
-	diaVector.push_back(Item(&diamond, sf::Vector2u(3, 1), 0.15f, sf::Vector2f(30.0f, 30.0f), 200.0f, 200.0f));
+	diaVector.push_back(Item(&diamond, sf::Vector2u(3, 1), 0.15f, sf::Vector2f(30.0f, 30.0f), 145.0f, 58.0f));
+	diaVector.push_back(Item(&diamond, sf::Vector2u(3, 1), 0.15f, sf::Vector2f(30.0f, 30.0f), 150.0f, 58.0f));
+	diaVector.push_back(Item(&diamond, sf::Vector2u(3, 1), 0.15f, sf::Vector2f(30.0f, 30.0f), 155.0f, 58.0f));
+	diaVector.push_back(Item(&diamond, sf::Vector2u(3, 1), 0.15f, sf::Vector2f(30.0f, 30.0f), 160.0f, 58.0f));
+	diaVector.push_back(Item(&diamond, sf::Vector2u(3, 1), 0.15f, sf::Vector2f(30.0f, 30.0f), 165.0f, 58.0f));
+	diaVector.push_back(Item(&diamond, sf::Vector2u(3, 1), 0.15f, sf::Vector2f(30.0f, 30.0f), 170.0f, 58.0f)); /**/
+
+	diaVector.push_back(Item(&diamond, sf::Vector2u(3, 1), 0.15f, sf::Vector2f(30.0f, 30.0f), 500.0f, 500.0f));
+	diaVector.push_back(Item(&diamond, sf::Vector2u(3, 1), 0.15f, sf::Vector2f(30.0f, 30.0f), 550.0f, 550.0f));
+	diaVector.push_back(Item(&diamond, sf::Vector2u(3, 1), 0.15f, sf::Vector2f(30.0f, 30.0f), 600.0f, 600.0f));
+	diaVector.push_back(Item(&diamond, sf::Vector2u(3, 1), 0.15f, sf::Vector2f(30.0f, 30.0f), 650.0f, 650.0f));
+	diaVector.push_back(Item(&diamond, sf::Vector2u(3, 1), 0.15f, sf::Vector2f(30.0f, 30.0f), 700.0f, 700.0f));
 
 	//Firepoint 
 	sf::Texture FirePoint;
@@ -277,10 +282,11 @@ int main()
 
 	//Platform
 	Collision playerCollision = player.GetCollision();
-	Platform platform1(nullptr, sf::Vector2f(50.0f, 1329.0f), sf::Vector2f(5.0f, 664.5f));//Õ—π·√°¢π“¥Õ—π Õßpos left
+	Platform platform1(nullptr, sf::Vector2f(50.0f, 2658.0f), sf::Vector2f(5.0f,1329.0f));//Õ—π·√°¢π“¥Õ—π Õßpos left
 	Platform platform2(nullptr, sf::Vector2f(1248.0f, 50.0f), sf::Vector2f(624.0f, -25.0f));//top
 	Platform platform3(nullptr, sf::Vector2f(1248.0f, 50.0f), sf::Vector2f(624.0f, 1354.0f));//down 1329+25
-	Platform platform4(nullptr, sf::Vector2f(50.0f, 1329.0f), sf::Vector2f(1243.0f, 664.5f));//right 1248+25
+	Platform platform4(nullptr, sf::Vector2f(50.0f, 2658.0f), sf::Vector2f(1243.0f, 1329.0f));//right 1248+25
+	
 	Platform platform5(nullptr, sf::Vector2f(45.0f, 35.0f), sf::Vector2f(210.0f, 180.0f));
 	Platform platform6(nullptr, sf::Vector2f(45.0f, 35.0f), sf::Vector2f(85.0f, 180.0f));
 	Platform platform7(nullptr, sf::Vector2f(5.0f, 5.0f), sf::Vector2f(60.0f, 130.0f));
@@ -351,11 +357,57 @@ int main()
 	Platform platform72(nullptr, sf::Vector2f(32.0f, 81.0f), sf::Vector2f(690.0f,30.0f));
 	Platform platform73(nullptr, sf::Vector2f(208.0f, 34.0f), sf::Vector2f(1092.0f, 9.0f));
 	Platform platform74(nullptr, sf::Vector2f(208.0f, 34.0f), sf::Vector2f(128.0f, 9.0f));
-	
-	Platform platform75(nullptr, sf::Vector2f(57.0f, 36.0f), sf::Vector2f(1088.0f, 8.0f));
-	Platform platform76(nullptr, sf::Vector2f(57.0f, 36.0f), sf::Vector2f(129.0f, 8.0f));
-	Platform platform77(nullptr, sf::Vector2f(64.0f, 50.0f), sf::Vector2f(196.0f, 19.0f));
-	Platform platform78(nullptr, sf::Vector2f(64.0f, 50.0f), sf::Vector2f(62.0f, 19.0f));
+	Platform platform75(nullptr, sf::Vector2f(1248.0f, 20.0f), sf::Vector2f(624.0f, 2660.0f));//down map2	
+	Platform platform76(nullptr, sf::Vector2f(233.0f, 147.0f), sf::Vector2f(1131.0f, 1701.0f));
+	Platform platform77(nullptr, sf::Vector2f(216.0f, 147.0f), sf::Vector2f(790.99f, 1701.0f));
+	Platform platform78(nullptr, sf::Vector2f(33.0f, 14.0f), sf::Vector2f(1187.0f, 1551.0f));
+	Platform platform79(nullptr, sf::Vector2f(74.0f, 14.0f), sf::Vector2f(1164.0f, 1465.0f));
+	Platform platform80(nullptr, sf::Vector2f(500.0f, 14.0f), sf::Vector2f(998.0f, 1425.0f));
+	Platform platform81(nullptr, sf::Vector2f(61.0f, 68.0f), sf::Vector2f(708.0f, 1391.0f));
+	Platform platform82(nullptr, sf::Vector2f(61.0f, 68.0f), sf::Vector2f(540.0f, 1391.0f));
+	Platform platform83(nullptr, sf::Vector2f(353.0f, 49.0f), sf::Vector2f(640.0f, 1655.99f));
+	Platform platform84(nullptr, sf::Vector2f(183.99f, 45.0f), sf::Vector2f(395.0f, 1441.0f));
+	Platform platform85(nullptr, sf::Vector2f(187.0f, 134.0f), sf::Vector2f(394.0f, 1645.0f));
+	Platform platform86(nullptr, sf::Vector2f(186.99f, 47.0f), sf::Vector2f(531.0f, 1689.0f));
+	Platform platform87(nullptr, sf::Vector2f(68.0f, 72.0f), sf::Vector2f(582.0f, 1741.99f));
+	Platform platform88(nullptr, sf::Vector2f(74.0f, 292.0f), sf::Vector2f(579.0f, 2016.99f));
+	Platform platform89(nullptr, sf::Vector2f(155.0f, 47.0f), sf::Vector2f(587.0f, 2189.0f));
+	Platform platform90(nullptr, sf::Vector2f(156.0f, 68.0f), sf::Vector2f(624.0f, 2155.0f));
+	Platform platform91(nullptr, sf::Vector2f(437.0f, 85.0f), sf::Vector2f(887.0f, 2248.0f));
+	Platform platform92(nullptr, sf::Vector2f(154.0f, 167.0f), sf::Vector2f(1040.0f, 2165.0f));
+	Platform platform93(nullptr, sf::Vector2f(142.0f, 55.0f), sf::Vector2f(1035.0f, 2302.0f));
+	Platform platform94(nullptr, sf::Vector2f(94.0f, 100.0f), sf::Vector2f(1057.0f, 2332.0f));
+	Platform platform95(nullptr, sf::Vector2f(64.0f, 136.0f), sf::Vector2f(1216.0f, 2360.0f));
+	Platform platform96(nullptr, sf::Vector2f(157.0f, 40.0f), sf::Vector2f(958.0f, 2478.0f));
+	Platform platform97(nullptr, sf::Vector2f(77.0f, 208.0f), sf::Vector2f(2394.0f, 913.0f));
+	Platform platform98(nullptr, sf::Vector2f(600.0f, 108.0f), sf::Vector2f(561.0f, 2348.0f));
+	Platform platform99(nullptr, sf::Vector2f(507.0f, 132.0f), sf::Vector2f(608.0f, 2400.0f));
+	Platform platform100(nullptr, sf::Vector2f(154.0f, 113.0f), sf::Vector2f(466.0f, 2498.0f));
+	Platform platform101(nullptr, sf::Vector2f(129.0f, 74.0f), sf::Vector2f(454.0f, 2621.0f));
+	Platform platform102(nullptr, sf::Vector2f(61.0f, 27.0f), sf::Vector2f(531.0f, 2645.0f));
+	Platform platform103(nullptr, sf::Vector2f(61.0f, 27.0f), sf::Vector2f(712.0f, 2645.0f));
+	Platform platform104(nullptr, sf::Vector2f(133.0f, 356.0f), sf::Vector2f(787.0f, 2480.0f));
+	Platform platform105(nullptr, sf::Vector2f(129.0f, 98.0f), sf::Vector2f(750.0f, 2490.0f));
+	Platform platform106(nullptr, sf::Vector2f(140.0f, 100.0f), sf::Vector2f(70.0f, 2350.0f));
+	Platform platform107(nullptr, sf::Vector2f(70.0f, 117.0f), sf::Vector2f(35.0f, 2429.0f));
+	Platform platform108(nullptr, sf::Vector2f(73.0f, 39.0f), sf::Vector2f(288.0f, 2267.0f));
+	Platform platform109(nullptr, sf::Vector2f(39.0f, 39.0f), sf::Vector2f(142.0f, 2267.0f));
+	Platform platform110(nullptr, sf::Vector2f(74.0f, 49.0f), sf::Vector2f(292.0f, 1733.0f));
+	Platform platform111(nullptr, sf::Vector2f(74.0f, 25.0f), sf::Vector2f(79.0f, 1717.0f));
+	Platform platform112(nullptr, sf::Vector2f(69.0f, 32.0f), sf::Vector2f(35.0f, 1764.0f));
+	Platform platform113(nullptr, sf::Vector2f(116.0f, 43.0f), sf::Vector2f(102.0f, 1811.99f));
+	Platform platform114(nullptr, sf::Vector2f(288.0f, 39.0f), sf::Vector2f(179.0f, 1434.0f));
+	Platform platform115(nullptr, sf::Vector2f(67.0f, 23.0f), sf::Vector2f(205.0f, 1505.0f));
+	Platform platform116(nullptr, sf::Vector2f(32.0f, 23.0f), sf::Vector2f(271.0f, 1601.99f));
+	Platform platform117(nullptr, sf::Vector2f(121.0f, 33.0f), sf::Vector2f(101.0f, 1521.99));
+	Platform platform118(nullptr, sf::Vector2f(134.0f, 36.0f), sf::Vector2f(86.0f, 1644.99f));
+	Platform platform119(nullptr, sf::Vector2f(73.0f, 76.0f), sf::Vector2f(998.0f, 2620.0f));
+	Platform platform120(nullptr, sf::Vector2f(67.0f, 75.0f), sf::Vector2f(295.0f, 1666.0f));
+	Platform platform121(nullptr, sf::Vector2f(64.0f, 50.0f), sf::Vector2f(62.0f, 19.0f));
+	Platform platform122(nullptr, sf::Vector2f(64.0f, 50.0f), sf::Vector2f(62.0f, 19.0f));
+	Platform platform123(nullptr, sf::Vector2f(64.0f, 50.0f), sf::Vector2f(62.0f, 19.0f));
+	Platform platform124(nullptr, sf::Vector2f(64.0f, 50.0f), sf::Vector2f(62.0f, 19.0f));
+	Platform platform125(nullptr, sf::Vector2f(64.0f, 50.0f), sf::Vector2f(62.0f, 19.0f));
 
 	//heart
 	sf::RectangleShape heartBar(sf::Vector2f(294.0f, 87.0f));
@@ -379,6 +431,20 @@ int main()
 	heartBar4.setTexture(&guiHeart4);
 	heartBar4.setSize(sf::Vector2f(147.5f, 43.5f));
 
+	//---------------------------Sound-----------------------------------------
+	sf::SoundBuffer sound;
+	sound.loadFromFile("Textures/coin.wav");
+	sf::Sound soundCoin;
+	soundCoin.setBuffer(sound);
+	soundCoin.setVolume(50.0f);
+
+	sf::Music titleSound;
+	titleSound.openFromFile("Textures/soundBGM.wav");
+	titleSound.setVolume(30.0f);
+	titleSound.setLoop(true);
+	titleSound.play();
+
+	bool drawDia = false;
 	bool checkMap = false;
 	int numofCycle = 0;
 	int u = 0;
@@ -421,18 +487,37 @@ int main()
 		for (int i = 0; i < enermyVector.size(); i++)
 		{
 			enermyVector[i].drawMonster(window);
-		}
+		}		
 		for (int i = 0; i < ChestVector.size(); i++)
 		{
-			if (ChestVector[i].drawDia() == true)
-			{
-				for (int i = 0; i < diaVector.size(); i++)
-				{
-					diaVector[i].drawItem(window);
-				}
-			}
 			ChestVector[i].drawItem(window);
 		}
+		if (ChestVector[0].drawDia() == true)
+		{
+			for (int j = 0; j <=5; j++)
+			{
+				
+				diaVector[j].drawItem(window);
+				drawDia = true;
+			}
+		}
+		if (ChestVector[1].drawDia() == true)
+		{
+			for (int j = 6; j <= 9; j++)
+			{
+
+				diaVector[j].drawItem(window);
+				drawDia = true;
+			}
+		}
+		/*if (u == 3)
+		{
+			for (int j = 0; j < diaVector.size(); j++)
+			{
+				diaVector[j].drawItem(window);
+				std::cout << "Diamond JA E HEER  ";
+			}
+		}*/
 		player.Draw(window);
 		window.draw(iconTimer);
 		window.draw(iconCoin);
@@ -614,7 +699,11 @@ int main()
 				}
 			}
 		}
-
+		//warp in map 2
+		if ((player.GetPosition().x > 880 && player.GetPosition().x < 904) && player.GetPosition().y >= 2617 && player.GetPosition().y <= 2618)
+		{
+			player.SetPosition(623.41, 2617);
+		}
 		//warp to bg3
 		if ((player.GetPosition().x > 580 && player.GetPosition().x < 660) && player.GetPosition().y >= 2520 && player.GetPosition().y <= 2550)
 		{
@@ -710,10 +799,15 @@ int main()
 		{
 			ChestVector[i].chestHit(deltaTime, player);
 		}
-		for (int i = 0; i < diaVector.size(); i++)
+		if (drawDia == true)
 		{
-			diaVector[i].updateItem(deltaTime, player);
+			for (int i = 0; i < diaVector.size(); i++)
+			{
+				diaVector[i].updateDiamond(deltaTime, player);
+			}
+			drawDia = false;
 		}
+		
 		for (int i = 0; i < fireVector.size(); i++)
 		{
 			fireVector[i].updateItemFire(deltaTime);
@@ -797,13 +891,71 @@ int main()
 		platform72.GetCollision().CheckCollision(playerCollision, 1.0f);
 		platform73.GetCollision().CheckCollision(playerCollision, 1.0f);
 		platform74.GetCollision().CheckCollision(playerCollision, 1.0f);
-		/*platform75.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform75.GetCollision().CheckCollision(playerCollision, 1.0f);
 		platform76.GetCollision().CheckCollision(playerCollision, 1.0f);
 		platform77.GetCollision().CheckCollision(playerCollision, 1.0f);
 		platform78.GetCollision().CheckCollision(playerCollision, 1.0f);
 		platform79.GetCollision().CheckCollision(playerCollision, 1.0f);
 		platform80.GetCollision().CheckCollision(playerCollision, 1.0f);
-*/
+		platform81.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform82.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform83.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform84.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform85.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform86.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform87.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform88.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform89.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform90.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform91.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform92.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform93.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform94.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform95.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform96.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform97.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform98.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform99.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform100.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform101.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform102.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform103.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform104.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform105.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform106.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform107.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform108.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform109.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform110.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform111.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform112.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform113.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform114.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform115.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform116.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform117.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform118.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform119.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform120.GetCollision().CheckCollision(playerCollision, 1.0f);
+		/*platform121.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform122.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform123.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform124.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform125.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform126.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform127.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform128.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform29.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform130.GetCollision().CheckCollision(playerCollision, 1.0f);
+		platform131.GetCollision().CheckCollision(playerCollision, 1.0f);
+		*/
+		
+		
+		
+		
+		
+		
+		
 		window.clear();
 
 	}

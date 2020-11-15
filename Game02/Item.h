@@ -30,6 +30,7 @@ public:
 	}
 	void chestHit(float deltatime, Player player);
 	bool drawDia() { return this->checkDia; }
+	void updateDiamond(float deltatime, Player player);
 	Collision GetCollider() { return Collision(body); }
 
 

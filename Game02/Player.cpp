@@ -193,7 +193,7 @@ void Player::updateFire(float deltatime, std::vector<FireItem>& fireVector)
     animation.updateItem(row, deltatime);
     body.setTextureRect(animation.uvRect);
 }
-void Player::updateEnermies2(float deltatime, std::vector<Monster>& enermyVector, std::vector<Monster>& monsterVector)
+void Player::updateEnermies2(float deltatime, std::vector<Monster>& enermyVector, std::vector<Monster>& monsterVector)//map 2 
 {
     for (int i = 0; i < monsterVector.size(); i++)
     {
