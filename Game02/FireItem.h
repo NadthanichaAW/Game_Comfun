@@ -7,7 +7,7 @@
 class FireItem
 {
 public:
-	FireItem(sf::Texture* texture, sf::Vector2u imageCount, float switchTime, float x, float y);
+	FireItem(sf::Texture* texture, sf::Vector2u imageCount, float switchTime, sf::Vector2f size, float x, float y);
 	~FireItem();
 
 	void updateItemFire(float deltatime);

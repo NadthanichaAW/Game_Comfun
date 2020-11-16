@@ -61,13 +61,8 @@ void Animation::updateFire(int row, float deltaTime)
 		currentImage.x++;
 		if (currentImage.x == 4)
 		{
-			if (time.getElapsedTime().asSeconds() >= 5.0)
-			{
-				currentImage.x = 0;
-				
-			}		
+			currentImage.x = 0;				
 		}
-		time.restart();
 	}
 	uvRect.top = currentImage.y * uvRect.height;
 	uvRect.left = currentImage.x * uvRect.width;

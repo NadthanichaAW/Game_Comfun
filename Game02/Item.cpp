@@ -9,6 +9,7 @@ Item::Item(sf::Texture* texture, sf::Vector2u imageCount, float switchTime, sf::
 	this->checkDia = false;
 	this->nubTime = 0;
 	this->twoTime = 0;
+	this->Pdia = 0;
 	Pclock = 0;
 	Pcoin = 0;
 	row = 0;
@@ -85,6 +86,7 @@ void Item::updateDiamond(float deltatime, Player player)
 
 	if (player.GetCollision().CheckCollision(this->GetCollider()))
 	{
+		this->Pdia += 1;
 		body.setPosition(-1500.0f, 500.0f); //chon laew pai yhu back bg 
 	}
 }

@@ -99,6 +99,26 @@ void Monster::updateEnermy(float deltatime)
 	body.setTextureRect(animation.uvRect);
 }
 
+void Monster::updatetitanRock(float deltatime)
+{
+	float positionX = body.getPosition().x;
+	velocity.x = 50;
+	velocity.y = 0;
+	if (positionX < this->posX)//thar pos mons < pos start hai mons move right 
+	{
+		row = 0;
+		this->face = 1;
+	}
+	else if (positionX > this->posX + 300)
+	{
+		row = 1;
+		this->face = -1;
+	}
+	body.move(this->face * velocity * deltatime);
+	animation.updateItem(row, deltatime);
+	body.setTextureRect(animation.uvRect);
+}
+
 void Monster::drawMonster(sf::RenderWindow& window)
 {
 	window.draw(body);

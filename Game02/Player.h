@@ -22,7 +22,7 @@ public:
 	void updateMonS(float deltatime, std::vector<Monster>& monsterVector);
 	void updateEnermies(float deltatime, std::vector<Monster>& enermyVector);
 	void updateFire(float deltatime, std::vector<FireItem>& fireVector);
-	void updateEnermies2(float deltatime, std::vector<Monster>& enermyVector, std::vector<Monster>& monsterVector);
+	void updateEnermies2(float deltatime, std::vector<Monster>& enermyVector, std::vector<Monster>& monsterVector,std::vector<Monster>& titanrockVector);
 	int hpHeart() { return this->hpCount; }
 private:
 	int hpCount;

@@ -193,8 +193,16 @@ void Player::updateFire(float deltatime, std::vector<FireItem>& fireVector)
     animation.updateItem(row, deltatime);
     body.setTextureRect(animation.uvRect);
 }
-void Player::updateEnermies2(float deltatime, std::vector<Monster>& enermyVector, std::vector<Monster>& monsterVector)//map 2 
+void Player::updateEnermies2(float deltatime, std::vector<Monster>& enermyVector, std::vector<Monster>& monsterVector,std::vector<Monster>& titanrockVector)//map 2 
 {
+    for (int i = 0; i < titanrockVector.size(); i++)
+    {
+        if (this->GetCollision().CheckCollision(titanrockVector[i].GetCollider()))
+        {
+            this->hpCount++;
+            body.setPosition(600.0f, 1400.0f);
+        }
+    }
     for (int i = 0; i < monsterVector.size(); i++)
     {
         if (this->GetCollision().CheckCollision(monsterVector[i].GetCollider()))

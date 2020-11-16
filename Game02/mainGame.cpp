@@ -83,6 +83,8 @@ int main()
 	Coin.setOutlineColor(sf::Color(128, 128, 128));
 	Coin.setOutlineThickness(1.0f);
 
+	int countDimond = 0;
+
 	int countClock = 0;
 	sf::Text Clocke ;
 	Clocke.setCharacterSize(50);
@@ -206,7 +208,7 @@ int main()
 	diaVector.push_back(Item(&diamond, sf::Vector2u(3, 1), 0.15f, sf::Vector2f(30.0f, 30.0f), 155.0f, 58.0f));
 	diaVector.push_back(Item(&diamond, sf::Vector2u(3, 1), 0.15f, sf::Vector2f(30.0f, 30.0f), 160.0f, 58.0f));
 	diaVector.push_back(Item(&diamond, sf::Vector2u(3, 1), 0.15f, sf::Vector2f(30.0f, 30.0f), 165.0f, 58.0f));
-	diaVector.push_back(Item(&diamond, sf::Vector2u(3, 1), 0.15f, sf::Vector2f(30.0f, 30.0f), 170.0f, 58.0f)); /**/
+	diaVector.push_back(Item(&diamond, sf::Vector2u(3, 1), 0.15f, sf::Vector2f(30.0f, 30.0f), 170.0f, 58.0f)); 
 
 	diaVector.push_back(Item(&diamond, sf::Vector2u(3, 1), 0.15f, sf::Vector2f(30.0f, 30.0f), 500.0f, 500.0f));
 	diaVector.push_back(Item(&diamond, sf::Vector2u(3, 1), 0.15f, sf::Vector2f(30.0f, 30.0f), 550.0f, 550.0f));
@@ -216,10 +218,10 @@ int main()
 
 	//Firepoint 
 	sf::Texture FirePoint;
-	FirePoint.loadFromFile("Textures/Fireball.png");
+	FirePoint.loadFromFile("Textures/Firepoint3.png");
 	std::vector<FireItem>fireVector;//ใช้เวกเตอร์เพราะมีหลายไอเท็ม
-	fireVector.push_back(FireItem(&FirePoint, sf::Vector2u(4, 1), 0.30, 581.0f, 169.0f));
-	fireVector.push_back(FireItem(&FirePoint, sf::Vector2u(4, 1), 0.30, 707.0f, 169.0f));
+	fireVector.push_back(FireItem(&FirePoint, sf::Vector2u(4, 1), 0.30, sf::Vector2f(32.0f, 192.0f), 555.0f, 406.0f));
+	fireVector.push_back(FireItem(&FirePoint, sf::Vector2u(4, 1), 0.30, sf::Vector2f(32.0f, 192.0f), 690.0f, 406.0f));
 
 	//Monster
 	sf::Texture monsterSlim;
@@ -234,6 +236,8 @@ int main()
 	enermyS.loadFromFile("Textures/monsterS.png");
 	sf::Texture wormE;
 	wormE.loadFromFile("Textures/worm.png");
+	sf::Texture titanRock;
+	titanRock.loadFromFile("Textures/titanRock.png");
 
 	std::vector<Monster>monsterVector;
 	monsterVector.push_back(Monster(&monsterSlim, sf::Vector2u(13, 2), 0.20f, sf::Vector2f(52.0f, 50.0f), 188.0f, 711.0f));
@@ -260,12 +264,15 @@ int main()
 	std::vector<Monster>enermyVector;
 	enermyVector.push_back(Monster(&enermyP, sf::Vector2u(3, 2), 0.30, sf::Vector2f(62.0f, 60.0f), 325.0f, 897.0f));
 	enermyVector.push_back(Monster(&enermyP, sf::Vector2u(3, 2), 0.30, sf::Vector2f(62.0f, 60.0f), 910.0f, 678.0f));
+	enermyVector.push_back(Monster(&enermyP, sf::Vector2u(3, 2), 0.30, sf::Vector2f(62.0f, 60.0f), 706.0f, 524.0f));
 
 	enermyVector.push_back(Monster(&enermyS, sf::Vector2u(3, 2), 0.30, sf::Vector2f(62.0f, 60.0f), 268.0f, 417.0f));
 	enermyVector.push_back(Monster(&enermyS, sf::Vector2u(3, 2), 0.30, sf::Vector2f(62.0f, 60.0f), 70.0f, 940.0f));
 	enermyVector.push_back(Monster(&enermyS, sf::Vector2u(3, 2), 0.30, sf::Vector2f(62.0f, 60.0f), 55.0f, 401.0f));
 	enermyVector.push_back(Monster(&enermyS, sf::Vector2u(3, 2), 0.30, sf::Vector2f(62.0f, 60.0f), 800.0f, 1900.0f));
 
+	std::vector<Monster>titanrockVector;
+	titanrockVector.push_back(Monster(&titanRock, sf::Vector2u(6, 2), 0.30, sf::Vector2f(92.0f, 90.0f), 85.0f, 1941.0f));
 
 	//Icon
 	sf::RectangleShape iconTimer(sf::Vector2f(355.0f, 126.0f));
@@ -397,7 +404,7 @@ int main()
 	Platform platform112(nullptr, sf::Vector2f(69.0f, 32.0f), sf::Vector2f(35.0f, 1764.0f));
 	Platform platform113(nullptr, sf::Vector2f(116.0f, 43.0f), sf::Vector2f(102.0f, 1811.99f));
 	Platform platform114(nullptr, sf::Vector2f(288.0f, 39.0f), sf::Vector2f(179.0f, 1434.0f));
-	Platform platform115(nullptr, sf::Vector2f(67.0f, 23.0f), sf::Vector2f(205.0f, 1505.0f));
+	Platform platform115(nullptr, sf::Vector2f(40.0f, 5.0f), sf::Vector2f(205.0f, 1490.0f));
 	Platform platform116(nullptr, sf::Vector2f(32.0f, 23.0f), sf::Vector2f(271.0f, 1601.99f));
 	Platform platform117(nullptr, sf::Vector2f(121.0f, 33.0f), sf::Vector2f(101.0f, 1521.99));
 	Platform platform118(nullptr, sf::Vector2f(134.0f, 36.0f), sf::Vector2f(86.0f, 1644.99f));
@@ -442,12 +449,13 @@ int main()
 	titleSound.openFromFile("Textures/soundBGM.wav");
 	titleSound.setVolume(30.0f);
 	titleSound.setLoop(true);
-	titleSound.play();
+	//titleSound.play();
 
 	bool drawDia = false;
 	bool checkMap = false;
 	int numofCycle = 0;
 	int u = 0;
+
 	while (window.isOpen())
 	{
 
@@ -510,14 +518,10 @@ int main()
 				drawDia = true;
 			}
 		}
-		/*if (u == 3)
+		for (int i = 0; i < titanrockVector.size(); i++)
 		{
-			for (int j = 0; j < diaVector.size(); j++)
-			{
-				diaVector[j].drawItem(window);
-				std::cout << "Diamond JA E HEER  ";
-			}
-		}*/
+			titanrockVector[i].drawMonster(window);
+		}
 		player.Draw(window);
 		window.draw(iconTimer);
 		window.draw(iconCoin);
@@ -538,7 +542,7 @@ int main()
 		}
 
 		point.str(" ");
-		point << "  " << countCoin;
+		point << "  " << countCoin + countDimond;
 		Coin.setString(point.str());
 		iconCoin.setPosition({ view.getCenter().x + 350,view.getCenter().y - 360 });
 		Coin.setPosition({ view.getCenter().x + 400,view.getCenter().y - 367 });
@@ -548,6 +552,14 @@ int main()
 			{
 				soundCoin.play();
 				countCoin += 100;
+			}
+		}
+		for (int i = 0; i < diaVector.size(); i++)
+		{
+			if (diaVector[i].pointDiamond() == 1)
+			{
+				soundCoin.play();
+				countDimond += 500;
 			}
 		}
 		point.str(" ");
@@ -583,7 +595,7 @@ int main()
 		platform13.Draw(window);
 		platform.Draw(window);
 		platform49.Draw(window);
-		platform48.Draw(window);
+		platform115.Draw(window);
 */
 
 		window.setView(view);
@@ -764,11 +776,11 @@ int main()
 		}
 		if (checkMap == true)
 		{			
-			player.updateEnermies2(deltaTime, enermyVector, monsterVector);
+			player.updateEnermies2(deltaTime, enermyVector, monsterVector, titanrockVector);
 		
 		}
 		
-		//player.updateFire(deltaTime, fireVector);
+		player.updateFire(deltaTime, fireVector);
 
 		//Itemupdate
 		for (int i = 0; i < coinVector.size(); i++)
@@ -811,6 +823,10 @@ int main()
 		for (int i = 0; i < fireVector.size(); i++)
 		{
 			fireVector[i].updateItemFire(deltaTime);
+		}
+		for (int i = 0; i < titanrockVector.size(); i++)
+		{
+			titanrockVector[i].updatetitanRock(deltaTime);
 		}
 
 		

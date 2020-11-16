@@ -28,6 +28,14 @@ public:
 			return 1;
 		}
 	}
+	int pointDiamond()
+	{
+		if (Pdia == 1)
+		{
+			Pdia--;
+			return 1;
+		}
+	}
 	void chestHit(float deltatime, Player player);
 	bool drawDia() { return this->checkDia; }
 	void updateDiamond(float deltatime, Player player);
@@ -39,6 +47,7 @@ private:
 	bool checkDia;
 	float nubTime;
 	float twoTime;
+	int Pdia;
 	int Pclock;
 	int Pcoin;
 	int row;
