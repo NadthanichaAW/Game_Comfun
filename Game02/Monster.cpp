@@ -102,7 +102,7 @@ void Monster::updateEnermy(float deltatime)
 void Monster::updatetitanRock(float deltatime)
 {
 	float positionX = body.getPosition().x;
-	velocity.x = 50;
+	velocity.x = 55;
 	velocity.y = 0;
 	if (positionX < this->posX)//thar pos mons < pos start hai mons move right 
 	{
@@ -110,6 +110,46 @@ void Monster::updatetitanRock(float deltatime)
 		this->face = 1;
 	}
 	else if (positionX > this->posX + 300)
+	{
+		row = 1;
+		this->face = -1;
+	}
+	body.move(this->face * velocity * deltatime);
+	animation.updateItem(row, deltatime);
+	body.setTextureRect(animation.uvRect);
+}
+
+void Monster::updateSkeleton(float deltatime)
+{
+	float positionY = body.getPosition().y;
+	velocity.x = 0;
+	velocity.y = 40;
+	if (positionY < this->posY)//thar pos mons < pos start hai mons move down
+	{
+		row = 0;
+		this->face = 1;
+	}
+	else if (positionY > this->posY + 280)
+	{
+		row = 1;
+		this->face = -1;
+	}
+	body.move(this->face * velocity * deltatime);
+	animation.updateItem(row, deltatime);
+	body.setTextureRect(animation.uvRect);
+}
+
+void Monster::updateAnimal(float deltatime)
+{
+	float positionX = body.getPosition().x;
+	velocity.x = 40;
+	velocity.y = 0;
+	if (positionX < this->posX)//thar pos mons < pos start hai mons move right 
+	{
+		row = 0;
+		this->face = 1;
+	}
+	else if (positionX > this->posX + 150)
 	{
 		row = 1;
 		this->face = -1;

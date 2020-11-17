@@ -193,8 +193,32 @@ void Player::updateFire(float deltatime, std::vector<FireItem>& fireVector)
     animation.updateItem(row, deltatime);
     body.setTextureRect(animation.uvRect);
 }
-void Player::updateEnermies2(float deltatime, std::vector<Monster>& enermyVector, std::vector<Monster>& monsterVector,std::vector<Monster>& titanrockVector)//map 2 
+void Player::updateEnermies2(float deltatime, std::vector<Monster>& enermyVector, std::vector<Monster>& monsterVector,std::vector<Monster>& titanrockVector,std::vector<Monster>& skeletonVector,std::vector<Monster>& slimPvector, std::vector<Monster>& animalVector)//map 2 
 {
+    for (int i = 0; i < slimPvector.size(); i++)
+    {
+        if (this->GetCollision().CheckCollision(slimPvector[i].GetCollider()))
+        {
+            this->hpCount++;
+            body.setPosition(600.0f, 1400.0f);
+        }
+    }
+    for (int i = 0; i < animalVector.size(); i++)
+    {
+        if (this->GetCollision().CheckCollision(animalVector[i].GetCollider()))
+        {
+            this->hpCount++;
+            body.setPosition(600.0f, 1400.0f);
+        }
+    }
+    for (int i = 0; i < skeletonVector.size(); i++)
+    {
+        if (this->GetCollision().CheckCollision(skeletonVector[i].GetCollider()))
+        {
+            this->hpCount++;
+            body.setPosition(600.0f, 1400.0f);
+        }
+    }
     for (int i = 0; i < titanrockVector.size(); i++)
     {
         if (this->GetCollision().CheckCollision(titanrockVector[i].GetCollider()))

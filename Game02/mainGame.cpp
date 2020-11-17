@@ -66,7 +66,7 @@ int main()
 	window.setFramerateLimit(50);
 
 	//Animation
-	Player player(&playerTexture, sf::Vector2u(3, 8), 0.9f, 150.0f);
+	Player player(&playerTexture, sf::Vector2u(3, 8), 0.95f, 150.0f);
 	float deltaTime = 0.0f;
 	sf::Clock clock;
 
@@ -238,19 +238,34 @@ int main()
 	wormE.loadFromFile("Textures/worm.png");
 	sf::Texture titanRock;
 	titanRock.loadFromFile("Textures/titanRock.png");
+	sf::Texture pumkinHuman;
+	pumkinHuman.loadFromFile("Textures/PumkinHuman.png");
+	sf::Texture skeletonBlack;
+	skeletonBlack.loadFromFile("Textures/monsterSkeB.png");
+	sf::Texture slimGreen;
+	slimGreen.loadFromFile("Textures/slimGreen.png");
+	sf::Texture rockMons;
+	rockMons.loadFromFile("Textures/rock.png");
+	sf::Texture snailMons;
+	snailMons.loadFromFile("Textures/snail.png");
+	sf::Texture turtleMons;
+	turtleMons.loadFromFile("Textures/turtle.png");
 
 	std::vector<Monster>monsterVector;
 	monsterVector.push_back(Monster(&monsterSlim, sf::Vector2u(13, 2), 0.20f, sf::Vector2f(52.0f, 50.0f), 188.0f, 711.0f));
 	monsterVector.push_back(Monster(&monsterSlim, sf::Vector2u(13, 2), 0.20f, sf::Vector2f(52.0f, 50.0f), 886.0f, 580.0f));
 	monsterVector.push_back(Monster(&monsterSlim, sf::Vector2u(13, 2), 0.20f, sf::Vector2f(52.0f, 50.0f), 492.0f, 850.0f));
-	monsterVector.push_back(Monster(&monsterSlim, sf::Vector2u(13, 2), 0.20f, sf::Vector2f(52.0f, 50.0f), 500.0f, 1600.0f));
-
+	
+	monsterVector.push_back(Monster(&monsterSlim, sf::Vector2u(13, 2), 0.20f, sf::Vector2f(52.0f, 50.0f), 195.0f, 2159.0f));
+	monsterVector.push_back(Monster(&monsterSlim, sf::Vector2u(13, 2), 0.20f, sf::Vector2f(52.0f, 50.0f), 80.0f, 2583.0f));
+	monsterVector.push_back(Monster(&rockMons, sf::Vector2u(14, 2), 0.20f, sf::Vector2f(52.0f, 50.0f), 789.0f, 1475.0f));
+	monsterVector.push_back(Monster(&rockMons, sf::Vector2u(14, 2), 0.20f, sf::Vector2f(52.0f, 50.0f), 975.99f, 1937.0f));
+	monsterVector.push_back(Monster(&rockMons, sf::Vector2u(14, 2), 0.20f, sf::Vector2f(52.0f, 50.0f), 581.00f, 1838.0f));
+	
 	monsterVector.push_back(Monster(&wormE, sf::Vector2u(3, 2), 0.20f, sf::Vector2f(52.0f, 50.0f), 95.0f, 380.0f));
 	monsterVector.push_back(Monster(&wormE, sf::Vector2u(3, 2), 0.20f, sf::Vector2f(52.0f, 50.0f), 929.0f, 1125.0f));
 	monsterVector.push_back(Monster(&wormE, sf::Vector2u(3, 2), 0.20f, sf::Vector2f(52.0f, 50.0f), 898.0f, 384.0f));
-
 	
-
 	std::vector<Monster>monsterFVector;
 	monsterFVector.push_back(Monster(&monstersFire, sf::Vector2u(7, 1), 0.30f, sf::Vector2f(52.0f, 50.0f), 928.0f, 255.0f));
 
@@ -259,7 +274,11 @@ int main()
 	slimPvector.push_back(Monster(&slimPurple, sf::Vector2u(7, 2), 0.20, sf::Vector2f(52.0f, 50.0f), 95.0f, (rand() % 80 + 596)));
 	slimPvector.push_back(Monster(&slimPurple, sf::Vector2u(7, 2), 0.20, sf::Vector2f(52.0f, 50.0f), 93.0f, (rand() % 80 + 944)));
 	slimPvector.push_back(Monster(&slimPurple, sf::Vector2u(7, 2), 0.20, sf::Vector2f(52.0f, 50.0f), 911.0f, 920.0f));
-	//slimPvector.push_back(Monster(&slimPurple, sf::Vector2u(7, 2), 0.20, sf::Vector2f(52.0f, 50.0f), 500.0f, (rand() % 170 + 500)));
+	
+	
+	slimPvector.push_back(Monster(&slimGreen, sf::Vector2u(10, 2), 0.20f, sf::Vector2f(52.0f, 50.0f), 209.0f, 1811.0f));
+	slimPvector.push_back(Monster(&slimGreen, sf::Vector2u(10, 2), 0.20f, sf::Vector2f(52.0f, 50.0f), 664.0f, 2061.0f));
+	slimPvector.push_back(Monster(&slimGreen, sf::Vector2u(10, 2), 0.20f, sf::Vector2f(52.0f, 50.0f), 550.0f, 1535.0f));
 
 	std::vector<Monster>enermyVector;
 	enermyVector.push_back(Monster(&enermyP, sf::Vector2u(3, 2), 0.30, sf::Vector2f(62.0f, 60.0f), 325.0f, 897.0f));
@@ -271,9 +290,26 @@ int main()
 	enermyVector.push_back(Monster(&enermyS, sf::Vector2u(3, 2), 0.30, sf::Vector2f(62.0f, 60.0f), 55.0f, 401.0f));
 	enermyVector.push_back(Monster(&enermyS, sf::Vector2u(3, 2), 0.30, sf::Vector2f(62.0f, 60.0f), 800.0f, 1900.0f));
 
-	std::vector<Monster>titanrockVector;
-	titanrockVector.push_back(Monster(&titanRock, sf::Vector2u(6, 2), 0.30, sf::Vector2f(92.0f, 90.0f), 85.0f, 1941.0f));
+	
+	std::vector<Monster>skeletonVector;
+	skeletonVector.push_back(Monster(&pumkinHuman, sf::Vector2u(3, 2), 0.30, sf::Vector2f(62.0f, 60.0f), 477.0f, 1851.0f));
+	skeletonVector.push_back(Monster(&pumkinHuman, sf::Vector2u(3, 2), 0.30, sf::Vector2f(62.0f, 60.0f), 1180.0f, 1945.0f));
 
+	skeletonVector.push_back(Monster(&skeletonBlack, sf::Vector2u(3, 2), 0.30, sf::Vector2f(62.0f, 60.0f), 208.0f, 1997.0f));
+	skeletonVector.push_back(Monster(&skeletonBlack, sf::Vector2u(3, 2), 0.30, sf::Vector2f(62.0f, 60.0f), 955.0f, 1655.0f));
+
+
+	std::vector<Monster>titanrockVector;
+	titanrockVector.push_back(Monster(&titanRock, sf::Vector2u(6, 2), 0.30, sf::Vector2f(102.0f, 100.0f), 85.0f, 1941.0f));
+	titanrockVector.push_back(Monster(&titanRock, sf::Vector2u(6, 2), 0.30, sf::Vector2f(102.0f, 100.0f), 913.0f, 2530.0f));
+
+	std::vector<Monster>animalVector;
+	animalVector.push_back(Monster(&snailMons, sf::Vector2u(10, 2), 0.30, sf::Vector2f(62.0f, 60.0f), 74.0f, 1585.0f));
+	animalVector.push_back(Monster(&snailMons, sf::Vector2u(10, 2), 0.30, sf::Vector2f(62.0f, 60.0f), 965.0f, 2008.0f));
+	
+	animalVector.push_back(Monster(&turtleMons, sf::Vector2u(8, 2), 0.30, sf::Vector2f(62.0f, 60.0f), 914.0f, 1546.0f));
+	animalVector.push_back(Monster(&turtleMons, sf::Vector2u(8, 2), 0.30, sf::Vector2f(62.0f, 60.0f), 238.0f, 2056.0f));
+	
 	//Icon
 	sf::RectangleShape iconTimer(sf::Vector2f(355.0f, 126.0f));
 	sf::Texture guiTimer;
@@ -293,7 +329,6 @@ int main()
 	Platform platform2(nullptr, sf::Vector2f(1248.0f, 50.0f), sf::Vector2f(624.0f, -25.0f));//top
 	Platform platform3(nullptr, sf::Vector2f(1248.0f, 50.0f), sf::Vector2f(624.0f, 1354.0f));//down 1329+25
 	Platform platform4(nullptr, sf::Vector2f(50.0f, 2658.0f), sf::Vector2f(1243.0f, 1329.0f));//right 1248+25
-	
 	Platform platform5(nullptr, sf::Vector2f(45.0f, 35.0f), sf::Vector2f(210.0f, 180.0f));
 	Platform platform6(nullptr, sf::Vector2f(45.0f, 35.0f), sf::Vector2f(85.0f, 180.0f));
 	Platform platform7(nullptr, sf::Vector2f(5.0f, 5.0f), sf::Vector2f(60.0f, 130.0f));
@@ -366,7 +401,7 @@ int main()
 	Platform platform74(nullptr, sf::Vector2f(208.0f, 34.0f), sf::Vector2f(128.0f, 9.0f));
 	Platform platform75(nullptr, sf::Vector2f(1248.0f, 20.0f), sf::Vector2f(624.0f, 2660.0f));//down map2	
 	Platform platform76(nullptr, sf::Vector2f(233.0f, 147.0f), sf::Vector2f(1131.0f, 1701.0f));
-	Platform platform77(nullptr, sf::Vector2f(216.0f, 147.0f), sf::Vector2f(790.99f, 1701.0f));
+	Platform platform77(nullptr, sf::Vector2f(216.0f, 135.0f), sf::Vector2f(790.99f, 1701.0f));
 	Platform platform78(nullptr, sf::Vector2f(33.0f, 14.0f), sf::Vector2f(1187.0f, 1551.0f));
 	Platform platform79(nullptr, sf::Vector2f(74.0f, 14.0f), sf::Vector2f(1164.0f, 1465.0f));
 	Platform platform80(nullptr, sf::Vector2f(500.0f, 14.0f), sf::Vector2f(998.0f, 1425.0f));
@@ -449,10 +484,20 @@ int main()
 	titleSound.openFromFile("Textures/soundBGM.wav");
 	titleSound.setVolume(30.0f);
 	titleSound.setLoop(true);
-	//titleSound.play();
+	titleSound.play();
+
+	sf::Music bonustimeSound;
+	bonustimeSound.openFromFile("Textures/bonustime.wav");
+	bonustimeSound.setVolume(30.0f);
+	bonustimeSound.setLoop(true);
+	
+	//----------------------------TIME---------------
+	sf::Clock nubClock;
+
 
 	bool drawDia = false;
 	bool checkMap = false;
+	bool checkMap2 = false;
 	int numofCycle = 0;
 	int u = 0;
 
@@ -480,6 +525,10 @@ int main()
 		{
 			fireVector[i].drawItemFire(window);
 		}
+		for (int i = 0; i < enermyVector.size(); i++)
+		{
+			enermyVector[i].drawMonster(window);
+		}
 		for (int i = 0; i < monsterFVector.size(); i++)
 		{
 			monsterFVector[i].drawMonster(window);
@@ -492,10 +541,7 @@ int main()
 		{
 			monsterVector[i].drawMonster(window);
 		}
-		for (int i = 0; i < enermyVector.size(); i++)
-		{
-			enermyVector[i].drawMonster(window);
-		}		
+		
 		for (int i = 0; i < ChestVector.size(); i++)
 		{
 			ChestVector[i].drawItem(window);
@@ -521,6 +567,14 @@ int main()
 		for (int i = 0; i < titanrockVector.size(); i++)
 		{
 			titanrockVector[i].drawMonster(window);
+		}
+		for (int i = 0; i < skeletonVector.size(); i++)
+		{
+			skeletonVector[i].drawMonster(window);
+		}
+		for (int i = 0; i < animalVector.size(); i++)
+		{
+			animalVector[i].drawMonster(window);
 		}
 		player.Draw(window);
 		window.draw(iconTimer);
@@ -563,7 +617,19 @@ int main()
 			}
 		}
 		point.str(" ");
-		point << "  " << countClock;
+		
+		if (checkMap2==false)
+		{
+			point << "  " << countClock;
+		}
+		if (checkMap2 == true)
+		{			
+			point << "  " << countClock - int(nubClock.getElapsedTime().asSeconds());
+			if (countClock - int(nubClock.getElapsedTime().asSeconds())==0)
+			{
+				window.close();
+			}
+		}
 		Clocke.setString(point.str());
 		iconTimer.setPosition({ view.getCenter().x + 150,view.getCenter().y - 360 });
 		Clocke.setPosition({ view.getCenter().x + 200,view.getCenter().y - 367 });
@@ -571,6 +637,7 @@ int main()
 		{
 			if (ClockVector[i].pointClocks() == 1)
 			{
+				
 				soundCoin.play();
 				countClock += 10;
 			}
@@ -594,8 +661,8 @@ int main()
 		platform12.Draw(window);
 		platform13.Draw(window);
 		platform.Draw(window);
-		platform49.Draw(window);
-		platform115.Draw(window);
+		platform80.Draw(window);
+		platform77.Draw(window);
 */
 
 		window.setView(view);
@@ -719,6 +786,10 @@ int main()
 		//warp to bg3
 		if ((player.GetPosition().x > 580 && player.GetPosition().x < 660) && player.GetPosition().y >= 2520 && player.GetPosition().y <= 2550)
 		{
+			nubClock.restart();
+			checkMap2 = true;
+			titleSound.stop();
+			bonustimeSound.play();	
 			u = 2;
 			player.SetPosition(625, 3136);
 		}if (u == 2)
@@ -767,7 +838,7 @@ int main()
 			}
 		}
 		player.Update(deltaTime);
-		if (checkMap == false)
+		/*if (checkMap == false)
 		{		
 			player.updateSlimFire(deltaTime, monsterFVector);
 			player.updateSlimP(deltaTime, slimPvector);
@@ -776,9 +847,10 @@ int main()
 		}
 		if (checkMap == true)
 		{			
-			player.updateEnermies2(deltaTime, enermyVector, monsterVector, titanrockVector);
+			player.updateEnermies2(deltaTime, enermyVector, monsterVector, titanrockVector,skeletonVector,slimPvector,animalVector);
 		
 		}
+		*/
 		
 		player.updateFire(deltaTime, fireVector);
 
@@ -827,6 +899,14 @@ int main()
 		for (int i = 0; i < titanrockVector.size(); i++)
 		{
 			titanrockVector[i].updatetitanRock(deltaTime);
+		}
+		for (int i = 0; i < skeletonVector.size(); i++)
+		{
+			skeletonVector[i].updateSkeleton(deltaTime);
+		}
+		for (int i = 0; i < animalVector.size(); i++)
+		{
+			animalVector[i].updateAnimal(deltaTime);
 		}
 
 		

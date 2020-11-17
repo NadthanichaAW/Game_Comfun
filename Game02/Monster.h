@@ -13,6 +13,8 @@ public:
 	void updateXMons(float deltatime);
 	void updateEnermy(float deltatime);
 	void updatetitanRock(float deltatime);
+	void updateSkeleton(float deltatime);
+	void updateAnimal(float deltatime);
 	void drawMonster(sf::RenderWindow& window);
 	
 
