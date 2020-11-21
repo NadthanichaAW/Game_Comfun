@@ -66,11 +66,11 @@ int main()
 	window.setFramerateLimit(50);
 
 	//Animation
-	Player player(&playerTexture, sf::Vector2u(3, 8), 0.95f, 150.0f);
+	Player player(&playerTexture, sf::Vector2u(3, 8), 0.95f, 400.0f);
 	float deltaTime = 0.0f;
 	sf::Clock clock;
 
-	//Point
+	//Point - font
 	int countCoin = 0;
 	sf::Font font;
 	font.loadFromFile("Textures/4Bit.ttf");
@@ -84,8 +84,8 @@ int main()
 	Coin.setOutlineThickness(1.0f);
 
 	int countDimond = 0;
-
 	int countClock = 0;
+	
 	sf::Text Clocke ;
 	Clocke.setCharacterSize(50);
 	Clocke.setString(point.str());
@@ -93,6 +93,34 @@ int main()
 	Clocke.setFillColor(sf::Color::White);
 	Clocke.setOutlineColor(sf::Color(128, 128, 128));
 	Clocke.setOutlineThickness(1.0f);
+
+	//Score
+	sf::Font fontScore;
+	fontScore.loadFromFile("Textures/XPLOR.ttf");
+	std::ostringstream highscore;
+	sf::Text youreScore;
+	youreScore.setFont(fontScore);
+	youreScore.setString(highscore.str());
+	youreScore.setCharacterSize(50);
+	youreScore.setFillColor(sf::Color(168, 11, 14));
+
+	sf::RectangleShape score1(sf::Vector2f(1080.0f, 720.0f));
+	sf::RectangleShape score2(sf::Vector2f(1080.0f, 720.0f));
+	sf::RectangleShape score3(sf::Vector2f(1080.0f, 720.0f));
+	sf::RectangleShape score4(sf::Vector2f(1080.0f, 720.0f));
+	sf::Texture picScore1;
+	picScore1.loadFromFile("Textures/score1.png");
+	sf::Texture picScore2;
+	picScore2.loadFromFile("Textures/score2.png");
+	sf::Texture picScore3;
+	picScore3.loadFromFile("Textures/score3.png");
+	sf::Texture picScore4;
+	picScore4.loadFromFile("Textures/score4.png");
+	score1.setTexture(&picScore1);
+	score2.setTexture(&picScore2);
+	score3.setTexture(&picScore3);
+	score4.setTexture(&picScore4);
+
 
 	//Item
 	sf::Texture coin;
@@ -518,11 +546,12 @@ int main()
 	
 	//----------------------------TIME---------------
 	sf::Clock nubClock;
-	int clock01 = 20;
 
+	bool endGame = false;
 	bool drawDia = false;
 	bool checkMap = false;
 	bool checkMap2 = false;
+	int bonusScore = 0;
 	int numofCycle = 0;
 	int u = 0;
 
@@ -531,7 +560,10 @@ int main()
 
 		deltaTime = clock.restart().asSeconds();
 		sf::Vector2f pos = player.GetPosition();
-		std::cout << pos.x << ' ' << pos.y << '\n';
+		//std::cout << pos.x << ' ' << pos.y << '\n';
+		sf::Vector2f mouesPosition = sf::Vector2f(0.0f, 0.0f);
+		mouesPosition = window.mapPixelToCoords(sf::Mouse::getPosition(window));
+		std::cout << sf::Mouse::getPosition(window).x << " " << sf::Mouse::getPosition(window).y << std::endl;
 		window.draw(bg);
 		window.draw(bg2);
 		window.draw(bg3);
@@ -645,16 +677,53 @@ int main()
 		
 		if (checkMap2==false)
 		{
-			point << "  " << clock01;
+			point << "  " << countClock;
 		}
 		if (checkMap2 == true)
-		{			
-			point << "  " << clock01 - int(nubClock.getElapsedTime().asSeconds());
-			if (clock01 - int(nubClock.getElapsedTime().asSeconds())==0)
+		{	
+			bonusScore = countClock - int(nubClock.getElapsedTime().asSeconds());
+			point << "  " << bonusScore;
+			if (countClock - int(nubClock.getElapsedTime().asSeconds())==0)
 			{
-				window.close();
+				endGame = true;				
 			}
+		
 		}
+		//------------------------endscore------------------------------------------
+		if (endGame == true)
+		{
+			nubClock.restart();
+			countClock = 0;
+			highscore.str(" ");			
+			highscore << "  " << countCoin + countDimond;
+			youreScore.setString(highscore.str());
+			window.draw(score1);
+			
+			if (sf::Mouse::getPosition(window).x >= 444 && sf::Mouse::getPosition(window).y >= 574 &&sf::Mouse::getPosition(window).x <= 495 && sf::Mouse::getPosition(window).y <= 620)
+			{	
+				window.draw(score2);
+			}
+			if (sf::Mouse::getPosition(window).x >= 512 && sf::Mouse::getPosition(window).y >= 574 && sf::Mouse::getPosition(window).x <= 564 && sf::Mouse::getPosition(window).y <= 620)
+			{
+				window.draw(score3);
+			}
+			if (sf::Mouse::getPosition(window).x >= 583 && sf::Mouse::getPosition(window).y >= 574 && sf::Mouse::getPosition(window).x <= 636 && sf::Mouse::getPosition(window).y <= 620)
+			{
+				window.draw(score4);
+				if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
+				{
+					window.close();
+					break;
+				}
+			}
+			window.draw(youreScore);
+			youreScore.setPosition({ view.getCenter().x - 105,view.getCenter().y + 115});
+			score1.setPosition({ view.getCenter().x - 540,view.getCenter().y - 360 });
+			score2.setPosition({ view.getCenter().x - 540,view.getCenter().y - 360 });
+			score3.setPosition({ view.getCenter().x - 540,view.getCenter().y - 360 });
+			score4.setPosition({ view.getCenter().x - 540,view.getCenter().y - 360 });
+		}
+		
 		Clocke.setString(point.str());
 		iconTimer.setPosition({ view.getCenter().x + 150,view.getCenter().y - 360 });
 		Clocke.setPosition({ view.getCenter().x + 200,view.getCenter().y - 367 });
@@ -877,7 +946,7 @@ int main()
 		}
 		*/
 		
-		player.updateFire(deltaTime, fireVector);
+		//player.updateFire(deltaTime, fireVector);
 
 		//Itemupdate
 		for (int i = 0; i < coinVector.size(); i++)
