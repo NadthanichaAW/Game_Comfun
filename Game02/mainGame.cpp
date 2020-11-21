@@ -94,7 +94,7 @@ int main()
 	Clocke.setOutlineColor(sf::Color(128, 128, 128));
 	Clocke.setOutlineThickness(1.0f);
 
-	//Score
+	//----------------------Score-------------------------------------------------
 	sf::Font fontScore;
 	fontScore.loadFromFile("Textures/XPLOR.ttf");
 	std::ostringstream highscore;
@@ -103,7 +103,6 @@ int main()
 	youreScore.setString(highscore.str());
 	youreScore.setCharacterSize(50);
 	youreScore.setFillColor(sf::Color(168, 11, 14));
-
 	sf::RectangleShape score1(sf::Vector2f(1080.0f, 720.0f));
 	sf::RectangleShape score2(sf::Vector2f(1080.0f, 720.0f));
 	sf::RectangleShape score3(sf::Vector2f(1080.0f, 720.0f));
@@ -120,8 +119,24 @@ int main()
 	score2.setTexture(&picScore2);
 	score3.setTexture(&picScore3);
 	score4.setTexture(&picScore4);
-
-
+	
+	//----------------------keyname-----------------------------------------
+	sf::String playerInput;
+	std::ofstream fileWriter;
+	std::ostringstream keyname;
+	sf::Text keyName;
+	keyName.setCharacterSize(50);
+	keyName.setString(" ");
+	keyName.setFont(font);
+	keyName.setFillColor(sf::Color(168, 11, 14));
+	sf::Text text("", font);//mail thee pull ma 
+	keyName.setPosition(300, 500);
+	text.setFillColor(sf::Color(168,11,14));
+	text.setPosition(545, 535);
+	std::map<int, std::string> keepscore;
+	std::ifstream fileReader;
+	std::string word;
+	
 	//Item
 	sf::Texture coin;
 	coin.loadFromFile("Textures/coin.png");
@@ -716,6 +731,36 @@ int main()
 					break;
 				}
 			}
+			sf::Text text1("", fontScore);
+			text1.setCharacterSize(45);
+			text1.setFillColor(sf::Color::White);
+			fileReader.open("Textures/name.txt");
+			do {
+				fileReader >> word;
+				std::string first_token = word.substr(0, word.find(','));
+				int second_token = std::stoi(word.substr(word.find(',') + 1, word.length()));
+				keepscore[second_token] = first_token;
+			} while (fileReader.good());
+			fileReader.close();
+			std::map<int, std::string>::iterator end = keepscore.end();
+			std::map<int, std::string>::iterator beg = keepscore.begin();
+			end--;
+			beg--;
+			int currentDisplay = 0;//new line 
+			for (std::map<int, std::string>::iterator it = end; it != beg; it--) 
+			{
+				text1.setString(it->second);
+				text1.setPosition(view.getCenter().x - 35, view.getCenter().y - 5);//back newline
+				window.draw(text1);
+				/*text1.setString(std::to_string(it->first));
+				text1.setPosition(view.getCenter().x + 95, view.getCenter().y - 210 + 80 * currentDisplay);
+				window.draw(text1);*/
+				currentDisplay++;
+				if (currentDisplay == 5)
+				{
+					break;
+				}
+			}
 			window.draw(youreScore);
 			youreScore.setPosition({ view.getCenter().x - 105,view.getCenter().y + 115});
 			score1.setPosition({ view.getCenter().x - 540,view.getCenter().y - 360 });
@@ -931,7 +976,10 @@ int main()
 				}
 			}
 		}
-		player.Update(deltaTime);
+		if(endGame == false)
+		{
+			player.Update(deltaTime);
+		}
 		/*if (checkMap == false)
 		{		
 			player.updateSlimFire(deltaTime, monsterFVector);
