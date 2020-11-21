@@ -181,10 +181,35 @@ int main()
 	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 116.0f, 1215.0f));
 	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 166.0f, 1215.0f));
 	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 216.0f, 1215.0f));
-	/*coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 725.0f, 382.0f));
-	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 725.0f, 382.0f));
-	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 725.0f, 680.0f));
-	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, 725.0f, 680.0f));*/
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 675.0f, 1522.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 725.0f, 1522.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 775.0f, 1522.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 825.0f, 1522.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 875.0f, 1522.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 925.0f, 1522.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 975.0f, 1522.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 1025.0f, 1522.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 1075.0f, 1522.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 780.0f, 1582.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 830.0f, 1582.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 880.0f, 1582.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 930.0f, 1582.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 980.0f, 1582.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 1030.0f, 1582.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 1080.0f, 1582.0f));
+	/*coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 216.0f, 1215.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 216.0f, 1215.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 216.0f, 1215.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 216.0f, 1215.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 216.0f, 1215.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 216.0f, 1215.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 216.0f, 1215.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 216.0f, 1215.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 216.0f, 1215.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 216.0f, 1215.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 216.0f, 1215.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 216.0f, 1215.0f));
+	*/
 
 	//---------------------------clock----------------------------------------------
 	std::vector<Item>ClockVector;
@@ -493,7 +518,7 @@ int main()
 	
 	//----------------------------TIME---------------
 	sf::Clock nubClock;
-
+	int clock01 = 20;
 
 	bool drawDia = false;
 	bool checkMap = false;
@@ -620,12 +645,12 @@ int main()
 		
 		if (checkMap2==false)
 		{
-			point << "  " << countClock;
+			point << "  " << clock01;
 		}
 		if (checkMap2 == true)
 		{			
-			point << "  " << countClock - int(nubClock.getElapsedTime().asSeconds());
-			if (countClock - int(nubClock.getElapsedTime().asSeconds())==0)
+			point << "  " << clock01 - int(nubClock.getElapsedTime().asSeconds());
+			if (clock01 - int(nubClock.getElapsedTime().asSeconds())==0)
 			{
 				window.close();
 			}

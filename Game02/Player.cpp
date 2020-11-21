@@ -66,20 +66,23 @@ void Player::Update(float deltaTime)
         if (faceDirection == 1)
         {
             row = 4;
+           
         }
         else if (faceDirection == 2)
         {
             row = 7;
-
+           
         }
         else if (faceDirection == 3)
         {
             row = 5;
+
         }
         else if (faceDirection == 4)
         {
-            row = 6;
+            row = 6;          
         }
+     
     }
     else
     {
@@ -105,7 +108,8 @@ void Player::Update(float deltaTime)
             {
                 faceDirection = 4;
                 row = 2;
-            }        
+            }
+       
     }  
 	animation.Update(row, deltaTime);
 	body.setTextureRect(animation.uvRect);
