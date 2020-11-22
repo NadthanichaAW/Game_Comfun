@@ -30,6 +30,15 @@ int main()
 	sf::RenderWindow window(sf::VideoMode(1080, 720), "Chivalry Girl", sf::Style::Close | sf::Style::Titlebar | sf::Style::Resize);
 	sf::View view(sf::Vector2f(0.0f, 0.0f), sf::Vector2f(VIEW_HIGHT, VIEW_WIDE));
 
+	//------------------------------------mouse---------------------------------------
+	/*window.setMouseCursorVisible(false);  // off cursor
+	sf::Cursor cursorMouse;  //pragard reak chai cursor
+	cursorMouse.loadFromSystem(sf::Cursor::Hand);//cursor pic hand
+	sf::Texture cursorText;
+	cursorText.loadFromFile("Textures/cursor.png");
+	sf::Sprite cursorSprite(cursorText);
+	cursorSprite.setScale(1.0f, 1.0f);
+	*/
 
 	//Texture
 	sf::Texture playerTexture;
@@ -100,7 +109,6 @@ int main()
 	std::ostringstream highscore;
 	sf::Text youreScore;
 	youreScore.setFont(fontScore);
-	youreScore.setString(highscore.str());
 	youreScore.setCharacterSize(50);
 	youreScore.setFillColor(sf::Color(168, 11, 14));
 	sf::RectangleShape score1(sf::Vector2f(1080.0f, 720.0f));
@@ -121,6 +129,8 @@ int main()
 	score4.setTexture(&picScore4);
 	
 	//----------------------keyname-----------------------------------------
+	sf::Font nameScore;
+	nameScore.loadFromFile("Textures/NaughtyMonster.ttf");
 	sf::String playerInput;
 	std::ofstream fileWriter;
 	std::ostringstream keyname;
@@ -559,6 +569,10 @@ int main()
 	bonustimeSound.setVolume(30.0f);
 	bonustimeSound.setLoop(true);
 	
+	sf::Music gameoverSound;
+	gameoverSound.openFromFile("Textures/gameover 8bit.wav");
+	gameoverSound.setVolume(30.0f);
+
 	//----------------------------TIME---------------
 	sf::Clock nubClock;
 
@@ -575,10 +589,12 @@ int main()
 
 		deltaTime = clock.restart().asSeconds();
 		sf::Vector2f pos = player.GetPosition();
-		//std::cout << pos.x << ' ' << pos.y << '\n';
+		std::cout << pos.x << ' ' << pos.y << '\n';
 		sf::Vector2f mouesPosition = sf::Vector2f(0.0f, 0.0f);
 		mouesPosition = window.mapPixelToCoords(sf::Mouse::getPosition(window));
-		std::cout << sf::Mouse::getPosition(window).x << " " << sf::Mouse::getPosition(window).y << std::endl;
+		//std::cout << sf::Mouse::getPosition(window).x << " " << sf::Mouse::getPosition(window).y << std::endl;
+		//window.setMouseCursor(cursorMouse);
+		
 		window.draw(bg);
 		window.draw(bg2);
 		window.draw(bg3);
@@ -664,8 +680,15 @@ int main()
 		}
 		else if (player.hpHeart() == 3)
 		{
+			endGame = true;
 			window.draw(heartBar4);
+			
 		}
+		/*if (u == 3)
+		{
+			titleSound.stop();
+			gameoverSound.play();
+		}*/
 
 		point.str(" ");
 		point << "  " << countCoin + countDimond;
@@ -706,7 +729,7 @@ int main()
 		}
 		//------------------------endscore------------------------------------------
 		if (endGame == true)
-		{
+		{	
 			nubClock.restart();
 			countClock = 0;
 			highscore.str(" ");			
@@ -731,9 +754,10 @@ int main()
 					break;
 				}
 			}
-			sf::Text text1("", fontScore);
+			
+			sf::Text text1("", nameScore);
 			text1.setCharacterSize(45);
-			text1.setFillColor(sf::Color::White);
+			text1.setFillColor(sf::Color(168, 11, 14));
 			fileReader.open("Textures/name.txt");
 			do {
 				fileReader >> word;
@@ -806,7 +830,6 @@ int main()
 
 		window.setView(view);
 		window.display();
-
 		sf::Event event;
 		while (window.pollEvent(event))
 		{
@@ -976,81 +999,82 @@ int main()
 				}
 			}
 		}
-		if(endGame == false)
-		{
-			player.Update(deltaTime);
-		}
-		/*if (checkMap == false)
+		
+		if (checkMap == false)
 		{		
 			player.updateSlimFire(deltaTime, monsterFVector);
 			player.updateSlimP(deltaTime, slimPvector);
 			player.updateMonS(deltaTime, monsterVector);
 			player.updateEnermies(deltaTime, enermyVector);
+			player.updateFire(deltaTime, fireVector);
 		}
 		if (checkMap == true)
 		{			
 			player.updateEnermies2(deltaTime, enermyVector, monsterVector, titanrockVector,skeletonVector,slimPvector,animalVector);
 		
 		}
-		*/
+		/**/
 		
-		//player.updateFire(deltaTime, fireVector);
-
-		//Itemupdate
-		for (int i = 0; i < coinVector.size(); i++)
+		
+		
+		if (endGame == false)
 		{
-			coinVector[i].updateItem(deltaTime, player);
-		}
-		for (int i = 0; i < ClockVector.size(); i++)
-		{
-			ClockVector[i].updateItem(deltaTime, player);
-		}
-		for (int i = 0; i < monsterFVector.size(); i++)
-		{
-			monsterFVector[i].updateX(deltaTime);
-		}
-		for (int i = 0; i < slimPvector.size(); i++)
-		{
-			slimPvector[i].updateXslim(deltaTime);
-		}
-		for (int i = 0; i < monsterVector.size(); i++)
-		{
-			monsterVector[i].updateXMons(deltaTime);
-		}
-		for (int i = 0; i < enermyVector.size(); i++)
-		{
-			enermyVector[i].updateEnermy(deltaTime);
-		}
-		for (int i = 0; i < ChestVector.size(); i++)
-		{
-			ChestVector[i].chestHit(deltaTime, player);
-		}
-		if (drawDia == true)
-		{
-			for (int i = 0; i < diaVector.size(); i++)
+			player.Update(deltaTime);
+			//Itemupdate	
+			for (int i = 0; i < coinVector.size(); i++)
 			{
-				diaVector[i].updateDiamond(deltaTime, player);
+				coinVector[i].updateItem(deltaTime, player);
 			}
-			drawDia = false;
-		}
-		
-		for (int i = 0; i < fireVector.size(); i++)
-		{
-			fireVector[i].updateItemFire(deltaTime);
-		}
-		for (int i = 0; i < titanrockVector.size(); i++)
-		{
-			titanrockVector[i].updatetitanRock(deltaTime);
-		}
-		for (int i = 0; i < skeletonVector.size(); i++)
-		{
-			skeletonVector[i].updateSkeleton(deltaTime);
-		}
-		for (int i = 0; i < animalVector.size(); i++)
-		{
-			animalVector[i].updateAnimal(deltaTime);
-		}
+			for (int i = 0; i < ClockVector.size(); i++)
+			{
+				ClockVector[i].updateItem(deltaTime, player);
+			}
+			for (int i = 0; i < monsterFVector.size(); i++)
+			{
+				monsterFVector[i].updateX(deltaTime);
+			}
+			for (int i = 0; i < slimPvector.size(); i++)
+			{
+				slimPvector[i].updateXslim(deltaTime);
+			}
+			for (int i = 0; i < monsterVector.size(); i++)
+			{
+				monsterVector[i].updateXMons(deltaTime);
+			}
+			for (int i = 0; i < enermyVector.size(); i++)
+			{
+				enermyVector[i].updateEnermy(deltaTime);
+			}
+			for (int i = 0; i < ChestVector.size(); i++)
+			{
+				ChestVector[i].chestHit(deltaTime, player);
+			}
+			if (drawDia == true)
+			{
+				for (int i = 0; i < diaVector.size(); i++)
+				{
+					diaVector[i].updateDiamond(deltaTime, player);
+				}
+				drawDia = false;
+			}
 
+			for (int i = 0; i < fireVector.size(); i++)
+			{
+				fireVector[i].updateItemFire(deltaTime);
+			}
+			for (int i = 0; i < titanrockVector.size(); i++)
+			{
+				titanrockVector[i].updatetitanRock(deltaTime);
+			}
+			for (int i = 0; i < skeletonVector.size(); i++)
+			{
+				skeletonVector[i].updateSkeleton(deltaTime);
+			}
+			for (int i = 0; i < animalVector.size(); i++)
+			{
+				animalVector[i].updateAnimal(deltaTime);
+			}
+		}
 		
 
 		//PlatformCollision
@@ -1191,9 +1215,7 @@ int main()
 		
 		
 		
-		
-		
-		
+			
 		window.clear();
 
 	}
