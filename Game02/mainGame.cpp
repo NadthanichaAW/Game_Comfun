@@ -30,24 +30,10 @@ int main()
 	sf::RenderWindow window(sf::VideoMode(1080, 720), "Chivalry Girl", sf::Style::Close | sf::Style::Titlebar | sf::Style::Resize);
 	sf::View view(sf::Vector2f(0.0f, 0.0f), sf::Vector2f(VIEW_HIGHT, VIEW_WIDE));
 
-	//------------------------------------mouse---------------------------------------
-	/*window.setMouseCursorVisible(false);  // off cursor
-	sf::Cursor cursorMouse;  //pragard reak chai cursor
-	cursorMouse.loadFromSystem(sf::Cursor::Hand);//cursor pic hand
-	sf::Texture cursorText;
-	cursorText.loadFromFile("Textures/cursor.png");
-	sf::Sprite cursorSprite(cursorText);
-	cursorSprite.setScale(1.0f, 1.0f);
-	*/
-
 	//Texture
 	sf::Texture playerTexture;
 	playerTexture.loadFromFile("Textures/Martha9.png");
 
-	//View
-	/*view.setCenter(sf::Vector2f(0.0f, 0.0f));
-	view.setSize(sf::Vector2f(200.f, 200.f));
-	*/
 	sf::Vector2u textureSize = playerTexture.getSize();
 
 	//Background_1
@@ -523,11 +509,46 @@ int main()
 	Platform platform118(nullptr, sf::Vector2f(134.0f, 36.0f), sf::Vector2f(86.0f, 1644.99f));
 	Platform platform119(nullptr, sf::Vector2f(73.0f, 76.0f), sf::Vector2f(998.0f, 2620.0f));
 	Platform platform120(nullptr, sf::Vector2f(67.0f, 75.0f), sf::Vector2f(295.0f, 1666.0f));
-	Platform platform121(nullptr, sf::Vector2f(64.0f, 50.0f), sf::Vector2f(62.0f, 19.0f));
+	Platform platform121(nullptr, sf::Vector2f(1248.0f, 44.0f), sf::Vector2f(624.0f, 3010.0f));
 	Platform platform122(nullptr, sf::Vector2f(64.0f, 50.0f), sf::Vector2f(62.0f, 19.0f));
 	Platform platform123(nullptr, sf::Vector2f(64.0f, 50.0f), sf::Vector2f(62.0f, 19.0f));
 	Platform platform124(nullptr, sf::Vector2f(64.0f, 50.0f), sf::Vector2f(62.0f, 19.0f));
 	Platform platform125(nullptr, sf::Vector2f(64.0f, 50.0f), sf::Vector2f(62.0f, 19.0f));
+	Platform platform126(nullptr, sf::Vector2f(64.0f, 50.0f), sf::Vector2f(62.0f, 19.0f));
+	Platform platform127(nullptr, sf::Vector2f(64.0f, 50.0f), sf::Vector2f(62.0f, 19.0f));
+	Platform platform128(nullptr, sf::Vector2f(64.0f, 50.0f), sf::Vector2f(62.0f, 19.0f));
+	Platform platform129(nullptr, sf::Vector2f(64.0f, 50.0f), sf::Vector2f(62.0f, 19.0f));
+	Platform platform130(nullptr, sf::Vector2f(64.0f, 50.0f), sf::Vector2f(62.0f, 19.0f));
+	Platform platform131(nullptr, sf::Vector2f(64.0f, 50.0f), sf::Vector2f(62.0f, 19.0f));
+	Platform platform132(nullptr, sf::Vector2f(64.0f, 50.0f), sf::Vector2f(62.0f, 19.0f));
+	Platform platform133(nullptr, sf::Vector2f(64.0f, 50.0f), sf::Vector2f(62.0f, 19.0f));
+	Platform platform134(nullptr, sf::Vector2f(64.0f, 50.0f), sf::Vector2f(62.0f, 19.0f));
+	Platform platform135(nullptr, sf::Vector2f(64.0f, 50.0f), sf::Vector2f(62.0f, 19.0f));
+	Platform platform136(nullptr, sf::Vector2f(64.0f, 50.0f), sf::Vector2f(62.0f, 19.0f));
+	Platform platform137(nullptr, sf::Vector2f(64.0f, 50.0f), sf::Vector2f(62.0f, 19.0f));
+	Platform platform138(nullptr, sf::Vector2f(64.0f, 50.0f), sf::Vector2f(62.0f, 19.0f));
+	Platform platform139(nullptr, sf::Vector2f(64.0f, 50.0f), sf::Vector2f(62.0f, 19.0f));
+	Platform platform140(nullptr, sf::Vector2f(64.0f, 50.0f), sf::Vector2f(62.0f, 19.0f));
+	Platform platform141(nullptr, sf::Vector2f(64.0f, 50.0f), sf::Vector2f(62.0f, 19.0f));
+	Platform platform142(nullptr, sf::Vector2f(64.0f, 50.0f), sf::Vector2f(62.0f, 19.0f));
+	Platform platform143(nullptr, sf::Vector2f(64.0f, 50.0f), sf::Vector2f(62.0f, 19.0f));
+	Platform platform144(nullptr, sf::Vector2f(64.0f, 50.0f), sf::Vector2f(62.0f, 19.0f));
+	Platform platform145(nullptr, sf::Vector2f(64.0f, 50.0f), sf::Vector2f(62.0f, 19.0f));
+	Platform platform146(nullptr, sf::Vector2f(64.0f, 50.0f), sf::Vector2f(62.0f, 19.0f));
+	Platform platform147(nullptr, sf::Vector2f(64.0f, 50.0f), sf::Vector2f(62.0f, 19.0f));
+	Platform platform148(nullptr, sf::Vector2f(64.0f, 50.0f), sf::Vector2f(62.0f, 19.0f));
+	Platform platform149(nullptr, sf::Vector2f(64.0f, 50.0f), sf::Vector2f(62.0f, 19.0f));
+	Platform platform150(nullptr, sf::Vector2f(64.0f, 50.0f), sf::Vector2f(62.0f, 19.0f));
+	Platform platform151(nullptr, sf::Vector2f(64.0f, 50.0f), sf::Vector2f(62.0f, 19.0f));
+	Platform platform152(nullptr, sf::Vector2f(64.0f, 50.0f), sf::Vector2f(62.0f, 19.0f));
+	Platform platform153(nullptr, sf::Vector2f(64.0f, 50.0f), sf::Vector2f(62.0f, 19.0f));
+	Platform platform154(nullptr, sf::Vector2f(64.0f, 50.0f), sf::Vector2f(62.0f, 19.0f));
+	Platform platform155(nullptr, sf::Vector2f(64.0f, 50.0f), sf::Vector2f(62.0f, 19.0f));
+	Platform platform156(nullptr, sf::Vector2f(64.0f, 50.0f), sf::Vector2f(62.0f, 19.0f));
+	Platform platform157(nullptr, sf::Vector2f(64.0f, 50.0f), sf::Vector2f(62.0f, 19.0f));
+	Platform platform158(nullptr, sf::Vector2f(64.0f, 50.0f), sf::Vector2f(62.0f, 19.0f));
+	Platform platform159(nullptr, sf::Vector2f(64.0f, 50.0f), sf::Vector2f(62.0f, 19.0f));
+	Platform platform160(nullptr, sf::Vector2f(64.0f, 50.0f), sf::Vector2f(62.0f, 19.0f));
 
 	//heart
 	sf::RectangleShape heartBar(sf::Vector2f(294.0f, 87.0f));
@@ -551,18 +572,40 @@ int main()
 	heartBar4.setTexture(&guiHeart4);
 	heartBar4.setSize(sf::Vector2f(147.5f, 43.5f));
 
+	//---------------------------menu-------------------------------------------------
+	sf::RectangleShape menu1(sf::Vector2f(1080.0f, 720.0f));
+	sf::RectangleShape menu2(sf::Vector2f(1080.0f, 720.0f));
+	sf::RectangleShape menu3(sf::Vector2f(1080.0f, 720.0f));
+	sf::RectangleShape menu4(sf::Vector2f(1080.0f, 720.0f));
+	sf::RectangleShape menu5(sf::Vector2f(1080.0f, 720.0f));
+	sf::Texture picMenu1;
+	picMenu1.loadFromFile("Textures/menu.png");
+	sf::Texture picMenu2;
+	picMenu2.loadFromFile("Textures/menu2.png");
+	sf::Texture picMenu3;
+	picMenu3.loadFromFile("Textures/menu3.png");
+	sf::Texture picMenu4;
+	picMenu4.loadFromFile("Textures/menu4.png");
+	sf::Texture picMenu5;
+	picMenu5.loadFromFile("Textures/menu5.png");
+	menu1.setTexture(&picMenu1);
+	menu2.setTexture(&picMenu2);
+	menu3.setTexture(&picMenu3);
+	menu4.setTexture(&picMenu4);
+	menu5.setTexture(&picMenu5);
+
+
 	//---------------------------Sound-----------------------------------------
 	sf::SoundBuffer sound;
 	sound.loadFromFile("Textures/coin.wav");
 	sf::Sound soundCoin;
 	soundCoin.setBuffer(sound);
-	soundCoin.setVolume(50.0f);
+	soundCoin.setVolume(30.0f);
 
 	sf::Music titleSound;
 	titleSound.openFromFile("Textures/soundBGM.wav");
 	titleSound.setVolume(30.0f);
 	titleSound.setLoop(true);
-	titleSound.play();
 
 	sf::Music bonustimeSound;
 	bonustimeSound.openFromFile("Textures/bonustime.wav");
@@ -573,654 +616,772 @@ int main()
 	gameoverSound.openFromFile("Textures/gameover 8bit.wav");
 	gameoverSound.setVolume(30.0f);
 
+	sf::Music levelclearSound;
+	levelclearSound.openFromFile("Textures/levelclear.wav");
+	levelclearSound.setVolume(30.0f);
+
+	sf::Music mainmenuSound;
+	mainmenuSound.openFromFile("Textures/mainsound.wav");
+	mainmenuSound.setVolume(30.0f);
+
 	//----------------------------TIME---------------
 	sf::Clock nubClock;
+	sf::Clock hitClock;
 
+	bool howto = false;
+	bool menu = true;
+	bool start = false;
+	bool dieSound = false;
+	bool soundEnd = false;
 	bool endGame = false;
 	bool drawDia = false;
 	bool checkMap = false;
 	bool checkMap2 = false;
+	int dieStart = 0;
+	int soundStart = 0;
 	int bonusScore = 0;
 	int numofCycle = 0;
 	int u = 0;
 
 	while (window.isOpen())
 	{
-
-		deltaTime = clock.restart().asSeconds();
-		sf::Vector2f pos = player.GetPosition();
-		std::cout << pos.x << ' ' << pos.y << '\n';
-		sf::Vector2f mouesPosition = sf::Vector2f(0.0f, 0.0f);
-		mouesPosition = window.mapPixelToCoords(sf::Mouse::getPosition(window));
-		//std::cout << sf::Mouse::getPosition(window).x << " " << sf::Mouse::getPosition(window).y << std::endl;
-		//window.setMouseCursor(cursorMouse);
-		
-		window.draw(bg);
-		window.draw(bg2);
-		window.draw(bg3);
-		
-		
-		//Item
-		for (int i = 0; i < coinVector.size(); i++)
+		mainmenuSound.play();
+		while (menu==true)
 		{
-			coinVector[i].drawItem(window);
-		}
-		for (int i = 0; i < ClockVector.size(); i++)
-		{
-			ClockVector[i].drawItem(window);
-		}
-		for (int i = 0; i < fireVector.size(); i++)
-		{
-			fireVector[i].drawItemFire(window);
-		}
-		for (int i = 0; i < enermyVector.size(); i++)
-		{
-			enermyVector[i].drawMonster(window);
-		}
-		for (int i = 0; i < monsterFVector.size(); i++)
-		{
-			monsterFVector[i].drawMonster(window);
-		}
-		for (int i = 0; i < slimPvector.size(); i++)
-		{
-			slimPvector[i].drawMonster(window);
-		}
-		for (int i = 0; i < monsterVector.size(); i++)
-		{
-			monsterVector[i].drawMonster(window);
-		}
-		
-		for (int i = 0; i < ChestVector.size(); i++)
-		{
-			ChestVector[i].drawItem(window);
-		}
-		if (ChestVector[0].drawDia() == true)
-		{
-			for (int j = 0; j <=5; j++)
+			sf::Vector2f mouesPosition = sf::Vector2f(0.0f, 0.0f);
+			mouesPosition = window.mapPixelToCoords(sf::Mouse::getPosition(window));
+			std::cout << sf::Mouse::getPosition(window).x << " " << sf::Mouse::getPosition(window).y << std::endl;
+			sf::Event event;
+			while (window.pollEvent(event))
 			{
-				
-				diaVector[j].drawItem(window);
-				drawDia = true;
-			}
-		}
-		if (ChestVector[1].drawDia() == true)
-		{
-			for (int j = 6; j <= 9; j++)
-			{
-
-				diaVector[j].drawItem(window);
-				drawDia = true;
-			}
-		}
-		for (int i = 0; i < titanrockVector.size(); i++)
-		{
-			titanrockVector[i].drawMonster(window);
-		}
-		for (int i = 0; i < skeletonVector.size(); i++)
-		{
-			skeletonVector[i].drawMonster(window);
-		}
-		for (int i = 0; i < animalVector.size(); i++)
-		{
-			animalVector[i].drawMonster(window);
-		}
-		player.Draw(window);
-		window.draw(iconTimer);
-		window.draw(iconCoin);
-		window.draw(Coin);
-		window.draw(Clocke);
-		window.draw(heartBar);
-		if (player.hpHeart()==1)
-		{
-			window.draw(heartBar2);
-		}
-		else if (player.hpHeart()==2)
-		{
-			window.draw(heartBar3);
-		}
-		else if (player.hpHeart() == 3)
-		{
-			endGame = true;
-			window.draw(heartBar4);
-			
-		}
-		/*if (u == 3)
-		{
-			titleSound.stop();
-			gameoverSound.play();
-		}*/
-
-		point.str(" ");
-		point << "  " << countCoin + countDimond;
-		Coin.setString(point.str());
-		iconCoin.setPosition({ view.getCenter().x + 350,view.getCenter().y - 360 });
-		Coin.setPosition({ view.getCenter().x + 400,view.getCenter().y - 367 });
-		for (int i = 0; i < coinVector.size(); i++)
-		{
-			if (coinVector[i].pointCoins() == 1)
-			{
-				soundCoin.play();
-				countCoin += 100;
-			}
-		}
-		for (int i = 0; i < diaVector.size(); i++)
-		{
-			if (diaVector[i].pointDiamond() == 1)
-			{
-				soundCoin.play();
-				countDimond += 500;
-			}
-		}
-		point.str(" ");
-		
-		if (checkMap2==false)
-		{
-			point << "  " << countClock;
-		}
-		if (checkMap2 == true)
-		{	
-			bonusScore = countClock - int(nubClock.getElapsedTime().asSeconds());
-			point << "  " << bonusScore;
-			if (countClock - int(nubClock.getElapsedTime().asSeconds())==0)
-			{
-				endGame = true;				
-			}
-		
-		}
-		//------------------------endscore------------------------------------------
-		if (endGame == true)
-		{	
-			nubClock.restart();
-			countClock = 0;
-			highscore.str(" ");			
-			highscore << "  " << countCoin + countDimond;
-			youreScore.setString(highscore.str());
-			window.draw(score1);
-			
-			if (sf::Mouse::getPosition(window).x >= 444 && sf::Mouse::getPosition(window).y >= 574 &&sf::Mouse::getPosition(window).x <= 495 && sf::Mouse::getPosition(window).y <= 620)
-			{	
-				window.draw(score2);
-			}
-			if (sf::Mouse::getPosition(window).x >= 512 && sf::Mouse::getPosition(window).y >= 574 && sf::Mouse::getPosition(window).x <= 564 && sf::Mouse::getPosition(window).y <= 620)
-			{
-				window.draw(score3);
-			}
-			if (sf::Mouse::getPosition(window).x >= 583 && sf::Mouse::getPosition(window).y >= 574 && sf::Mouse::getPosition(window).x <= 636 && sf::Mouse::getPosition(window).y <= 620)
-			{
-				window.draw(score4);
-				if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
+				switch (event.type)
 				{
+				case sf::Event::Closed:
 					window.close();
 					break;
-				}
-			}
-			
-			sf::Text text1("", nameScore);
-			text1.setCharacterSize(45);
-			text1.setFillColor(sf::Color(168, 11, 14));
-			fileReader.open("Textures/name.txt");
-			do {
-				fileReader >> word;
-				std::string first_token = word.substr(0, word.find(','));
-				int second_token = std::stoi(word.substr(word.find(',') + 1, word.length()));
-				keepscore[second_token] = first_token;
-			} while (fileReader.good());
-			fileReader.close();
-			std::map<int, std::string>::iterator end = keepscore.end();
-			std::map<int, std::string>::iterator beg = keepscore.begin();
-			end--;
-			beg--;
-			int currentDisplay = 0;//new line 
-			for (std::map<int, std::string>::iterator it = end; it != beg; it--) 
-			{
-				text1.setString(it->second);
-				text1.setPosition(view.getCenter().x - 35, view.getCenter().y - 5);//back newline
-				window.draw(text1);
-				/*text1.setString(std::to_string(it->first));
-				text1.setPosition(view.getCenter().x + 95, view.getCenter().y - 210 + 80 * currentDisplay);
-				window.draw(text1);*/
-				currentDisplay++;
-				if (currentDisplay == 5)
-				{
+				case sf::Event::Resized:
+					ResizeView(window, view);
+					break;
+				case sf::Event::TextEntered:
 					break;
 				}
 			}
-			window.draw(youreScore);
-			youreScore.setPosition({ view.getCenter().x - 105,view.getCenter().y + 115});
-			score1.setPosition({ view.getCenter().x - 540,view.getCenter().y - 360 });
-			score2.setPosition({ view.getCenter().x - 540,view.getCenter().y - 360 });
-			score3.setPosition({ view.getCenter().x - 540,view.getCenter().y - 360 });
-			score4.setPosition({ view.getCenter().x - 540,view.getCenter().y - 360 });
-		}
-		
-		Clocke.setString(point.str());
-		iconTimer.setPosition({ view.getCenter().x + 150,view.getCenter().y - 360 });
-		Clocke.setPosition({ view.getCenter().x + 200,view.getCenter().y - 367 });
-		for (int i = 0; i < ClockVector.size(); i++)
-		{
-			if (ClockVector[i].pointClocks() == 1)
+			
+			window.draw(menu1);
+			if (howto == false)
 			{
-				
-				soundCoin.play();
-				countClock += 10;
-			}
-		}
-		heartBar.setPosition({ view.getCenter().x + 360,view.getCenter().y - 290 });
-		heartBar2.setPosition({ view.getCenter().x + 360,view.getCenter().y - 290 });
-		heartBar3.setPosition({ view.getCenter().x + 360,view.getCenter().y - 290 });
-		heartBar4.setPosition({ view.getCenter().x + 360,view.getCenter().y - 290 });
-		//platformDraw
-		/*platform1.Draw(window);
-		platform2.Draw(window);
-		platform3.Draw(window);
-		platform4.Draw(window);
-		platform5.Draw(window);
-		platform6.Draw(window);
-		platform7.Draw(window);
-		platform8.Draw(window);
-		platform9.Draw(window);
-		platform10.Draw(window);
-		platform11.Draw(window);
-		platform12.Draw(window);
-		platform13.Draw(window);
-		platform.Draw(window);
-		platform80.Draw(window);
-		platform77.Draw(window);
-*/
+				if (sf::Mouse::getPosition(window).x >= 460 && sf::Mouse::getPosition(window).y >= 507 && sf::Mouse::getPosition(window).x <= 620 && sf::Mouse::getPosition(window).y <= 580)
+				{
+					//play
+					window.draw(menu2);
+					if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
+					{
+						menu = false;
+						start = true;
+						titleSound.play();
+						hitClock.restart();
+					}
+				}
+				if (sf::Mouse::getPosition(window).x >= 460 && sf::Mouse::getPosition(window).y >= 600 && sf::Mouse::getPosition(window).x <= 620 && sf::Mouse::getPosition(window).y <= 670)
+				{
+					window.draw(menu3);
+					if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
+					{
+						//exit
+						window.close();
+						break;
+					}
+				}
+				if (sf::Mouse::getPosition(window).x >= 916 && sf::Mouse::getPosition(window).y >= 640 && sf::Mouse::getPosition(window).x <= 980 && sf::Mouse::getPosition(window).y <= 705)
+				{
+					//how to 
+					window.draw(menu5);
+					if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
+					{
+						howto = true;
+					}
+					//bool = true			
+				}
+				if (sf::Mouse::getPosition(window).x >= 995 && sf::Mouse::getPosition(window).y >= 640 && sf::Mouse::getPosition(window).x <= 1060 && sf::Mouse::getPosition(window).y <= 705)
+				{
+					//score
+					window.draw(menu4);
+					if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
+					{
 
-		window.setView(view);
-		window.display();
-		sf::Event event;
-		while (window.pollEvent(event))
-		{
-			switch (event.type)
-			{
-			case sf::Event::Closed:
-				window.close();
-				break;
-			case sf::Event::Resized:
-				ResizeView(window, view);
-				break;
-			case sf::Event::TextEntered:
-				break;
+					}
+				}
 			}
-		}
-		view.setCenter(player.GetPosition());//x=y
-		if (view.getCenter().x - 540.0f <= 0.0f)//front center window behide pic
-		{
-			if (view.getCenter().y - 360.0f <= 0.0f)
-			{
-				view.setCenter(540.0f, 360.0f);//window
-			}
-			if (view.getCenter().y + 360.0f >= 1329.0f)
-			{
-				view.setCenter(540.0f, 969.0f);//window
-			}
-			if (view.getCenter().y - 360.0f > 0.0f && view.getCenter().y + 360.0f < 1329.0f)
-			{
-				view.setCenter(540.0f, player.GetPosition().y);
-			}
+				if (howto == true)
+				{
+					window.draw(score1);
+					if (sf::Mouse::getPosition(window).x >= 995 && sf::Mouse::getPosition(window).y >= 640 && sf::Mouse::getPosition(window).x <= 1060 && sf::Mouse::getPosition(window).y <= 705)
+					{
+						if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
+						{
+							howto = false;
+						}
+					}
 
+				}
+			
+			window.display();
 		}
-		if (view.getCenter().x + 540.0f >= 1248.0f)
+		while (start == true)
 		{
-			if (view.getCenter().y - 360.0f <= 0.0f)
-			{
-				view.setCenter(708.0f, 360.0f);//window 1248-540 collision right
-			}
-			if (view.getCenter().y + 360.0f >= 1329.0f)
-			{
-				view.setCenter(708.0f, 969.0f);//window 1248-540
-			}
-			if (view.getCenter().y - 360.0f > 0.0f && view.getCenter().y + 360.0f < 1329.0f)
-			{
-				view.setCenter(708.0f, player.GetPosition().y);
-			}
-		}
-		if (view.getCenter().x - 540.0f > 0.0f && view.getCenter().x + 540.0f < 1248.0f)
-		{
-			if (view.getCenter().y - 360.0f <= 0.0f)
-			{
-				view.setCenter(player.GetPosition().x, 360.0f);
-			}
-			if (view.getCenter().y + 360.0f >= 1329.0f)
-			{
-				view.setCenter(player.GetPosition().x, 969.0f);
-			}
-		}
-		//warp to bg2
-		if ((player.GetPosition().x > 592 && player.GetPosition().x < 660) && player.GetPosition().y >= 1271 && player.GetPosition().y <= 1299)
-		{
-			checkMap = true;
-			u = 1;
-			player.SetPosition(625, 1410);
-			//player.SetPosition(958, 1671);
-		}if (u == 1)
-		{
-			view.setCenter(player.GetPosition());//x=y
-			if (view.getCenter().x - 540.0f <= 0.0f)//front center window behide pic
-			{
-				if (view.getCenter().y - 360.0f <= 0.0f)
-				{
-					view.setCenter(540.0f, 360.0f);//window
-				}
-				if (view.getCenter().y + 360.0f >= 2658.0f)
-				{
-					view.setCenter(540.0f, 2298.0f);//window
-				}
-				if (view.getCenter().y - 360.0f > 0.0f && view.getCenter().y + 360.0f < 2658.0f)
-				{
-					view.setCenter(540.0f, player.GetPosition().y);
-				}
-			}
-			if (view.getCenter().x + 540.0f >= 1248.0f)
-			{
-				if (view.getCenter().y - 360.0f <= 0.0f)
-				{
-					view.setCenter(708.0f, 360.0f);//window 1248-540 collision right 
-				}
-				if (view.getCenter().y + 360.0f >= 2658.0f)
-				{
-					view.setCenter(708.0f, 2298.0f);//window 1248-540
-				}
-				if (view.getCenter().y - 360.0f > 0.0f && view.getCenter().y + 360.0f < 2658.0f)
-				{
-					view.setCenter(708.0f, player.GetPosition().y);
-				}
-			}
-			if (view.getCenter().x - 540.0f > 0.0f && view.getCenter().x + 540.0f < 1248.0f)
-			{
-				if (view.getCenter().y - 360.0f <= 0.0f)
-				{
-					view.setCenter(player.GetPosition().x, 360.0f);
-				}
-				if (view.getCenter().y + 360.0f >= 2658.0f)
-				{
-					view.setCenter(player.GetPosition().x, 2298.0f);
-				}
-			}
-		}
-		//warp in map 2
-		if ((player.GetPosition().x > 880 && player.GetPosition().x < 904) && player.GetPosition().y >= 2617 && player.GetPosition().y <= 2618)
-		{
-			player.SetPosition(623.41, 2617);
-		}
-		//warp to bg3
-		if ((player.GetPosition().x > 580 && player.GetPosition().x < 660) && player.GetPosition().y >= 2520 && player.GetPosition().y <= 2550)
-		{
-			nubClock.restart();
-			checkMap2 = true;
-			titleSound.stop();
-			bonustimeSound.play();	
-			u = 2;
-			player.SetPosition(625, 3136);
-		}if (u == 2)
-		{
-			view.setCenter(player.GetPosition());//x=y
-			if (view.getCenter().x - 540.0f <= 0.0f)//front center window behide pic
-			{
-				if (view.getCenter().y - 360.0f <= 0.0f)
-				{
-					view.setCenter(540.0f, 360.0f);//window
-				}
-				if (view.getCenter().y + 360.0f >= 4329.0f)
-				{
-					view.setCenter(540.0f, 3969.0f);//window
-				}
-				if (view.getCenter().y - 360.0f > 0.0f && view.getCenter().y + 360.0f < 4329.0f)
-				{
-					view.setCenter(540.0f, player.GetPosition().y);
-				}
-			}
-			if (view.getCenter().x + 540.0f >= 1248.0f)
-			{
-				if (view.getCenter().y - 360.0f <= 0.0f)
-				{
-					view.setCenter(708.0f, 360.0f);//window 1248-540 collision right 
-				}
-				if (view.getCenter().y + 360.0f >= 4329.0f)
-				{
-					view.setCenter(708.0f, 3969.0f);//window 1248-540
-				}
-				if (view.getCenter().y - 360.0f > 0.0f && view.getCenter().y + 360.0f < 4329.0f)
-				{
-					view.setCenter(708.0f, player.GetPosition().y);
-				}
-			}
-			if (view.getCenter().x - 540.0f > 0.0f && view.getCenter().x + 540.0f < 1248.0f)
-			{
-				if (view.getCenter().y - 360.0f <= 0.0f)
-				{
-					view.setCenter(player.GetPosition().x, 360.0f);
-				}
-				if (view.getCenter().y + 360.0f >= 4329.0f)
-				{
-					view.setCenter(player.GetPosition().x, 3969.0f);
-				}
-			}
-		}
-		
-		if (checkMap == false)
-		{		
-			player.updateSlimFire(deltaTime, monsterFVector);
-			player.updateSlimP(deltaTime, slimPvector);
-			player.updateMonS(deltaTime, monsterVector);
-			player.updateEnermies(deltaTime, enermyVector);
-			player.updateFire(deltaTime, fireVector);
-		}
-		if (checkMap == true)
-		{			
-			player.updateEnermies2(deltaTime, enermyVector, monsterVector, titanrockVector,skeletonVector,slimPvector,animalVector);
-		
-		}
-		/**/
-		
-		
-		
-		if (endGame == false)
-		{
-			player.Update(deltaTime);
-			//Itemupdate	
+			mainmenuSound.stop();
+			deltaTime = clock.restart().asSeconds();
+			sf::Vector2f pos = player.GetPosition();
+			std::cout << pos.x << ' ' << pos.y << '\n';
+			sf::Vector2f mouesPosition = sf::Vector2f(0.0f, 0.0f);
+			mouesPosition = window.mapPixelToCoords(sf::Mouse::getPosition(window));
+			//std::cout << sf::Mouse::getPosition(window).x << " " << sf::Mouse::getPosition(window).y << std::endl;
+
+			window.draw(bg);
+			window.draw(bg2);
+			window.draw(bg3);
+
+
+			//Item
 			for (int i = 0; i < coinVector.size(); i++)
 			{
-				coinVector[i].updateItem(deltaTime, player);
+				coinVector[i].drawItem(window);
 			}
 			for (int i = 0; i < ClockVector.size(); i++)
 			{
-				ClockVector[i].updateItem(deltaTime, player);
+				ClockVector[i].drawItem(window);
 			}
-			for (int i = 0; i < monsterFVector.size(); i++)
+			for (int i = 0; i < fireVector.size(); i++)
 			{
-				monsterFVector[i].updateX(deltaTime);
-			}
-			for (int i = 0; i < slimPvector.size(); i++)
-			{
-				slimPvector[i].updateXslim(deltaTime);
-			}
-			for (int i = 0; i < monsterVector.size(); i++)
-			{
-				monsterVector[i].updateXMons(deltaTime);
+				fireVector[i].drawItemFire(window);
 			}
 			for (int i = 0; i < enermyVector.size(); i++)
 			{
-				enermyVector[i].updateEnermy(deltaTime);
+				enermyVector[i].drawMonster(window);
 			}
-			for (int i = 0; i < ChestVector.size(); i++)
+			for (int i = 0; i < monsterFVector.size(); i++)
 			{
-				ChestVector[i].chestHit(deltaTime, player);
+				monsterFVector[i].drawMonster(window);
 			}
-			if (drawDia == true)
+			for (int i = 0; i < slimPvector.size(); i++)
 			{
-				for (int i = 0; i < diaVector.size(); i++)
-				{
-					diaVector[i].updateDiamond(deltaTime, player);
-				}
-				drawDia = false;
+				slimPvector[i].drawMonster(window);
+			}
+			for (int i = 0; i < monsterVector.size(); i++)
+			{
+				monsterVector[i].drawMonster(window);
 			}
 
-			for (int i = 0; i < fireVector.size(); i++)
+			for (int i = 0; i < ChestVector.size(); i++)
 			{
-				fireVector[i].updateItemFire(deltaTime);
+				ChestVector[i].drawItem(window);
+			}
+			if (ChestVector[0].drawDia() == true)
+			{
+				for (int j = 0; j <= 5; j++)
+				{
+
+					diaVector[j].drawItem(window);
+					drawDia = true;
+				}
+			}
+			if (ChestVector[1].drawDia() == true)
+			{
+				for (int j = 6; j <= 9; j++)
+				{
+
+					diaVector[j].drawItem(window);
+					drawDia = true;
+				}
 			}
 			for (int i = 0; i < titanrockVector.size(); i++)
 			{
-				titanrockVector[i].updatetitanRock(deltaTime);
+				titanrockVector[i].drawMonster(window);
 			}
 			for (int i = 0; i < skeletonVector.size(); i++)
 			{
-				skeletonVector[i].updateSkeleton(deltaTime);
+				skeletonVector[i].drawMonster(window);
 			}
 			for (int i = 0; i < animalVector.size(); i++)
 			{
-				animalVector[i].updateAnimal(deltaTime);
+				animalVector[i].drawMonster(window);
 			}
+			player.Draw(window);
+			window.draw(iconTimer);
+			window.draw(iconCoin);
+			window.draw(Coin);
+			window.draw(Clocke);
+			window.draw(heartBar);
+			if (player.hpHeart() == 1)
+			{
+				window.draw(heartBar2);
+			}
+			else if (player.hpHeart() == 2)
+			{
+				window.draw(heartBar3);
+			}
+			else if (player.hpHeart() == 3)
+			{
+				endGame = true;
+				window.draw(heartBar4);
+				for (; dieStart < 1; dieStart++)
+				{
+					dieSound = true;
+				}
+
+			}
+			if (dieSound == true)
+			{
+				titleSound.stop();
+				gameoverSound.play();
+
+			}dieSound = false;
+
+			point.str(" ");
+			point << "  " << countCoin + countDimond;
+			Coin.setString(point.str());
+			iconCoin.setPosition({ view.getCenter().x + 350,view.getCenter().y - 360 });
+			Coin.setPosition({ view.getCenter().x + 400,view.getCenter().y - 367 });
+			for (int i = 0; i < coinVector.size(); i++)
+			{
+				if (coinVector[i].pointCoins() == 1)
+				{
+					soundCoin.play();
+					countCoin += 100;
+				}
+			}
+			for (int i = 0; i < diaVector.size(); i++)
+			{
+				if (diaVector[i].pointDiamond() == 1)
+				{
+					soundCoin.play();
+					countDimond += 500;
+				}
+			}
+			point.str(" ");
+
+			if (checkMap2 == false)
+			{
+				point << "  " << countClock;
+			}
+			if (checkMap2 == true)
+			{
+				bonusScore = countClock - int(nubClock.getElapsedTime().asSeconds());
+				point << "  " << bonusScore;
+				if (countClock - int(nubClock.getElapsedTime().asSeconds()) == 0)
+				{
+					endGame = true;
+					for (; soundStart < 1; soundStart++)
+					{
+						soundEnd = true;
+					}
+				}/**/
+
+			}
+			if (soundEnd == true)
+			{
+				bonustimeSound.stop();
+				levelclearSound.play();
+
+			}
+			soundEnd = false;
+			//------------------------endscore------------------------------------------
+			if (endGame == true)
+			{
+				nubClock.restart();
+				countClock = 0;
+				highscore.str(" ");
+				highscore << "  " << countCoin + countDimond;
+				youreScore.setString(highscore.str());
+				window.draw(score1);
+
+				if (sf::Mouse::getPosition(window).x >= 444 && sf::Mouse::getPosition(window).y >= 574 && sf::Mouse::getPosition(window).x <= 495 && sf::Mouse::getPosition(window).y <= 620)
+				{
+					window.draw(score2);
+				}
+				if (sf::Mouse::getPosition(window).x >= 512 && sf::Mouse::getPosition(window).y >= 574 && sf::Mouse::getPosition(window).x <= 564 && sf::Mouse::getPosition(window).y <= 620)
+				{
+					window.draw(score3);
+				}
+				if (sf::Mouse::getPosition(window).x >= 583 && sf::Mouse::getPosition(window).y >= 574 && sf::Mouse::getPosition(window).x <= 636 && sf::Mouse::getPosition(window).y <= 620)
+				{
+					window.draw(score4);
+					if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
+					{
+						window.close();
+						break;
+					}
+				}
+
+				sf::Text text1("", nameScore);
+				text1.setCharacterSize(45);
+				text1.setFillColor(sf::Color(168, 11, 14));
+				fileReader.open("Textures/name.txt");
+				do {
+					fileReader >> word;
+					std::string first_token = word.substr(0, word.find(','));
+					int second_token = std::stoi(word.substr(word.find(',') + 1, word.length()));
+					keepscore[second_token] = first_token;
+				} while (fileReader.good());
+				fileReader.close();
+				std::map<int, std::string>::iterator end = keepscore.end();
+				std::map<int, std::string>::iterator beg = keepscore.begin();
+				end--;
+				beg--;
+				int currentDisplay = 0;//new line 
+				for (std::map<int, std::string>::iterator it = end; it != beg; it--)
+				{
+					text1.setString(it->second);
+					text1.setPosition(view.getCenter().x - 35, view.getCenter().y - 5);//back newline
+					window.draw(text1);
+					/*text1.setString(std::to_string(it->first));
+					text1.setPosition(view.getCenter().x + 95, view.getCenter().y - 210 + 80 * currentDisplay);
+					window.draw(text1);*/
+					currentDisplay++;
+					if (currentDisplay == 5)
+					{
+						break;
+					}
+				}
+				window.draw(youreScore);
+				youreScore.setPosition({ view.getCenter().x - 105,view.getCenter().y + 115 });
+				score1.setPosition({ view.getCenter().x - 540,view.getCenter().y - 360 });
+				score2.setPosition({ view.getCenter().x - 540,view.getCenter().y - 360 });
+				score3.setPosition({ view.getCenter().x - 540,view.getCenter().y - 360 });
+				score4.setPosition({ view.getCenter().x - 540,view.getCenter().y - 360 });
+			}
+
+			Clocke.setString(point.str());
+			iconTimer.setPosition({ view.getCenter().x + 150,view.getCenter().y - 360 });
+			Clocke.setPosition({ view.getCenter().x + 200,view.getCenter().y - 367 });
+			for (int i = 0; i < ClockVector.size(); i++)
+			{
+				if (ClockVector[i].pointClocks() == 1)
+				{
+
+					soundCoin.play();
+					countClock += 10;
+				}
+			}
+			heartBar.setPosition({ view.getCenter().x + 360,view.getCenter().y - 290 });
+			heartBar2.setPosition({ view.getCenter().x + 360,view.getCenter().y - 290 });
+			heartBar3.setPosition({ view.getCenter().x + 360,view.getCenter().y - 290 });
+			heartBar4.setPosition({ view.getCenter().x + 360,view.getCenter().y - 290 });
+			//platformDraw
+			/*platform1.Draw(window);
+			platform2.Draw(window);
+			platform3.Draw(window);
+			platform4.Draw(window);
+			platform5.Draw(window);
+			platform6.Draw(window);
+			platform7.Draw(window);
+			platform8.Draw(window);
+			platform9.Draw(window);
+			platform10.Draw(window);
+			platform11.Draw(window);
+			platform12.Draw(window);
+			platform13.Draw(window);
+			platform.Draw(window);
+			platform80.Draw(window);
+			platform77.Draw(window);
+	*/
+
+			window.setView(view);
+			window.display();
+			sf::Event event;
+			while (window.pollEvent(event))
+			{
+				switch (event.type)
+				{
+				case sf::Event::Closed:
+					window.close();
+					break;
+				case sf::Event::Resized:
+					ResizeView(window, view);
+					break;
+				case sf::Event::TextEntered:
+					break;
+				}
+			}
+			view.setCenter(player.GetPosition());//x=y
+			if (view.getCenter().x - 540.0f <= 0.0f)//front center window behide pic
+			{
+				if (view.getCenter().y - 360.0f <= 0.0f)
+				{
+					view.setCenter(540.0f, 360.0f);//window
+				}
+				if (view.getCenter().y + 360.0f >= 1329.0f)
+				{
+					view.setCenter(540.0f, 969.0f);//window
+				}
+				if (view.getCenter().y - 360.0f > 0.0f && view.getCenter().y + 360.0f < 1329.0f)
+				{
+					view.setCenter(540.0f, player.GetPosition().y);
+				}
+
+			}
+			if (view.getCenter().x + 540.0f >= 1248.0f)
+			{
+				if (view.getCenter().y - 360.0f <= 0.0f)
+				{
+					view.setCenter(708.0f, 360.0f);//window 1248-540 collision right
+				}
+				if (view.getCenter().y + 360.0f >= 1329.0f)
+				{
+					view.setCenter(708.0f, 969.0f);//window 1248-540
+				}
+				if (view.getCenter().y - 360.0f > 0.0f && view.getCenter().y + 360.0f < 1329.0f)
+				{
+					view.setCenter(708.0f, player.GetPosition().y);
+				}
+			}
+			if (view.getCenter().x - 540.0f > 0.0f && view.getCenter().x + 540.0f < 1248.0f)
+			{
+				if (view.getCenter().y - 360.0f <= 0.0f)
+				{
+					view.setCenter(player.GetPosition().x, 360.0f);
+				}
+				if (view.getCenter().y + 360.0f >= 1329.0f)
+				{
+					view.setCenter(player.GetPosition().x, 969.0f);
+				}
+			}
+			//warp to bg2
+			if ((player.GetPosition().x > 592 && player.GetPosition().x < 660) && player.GetPosition().y >= 1271 && player.GetPosition().y <= 1299)
+			{
+				checkMap = true;
+				u = 1;
+				player.SetPosition(625, 1410);
+				//player.SetPosition(958, 1671);
+			}if (u == 1)
+			{
+				view.setCenter(player.GetPosition());//x=y
+				if (view.getCenter().x - 540.0f <= 0.0f)//front center window behide pic
+				{
+					if (view.getCenter().y - 360.0f <= 0.0f)
+					{
+						view.setCenter(540.0f, 360.0f);//window
+					}
+					if (view.getCenter().y + 360.0f >= 2658.0f)
+					{
+						view.setCenter(540.0f, 2298.0f);//window
+					}
+					if (view.getCenter().y - 360.0f > 0.0f && view.getCenter().y + 360.0f < 2658.0f)
+					{
+						view.setCenter(540.0f, player.GetPosition().y);
+					}
+				}
+				if (view.getCenter().x + 540.0f >= 1248.0f)
+				{
+					if (view.getCenter().y - 360.0f <= 0.0f)
+					{
+						view.setCenter(708.0f, 360.0f);//window 1248-540 collision right 
+					}
+					if (view.getCenter().y + 360.0f >= 2658.0f)
+					{
+						view.setCenter(708.0f, 2298.0f);//window 1248-540
+					}
+					if (view.getCenter().y - 360.0f > 0.0f && view.getCenter().y + 360.0f < 2658.0f)
+					{
+						view.setCenter(708.0f, player.GetPosition().y);
+					}
+				}
+				if (view.getCenter().x - 540.0f > 0.0f && view.getCenter().x + 540.0f < 1248.0f)
+				{
+					if (view.getCenter().y - 360.0f <= 0.0f)
+					{
+						view.setCenter(player.GetPosition().x, 360.0f);
+					}
+					if (view.getCenter().y + 360.0f >= 2658.0f)
+					{
+						view.setCenter(player.GetPosition().x, 2298.0f);
+					}
+				}
+			}
+			//warp in map 2
+			if ((player.GetPosition().x > 880 && player.GetPosition().x < 904) && player.GetPosition().y >= 2617 && player.GetPosition().y <= 2618)
+			{
+				player.SetPosition(623.41, 2617);
+			}
+			//warp to bg3
+			if ((player.GetPosition().x > 580 && player.GetPosition().x < 660) && player.GetPosition().y >= 2520 && player.GetPosition().y <= 2550)
+			{
+				nubClock.restart();
+				checkMap2 = true;
+				titleSound.stop();
+				bonustimeSound.play();
+				u = 2;
+				player.SetPosition(625, 3136);
+			}if (u == 2)
+			{
+				view.setCenter(player.GetPosition());//x=y
+				if (view.getCenter().x - 540.0f <= 0.0f)//front center window behide pic
+				{
+					if (view.getCenter().y - 360.0f <= 0.0f)
+					{
+						view.setCenter(540.0f, 360.0f);//window
+					}
+					if (view.getCenter().y + 360.0f >= 4329.0f)
+					{
+						view.setCenter(540.0f, 3969.0f);//window
+					}
+					if (view.getCenter().y - 360.0f > 0.0f && view.getCenter().y + 360.0f < 4329.0f)
+					{
+						view.setCenter(540.0f, player.GetPosition().y);
+					}
+				}
+				if (view.getCenter().x + 540.0f >= 1248.0f)
+				{
+					if (view.getCenter().y - 360.0f <= 0.0f)
+					{
+						view.setCenter(708.0f, 360.0f);//window 1248-540 collision right 
+					}
+					if (view.getCenter().y + 360.0f >= 4329.0f)
+					{
+						view.setCenter(708.0f, 3969.0f);//window 1248-540
+					}
+					if (view.getCenter().y - 360.0f > 0.0f && view.getCenter().y + 360.0f < 4329.0f)
+					{
+						view.setCenter(708.0f, player.GetPosition().y);
+					}
+				}
+				if (view.getCenter().x - 540.0f > 0.0f && view.getCenter().x + 540.0f < 1248.0f)
+				{
+					if (view.getCenter().y - 360.0f <= 0.0f)
+					{
+						view.setCenter(player.GetPosition().x, 360.0f);
+					}
+					if (view.getCenter().y + 360.0f >= 4329.0f)
+					{
+						view.setCenter(player.GetPosition().x, 3969.0f);
+					}
+				}
+			}
+
+
+			if (checkMap == false)
+			{
+				player.updateSlimFire(deltaTime, monsterFVector);
+				player.updateSlimP(deltaTime, slimPvector);
+				player.updateMonS(deltaTime, monsterVector);
+				player.updateEnermies(deltaTime, enermyVector);
+				player.updateFire(deltaTime, fireVector);
+			}
+			if (checkMap == true)
+			{
+				player.updateEnermies2(deltaTime, enermyVector, monsterVector, titanrockVector, skeletonVector, slimPvector, animalVector);
+
+			}
+			/**/
+
+
+
+			if (endGame == false)
+			{
+				if (hitClock.getElapsedTime().asSeconds() > 0.5)
+				{
+					player.Update(deltaTime);
+				}
+					//Itemupdate	
+				for (int i = 0; i < coinVector.size(); i++)
+				{
+					coinVector[i].updateItem(deltaTime, player);
+				}
+				for (int i = 0; i < ClockVector.size(); i++)
+				{
+					ClockVector[i].updateItem(deltaTime, player);
+				}
+				for (int i = 0; i < monsterFVector.size(); i++)
+				{
+					monsterFVector[i].updateX(deltaTime);
+				}
+				for (int i = 0; i < slimPvector.size(); i++)
+				{
+					slimPvector[i].updateXslim(deltaTime);
+				}
+				for (int i = 0; i < monsterVector.size(); i++)
+				{
+					monsterVector[i].updateXMons(deltaTime);
+				}
+				for (int i = 0; i < enermyVector.size(); i++)
+				{
+					enermyVector[i].updateEnermy(deltaTime);
+				}
+				for (int i = 0; i < ChestVector.size(); i++)
+				{
+					ChestVector[i].chestHit(deltaTime, player);
+				}
+				if (drawDia == true)
+				{
+					for (int i = 0; i < diaVector.size(); i++)
+					{
+						diaVector[i].updateDiamond(deltaTime, player);
+					}
+					drawDia = false;
+				}
+					
+				for (int i = 0; i < fireVector.size(); i++)
+				{
+					fireVector[i].updateItemFire(deltaTime);
+				}
+				for (int i = 0; i < titanrockVector.size(); i++)
+				{
+					titanrockVector[i].updatetitanRock(deltaTime);
+				}
+				for (int i = 0; i < skeletonVector.size(); i++)
+				{
+					skeletonVector[i].updateSkeleton(deltaTime);
+				}
+				for (int i = 0; i < animalVector.size(); i++)
+				{
+					animalVector[i].updateAnimal(deltaTime);
+				}
+				
+			}
+
+
+			//PlatformCollision
+			platform1.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform2.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform3.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform4.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform5.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform6.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform7.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform8.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform9.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform10.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform11.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform12.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform13.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform14.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform15.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform16.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform17.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform18.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform18.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform19.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform20.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform21.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform22.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform23.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform24.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform25.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform26.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform27.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform28.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform29.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform30.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform31.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform32.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform33.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform34.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform35.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform36.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform37.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform38.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform39.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform40.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform41.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform42.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform43.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform44.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform45.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform46.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform47.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform48.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform49.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform50.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform51.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform52.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform53.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform54.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform55.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform56.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform57.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform58.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform59.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform60.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform61.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform62.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform63.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform64.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform65.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform66.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform67.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform68.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform69.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform70.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform71.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform72.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform73.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform74.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform75.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform76.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform77.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform78.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform79.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform80.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform81.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform82.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform83.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform84.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform85.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform86.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform87.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform88.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform89.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform90.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform91.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform92.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform93.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform94.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform95.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform96.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform97.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform98.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform99.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform100.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform101.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform102.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform103.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform104.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform105.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform106.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform107.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform108.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform109.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform110.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform111.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform112.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform113.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform114.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform115.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform116.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform117.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform118.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform119.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform120.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform121.GetCollision().CheckCollision(playerCollision, 1.0f);
+			/*platform122.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform123.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform124.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform125.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform126.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform127.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform128.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform29.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform130.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform131.GetCollision().CheckCollision(playerCollision, 1.0f);
+			*/
+
+
+
+
+
+			window.clear();
 		}
-		
-
-		//PlatformCollision
-		platform1.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform2.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform3.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform4.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform5.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform6.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform7.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform8.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform9.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform10.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform11.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform12.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform13.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform14.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform15.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform16.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform17.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform18.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform18.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform19.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform20.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform21.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform22.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform23.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform24.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform25.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform26.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform27.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform28.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform29.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform30.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform31.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform32.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform33.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform34.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform35.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform36.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform37.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform38.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform39.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform40.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform41.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform42.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform43.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform44.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform45.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform46.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform47.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform48.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform49.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform50.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform51.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform52.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform53.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform54.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform55.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform56.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform57.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform58.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform59.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform60.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform61.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform62.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform63.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform64.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform65.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform66.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform67.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform68.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform69.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform70.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform71.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform72.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform73.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform74.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform75.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform76.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform77.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform78.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform79.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform80.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform81.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform82.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform83.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform84.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform85.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform86.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform87.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform88.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform89.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform90.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform91.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform92.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform93.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform94.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform95.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform96.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform97.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform98.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform99.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform100.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform101.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform102.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform103.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform104.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform105.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform106.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform107.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform108.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform109.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform110.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform111.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform112.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform113.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform114.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform115.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform116.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform117.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform118.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform119.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform120.GetCollision().CheckCollision(playerCollision, 1.0f);
-		/*platform121.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform122.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform123.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform124.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform125.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform126.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform127.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform128.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform29.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform130.GetCollision().CheckCollision(playerCollision, 1.0f);
-		platform131.GetCollision().CheckCollision(playerCollision, 1.0f);
-		*/
-		
-		
-		
-		
-			
-		window.clear();
-
-	}
-		
-	return 0;
-
+	}	
+		return 0;
 }
 	
