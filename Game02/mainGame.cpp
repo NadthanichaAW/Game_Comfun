@@ -61,7 +61,7 @@ int main()
 	window.setFramerateLimit(50);
 
 	//Animation
-	Player player(&playerTexture, sf::Vector2u(3, 8), 0.95f, 400.0f);
+	Player player(&playerTexture, sf::Vector2u(3, 8), 0.95f, 500.0f);
 	float deltaTime = 0.0f;
 	sf::Clock clock;
 
@@ -112,27 +112,25 @@ int main()
 	score1.setTexture(&picScore1);
 	score2.setTexture(&picScore2);
 	score3.setTexture(&picScore3);
-	score4.setTexture(&picScore4);
+	score4.setTexture(&picScore4);	
 	
 	//----------------------keyname-----------------------------------------
 	sf::Font nameScore;
 	nameScore.loadFromFile("Textures/NaughtyMonster.ttf");
-	sf::String playerInput;
-	std::ofstream fileWriter;
-	std::ostringstream keyname;
+	/*//sf::String playerInput;
+	//std::ofstream fileWriter;
+	//std::ostringstream keyname;
 	sf::Text keyName;
-	keyName.setCharacterSize(50);
+	//keyName.setCharacterSize(40);
 	keyName.setString(" ");
-	keyName.setFont(font);
-	keyName.setFillColor(sf::Color(168, 11, 14));
-	sf::Text text("", font);//mail thee pull ma 
+	keyName.setFont(nameScore);
+	//keyName.setFillColor(sf::Color(168, 11, 14));
+	sf::Text text("", nameScore);//mail thee pull ma 
 	keyName.setPosition(300, 500);
 	text.setFillColor(sf::Color(168,11,14));
 	text.setPosition(545, 535);
-	std::map<int, std::string> keepscore;
-	std::ifstream fileReader;
-	std::string word;
-	
+	*/
+
 	//Item
 	sf::Texture coin;
 	coin.loadFromFile("Textures/coin.png");
@@ -236,7 +234,51 @@ int main()
 	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 980.0f, 1582.0f));
 	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 1030.0f, 1582.0f));
 	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 1080.0f, 1582.0f));
-	/*coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 216.0f, 1215.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 956.0f, 1627.99f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 956.0f, 1657.99f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 956.0f, 1687.99f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 956.0f, 1717.99f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 956.0f, 1747.99f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 675.0f, 1841.99f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 715.0f, 1841.99f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 755.0f, 1841.99f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 795.0f, 1841.99f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 835.0f, 1841.99f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 875.0f, 1841.99f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 915.0f, 1841.99f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 675.0f, 1930.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 735.0f, 1930.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 775.0f, 1930.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 815.0f, 1930.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 855.0f, 1930.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 895.0f, 1930.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 935.0f, 1930.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 975.0f, 1930.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 1015.0f, 1930.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 1055.0f, 1930.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 1115.0f, 1930.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 1175.0f, 1930.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 216.0f, 1930.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 216.0f, 1930.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 675.0f, 2049.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 735.0f, 2049.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 795.0f, 2049.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 855.0f, 2049.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 915.0f, 2049.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 975.0f, 2049.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 1035.0f, 2049.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 1095.0f, 2049.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 1155.0f, 2049.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 1195.0f, 2049.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 745.0f, 2109.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 795.0f, 2109.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 845.0f, 2109.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 895.0f, 2109.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 745.0f, 2161.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 795.0f, 2161.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 845.0f, 2161.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 895.0f, 2161.0f));
+
 	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 216.0f, 1215.0f));
 	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 216.0f, 1215.0f));
 	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 216.0f, 1215.0f));
@@ -248,7 +290,17 @@ int main()
 	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 216.0f, 1215.0f));
 	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 216.0f, 1215.0f));
 	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 216.0f, 1215.0f));
-	*/
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 216.0f, 1215.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 216.0f, 1215.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 216.0f, 1215.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 216.0f, 1215.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 216.0f, 1215.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 216.0f, 1215.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 216.0f, 1215.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 216.0f, 1215.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 216.0f, 1215.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 216.0f, 1215.0f));
+	/**/
 
 	//---------------------------clock----------------------------------------------
 	std::vector<Item>ClockVector;
@@ -509,46 +561,48 @@ int main()
 	Platform platform118(nullptr, sf::Vector2f(134.0f, 36.0f), sf::Vector2f(86.0f, 1644.99f));
 	Platform platform119(nullptr, sf::Vector2f(73.0f, 76.0f), sf::Vector2f(998.0f, 2620.0f));
 	Platform platform120(nullptr, sf::Vector2f(67.0f, 75.0f), sf::Vector2f(295.0f, 1666.0f));
-	Platform platform121(nullptr, sf::Vector2f(1248.0f, 44.0f), sf::Vector2f(624.0f, 3010.0f));
-	Platform platform122(nullptr, sf::Vector2f(64.0f, 50.0f), sf::Vector2f(62.0f, 19.0f));
-	Platform platform123(nullptr, sf::Vector2f(64.0f, 50.0f), sf::Vector2f(62.0f, 19.0f));
-	Platform platform124(nullptr, sf::Vector2f(64.0f, 50.0f), sf::Vector2f(62.0f, 19.0f));
-	Platform platform125(nullptr, sf::Vector2f(64.0f, 50.0f), sf::Vector2f(62.0f, 19.0f));
-	Platform platform126(nullptr, sf::Vector2f(64.0f, 50.0f), sf::Vector2f(62.0f, 19.0f));
-	Platform platform127(nullptr, sf::Vector2f(64.0f, 50.0f), sf::Vector2f(62.0f, 19.0f));
-	Platform platform128(nullptr, sf::Vector2f(64.0f, 50.0f), sf::Vector2f(62.0f, 19.0f));
-	Platform platform129(nullptr, sf::Vector2f(64.0f, 50.0f), sf::Vector2f(62.0f, 19.0f));
-	Platform platform130(nullptr, sf::Vector2f(64.0f, 50.0f), sf::Vector2f(62.0f, 19.0f));
-	Platform platform131(nullptr, sf::Vector2f(64.0f, 50.0f), sf::Vector2f(62.0f, 19.0f));
-	Platform platform132(nullptr, sf::Vector2f(64.0f, 50.0f), sf::Vector2f(62.0f, 19.0f));
-	Platform platform133(nullptr, sf::Vector2f(64.0f, 50.0f), sf::Vector2f(62.0f, 19.0f));
-	Platform platform134(nullptr, sf::Vector2f(64.0f, 50.0f), sf::Vector2f(62.0f, 19.0f));
-	Platform platform135(nullptr, sf::Vector2f(64.0f, 50.0f), sf::Vector2f(62.0f, 19.0f));
-	Platform platform136(nullptr, sf::Vector2f(64.0f, 50.0f), sf::Vector2f(62.0f, 19.0f));
-	Platform platform137(nullptr, sf::Vector2f(64.0f, 50.0f), sf::Vector2f(62.0f, 19.0f));
-	Platform platform138(nullptr, sf::Vector2f(64.0f, 50.0f), sf::Vector2f(62.0f, 19.0f));
-	Platform platform139(nullptr, sf::Vector2f(64.0f, 50.0f), sf::Vector2f(62.0f, 19.0f));
-	Platform platform140(nullptr, sf::Vector2f(64.0f, 50.0f), sf::Vector2f(62.0f, 19.0f));
-	Platform platform141(nullptr, sf::Vector2f(64.0f, 50.0f), sf::Vector2f(62.0f, 19.0f));
-	Platform platform142(nullptr, sf::Vector2f(64.0f, 50.0f), sf::Vector2f(62.0f, 19.0f));
-	Platform platform143(nullptr, sf::Vector2f(64.0f, 50.0f), sf::Vector2f(62.0f, 19.0f));
-	Platform platform144(nullptr, sf::Vector2f(64.0f, 50.0f), sf::Vector2f(62.0f, 19.0f));
-	Platform platform145(nullptr, sf::Vector2f(64.0f, 50.0f), sf::Vector2f(62.0f, 19.0f));
-	Platform platform146(nullptr, sf::Vector2f(64.0f, 50.0f), sf::Vector2f(62.0f, 19.0f));
-	Platform platform147(nullptr, sf::Vector2f(64.0f, 50.0f), sf::Vector2f(62.0f, 19.0f));
-	Platform platform148(nullptr, sf::Vector2f(64.0f, 50.0f), sf::Vector2f(62.0f, 19.0f));
-	Platform platform149(nullptr, sf::Vector2f(64.0f, 50.0f), sf::Vector2f(62.0f, 19.0f));
-	Platform platform150(nullptr, sf::Vector2f(64.0f, 50.0f), sf::Vector2f(62.0f, 19.0f));
-	Platform platform151(nullptr, sf::Vector2f(64.0f, 50.0f), sf::Vector2f(62.0f, 19.0f));
-	Platform platform152(nullptr, sf::Vector2f(64.0f, 50.0f), sf::Vector2f(62.0f, 19.0f));
-	Platform platform153(nullptr, sf::Vector2f(64.0f, 50.0f), sf::Vector2f(62.0f, 19.0f));
-	Platform platform154(nullptr, sf::Vector2f(64.0f, 50.0f), sf::Vector2f(62.0f, 19.0f));
-	Platform platform155(nullptr, sf::Vector2f(64.0f, 50.0f), sf::Vector2f(62.0f, 19.0f));
-	Platform platform156(nullptr, sf::Vector2f(64.0f, 50.0f), sf::Vector2f(62.0f, 19.0f));
-	Platform platform157(nullptr, sf::Vector2f(64.0f, 50.0f), sf::Vector2f(62.0f, 19.0f));
-	Platform platform158(nullptr, sf::Vector2f(64.0f, 50.0f), sf::Vector2f(62.0f, 19.0f));
-	Platform platform159(nullptr, sf::Vector2f(64.0f, 50.0f), sf::Vector2f(62.0f, 19.0f));
-	Platform platform160(nullptr, sf::Vector2f(64.0f, 50.0f), sf::Vector2f(62.0f, 19.0f));
+	Platform platform121(nullptr, sf::Vector2f(1248.0f, 44.0f), sf::Vector2f(624.0f, 3010.0f));//topbg3
+	Platform platform122(nullptr, sf::Vector2f(30.0f, 1319.0f), sf::Vector2f(0.0f, 3722.0f));//left
+	Platform platform123(nullptr, sf::Vector2f(30.0f, 1319.0f), sf::Vector2f(1248.0f, 3722.0f));//right
+	Platform platform124(nullptr, sf::Vector2f(1248.0f, 128.0f), sf::Vector2f(625.0f, 4265.0f));//down
+	Platform platform125(nullptr, sf::Vector2f(420.0f, 32.0f), sf::Vector2f(893.0f, 3182.0f));
+	Platform platform126(nullptr, sf::Vector2f(55.0f, 32.0f), sf::Vector2f(542.0f, 3182.0f));
+	Platform platform127(nullptr, sf::Vector2f(227.0f, 32.0f), sf::Vector2f(792.0f, 3309.0f));
+	Platform platform128(nullptr, sf::Vector2f(100.0f, 32.0f), sf::Vector2f(1061.0f, 3309.0f));
+	Platform platform129(nullptr, sf::Vector2f(141.0f, 32.0f), sf::Vector2f(875.0f, 3472.99f));
+	Platform platform130(nullptr, sf::Vector2f(99.0f, 32.0f), sf::Vector2f(1063.0f, 3472.99f));
+	Platform platform131(nullptr, sf::Vector2f(99.0f, 32.0f), sf::Vector2f(1063.0f, 3641.99));
+	Platform platform132(nullptr, sf::Vector2f(263.0f, 32.0f), sf::Vector2f(811.0f, 3641.99f));
+	Platform platform133(nullptr, sf::Vector2f(93.0f, 64.0f), sf::Vector2f(813.0f, 3781.99f));
+	Platform platform134(nullptr, sf::Vector2f(93.0f, 64.0f), sf::Vector2f(1063.0f, 3781.99f));
+	Platform platform135(nullptr, sf::Vector2f(300.0f, 32.0f), sf::Vector2f(416.0f, 3309.0f));
+	Platform platform136(nullptr, sf::Vector2f(213.0f, 32.0f), sf::Vector2f(333.0f, 3182.0f));
+	Platform platform137(nullptr, sf::Vector2f(298.0f, 32.0f), sf::Vector2f(416.0f, 3641.99f));
+	Platform platform138(nullptr, sf::Vector2f(85.0f, 32.0f), sf::Vector2f(144.0f, 3641.99f));
+	Platform platform139(nullptr, sf::Vector2f(176.0f, 32.0f), sf::Vector2f(479.0f, 3764.0f));
+	Platform platform140(nullptr, sf::Vector2f(67.0f, 8.0f), sf::Vector2f(240.0f, 3459.99f));
+	Platform platform141(nullptr, sf::Vector2f(107.0f, 8.0f), sf::Vector2f(612.0f, 3459.99f));
+	Platform platform142(nullptr, sf::Vector2f(52.0f, 32.0f), sf::Vector2f(165.0f, 3430.99f));
+	Platform platform143(nullptr, sf::Vector2f(16.0f, 171.0f), sf::Vector2f(520.0f, 3111.99f));
+	Platform platform144(nullptr, sf::Vector2f(16.0f, 44.0f), sf::Vector2f(728.0f, 3047.0f));
+	Platform platform145(nullptr, sf::Vector2f(16.0f, 324.0f), sf::Vector2f(1105.0f, 3326.0f));
+	Platform platform146(nullptr, sf::Vector2f(16.0f, 358.0f), sf::Vector2f(1020.0f, 3634.99f));
+	Platform platform147(nullptr, sf::Vector2f(16.0f, 697.0f), sf::Vector2f(687.0f, 3649.99f));
+	Platform platform148(nullptr, sf::Vector2f(16.0f, 280.0f), sf::Vector2f(144.0f, 3304.94f));
+	Platform platform149(nullptr, sf::Vector2f(16.0f, 240.0f), sf::Vector2f(185.0f, 3533.99f));
+	Platform platform150(nullptr, sf::Vector2f(47.0f, 198.0f), sf::Vector2f(124.0f, 3722.0f));
+	Platform platform151(nullptr, sf::Vector2f(52.0f, 156.0f), sf::Vector2f(289.0f, 3701.0f));
+	Platform platform152(nullptr, sf::Vector2f(16.0f, 298.0f), sf::Vector2f(269.0f, 3771.99f));
+	Platform platform153(nullptr, sf::Vector2f(52.0f, 234.0f), sf::Vector2f(415.0f, 3532.0f));
+	Platform platform154(nullptr, sf::Vector2f(16.0f, 156.0f), sf::Vector2f(561.0f, 3367.0f));
+	Platform platform155(nullptr, sf::Vector2f(16.0f, 114.0f), sf::Vector2f(561.0f, 3596.99f));
+	Platform platform156(nullptr, sf::Vector2f(16.0f, 123.0f), sf::Vector2f(561.0f, 3935.99f));
+	Platform platform157(nullptr, sf::Vector2f(530.0f, 412.0f), sf::Vector2f(265.0f, 4123.0f));
+	Platform platform158(nullptr, sf::Vector2f(530.0f, 329.0f), sf::Vector2f(983.0f, 4165.0f));
+	Platform platform159(nullptr, sf::Vector2f(16.0f, 156.0f), sf::Vector2f(269.0f, 3367.0f));
+	Platform platform160(nullptr, sf::Vector2f(496.0f, 55.0f), sf::Vector2f(248.0f, 3030.0f));
+	Platform platform161(nullptr, sf::Vector2f(56.0f, 74.0f), sf::Vector2f(415.0f, 3783.99f));
+	Platform platform162(nullptr, sf::Vector2f(110.0f, 2.0f), sf::Vector2f(625.0f, 3205.0f));
 
 	//heart
 	sf::RectangleShape heartBar(sf::Vector2f(294.0f, 87.0f));
@@ -578,6 +632,8 @@ int main()
 	sf::RectangleShape menu3(sf::Vector2f(1080.0f, 720.0f));
 	sf::RectangleShape menu4(sf::Vector2f(1080.0f, 720.0f));
 	sf::RectangleShape menu5(sf::Vector2f(1080.0f, 720.0f));
+	sf::RectangleShape howtoplay(sf::Vector2f(1080.0f, 720.0f));
+	sf::RectangleShape howtoplay2(sf::Vector2f(1080.0f, 720.0f));
 	sf::Texture picMenu1;
 	picMenu1.loadFromFile("Textures/menu.png");
 	sf::Texture picMenu2;
@@ -588,11 +644,39 @@ int main()
 	picMenu4.loadFromFile("Textures/menu4.png");
 	sf::Texture picMenu5;
 	picMenu5.loadFromFile("Textures/menu5.png");
+	sf::Texture pichowto;
+	pichowto.loadFromFile("Textures/howtoplay.png");
+	sf::Texture pichowto2;
+	pichowto2.loadFromFile("Textures/howtoplay2.png");
 	menu1.setTexture(&picMenu1);
 	menu2.setTexture(&picMenu2);
 	menu3.setTexture(&picMenu3);
 	menu4.setTexture(&picMenu4);
 	menu5.setTexture(&picMenu5);
+	howtoplay.setTexture(&pichowto);
+	howtoplay2.setTexture(&pichowto2);
+
+	//----------------------------leaderbordandname----------------------------
+	sf::RectangleShape enterN(sf::Vector2f(1080.0f, 720.0f));
+	sf::RectangleShape enterN2(sf::Vector2f(1080.0f, 720.0f));
+	sf::RectangleShape leadBord(sf::Vector2f(1080.0f, 720.0f));
+	sf::RectangleShape leadBord2(sf::Vector2f(1080.0f, 720.0f));
+	sf::RectangleShape loading(sf::Vector2f(1080.0f, 720.0f));
+	sf::Texture picName;
+	picName.loadFromFile("Textures/name.png");
+	sf::Texture picName2;
+	picName2.loadFromFile("Textures/name2.png");
+	sf::Texture picBord;
+	picBord.loadFromFile("Textures/leaderbord.png");
+	sf::Texture picBord2;
+	picBord2.loadFromFile("Textures/leaderbord2.png");
+	sf::Texture picLoad;
+	picLoad.loadFromFile("Textures/loading.png");
+	enterN.setTexture(&picName);
+	enterN2.setTexture(&picName2);
+	leadBord.setTexture(&picBord);
+	leadBord2.setTexture(&picBord2);
+	loading.setTexture(&picLoad);
 
 
 	//---------------------------Sound-----------------------------------------
@@ -623,11 +707,45 @@ int main()
 	sf::Music mainmenuSound;
 	mainmenuSound.openFromFile("Textures/mainsound.wav");
 	mainmenuSound.setVolume(30.0f);
+	
+	//-----------------------keyname---------------------------------
+	sf::String playerInput;
+	std::ofstream fileWriter;
+	std::ostringstream keyname;
+	sf::Text Keyname;
+	Keyname.setCharacterSize(40);
+	Keyname.setString(" ");
+	Keyname.setFont(nameScore);
+	Keyname.setFillColor(sf::Color::Black);
+	Keyname.setPosition(300, 500);
+	char last_char = ' ';
+	sf::RectangleShape cursor;
+	cursor.setSize(sf::Vector2f(5.0f, 30.0f));
+	cursor.setOrigin(sf::Vector2f(2.5f, 15.0f));
+	cursor.setFillColor(sf::Color::White);
+	sf::Text text("", nameScore);
+	text.setFillColor(sf::Color::White);
+	text.setPosition(430, 415);
+	cursor.setPosition(430.0f + text.getGlobalBounds().width + 10, 435.0f);
+	float totalTime_cursor = 0;
+	sf::Clock clock_cursor;
+	std::string user_name = "";
+	std::fstream myFile;
+	std::map<int, std::string> keepscore;
+	std::ifstream fileReader;
+	std::string word;
 
 	//----------------------------TIME---------------
 	sf::Clock nubClock;
 	sf::Clock hitClock;
+	sf::Clock guiClock;
+	sf::Clock loadClock;
 
+	bool loadingTime = false;
+	bool leadState = false;
+	bool state_cursor = false;
+	bool nameState = false;
+	bool bordScore = false;
 	bool howto = false;
 	bool menu = true;
 	bool start = false;
@@ -637,6 +755,8 @@ int main()
 	bool drawDia = false;
 	bool checkMap = false;
 	bool checkMap2 = false;
+	int countNames = 0;
+	int countLead = 0;
 	int dieStart = 0;
 	int soundStart = 0;
 	int bonusScore = 0;
@@ -668,65 +788,220 @@ int main()
 			}
 			
 			window.draw(menu1);
-			if (howto == false)
+			if (bordScore == false)
 			{
-				if (sf::Mouse::getPosition(window).x >= 460 && sf::Mouse::getPosition(window).y >= 507 && sf::Mouse::getPosition(window).x <= 620 && sf::Mouse::getPosition(window).y <= 580)
+				if (howto == false)
 				{
-					//play
-					window.draw(menu2);
-					if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
+					if (sf::Mouse::getPosition(window).x >= 460 && sf::Mouse::getPosition(window).y >= 507 && sf::Mouse::getPosition(window).x <= 620 && sf::Mouse::getPosition(window).y <= 580)
 					{
-						menu = false;
-						start = true;
-						titleSound.play();
-						hitClock.restart();
+						//play
+						window.draw(menu2);
+						if (sf::Mouse::isButtonPressed(sf::Mouse::Left) && guiClock.getElapsedTime().asSeconds() > 0.3)
+						{
+							menu = false;
+							start = false;
+							nameState = true;
+							hitClock.restart();
+						}
 					}
-				}
-				if (sf::Mouse::getPosition(window).x >= 460 && sf::Mouse::getPosition(window).y >= 600 && sf::Mouse::getPosition(window).x <= 620 && sf::Mouse::getPosition(window).y <= 670)
-				{
-					window.draw(menu3);
-					if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
+					if (sf::Mouse::getPosition(window).x >= 460 && sf::Mouse::getPosition(window).y >= 600 && sf::Mouse::getPosition(window).x <= 620 && sf::Mouse::getPosition(window).y <= 670)
 					{
-						//exit
-						window.close();
-						break;
+						window.draw(menu3);
+						if (sf::Mouse::isButtonPressed(sf::Mouse::Left) && guiClock.getElapsedTime().asSeconds() > 0.3)
+						{
+							//exit
+							window.close();
+							break;
+						}
 					}
-				}
-				if (sf::Mouse::getPosition(window).x >= 916 && sf::Mouse::getPosition(window).y >= 640 && sf::Mouse::getPosition(window).x <= 980 && sf::Mouse::getPosition(window).y <= 705)
-				{
-					//how to 
-					window.draw(menu5);
-					if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
+					if (sf::Mouse::getPosition(window).x >= 916 && sf::Mouse::getPosition(window).y >= 640 && sf::Mouse::getPosition(window).x <= 980 && sf::Mouse::getPosition(window).y <= 705)
 					{
-						howto = true;
+						//how to 
+						window.draw(menu5);
+						if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
+						{
+							howto = true;
+						}	
 					}
-					//bool = true			
-				}
-				if (sf::Mouse::getPosition(window).x >= 995 && sf::Mouse::getPosition(window).y >= 640 && sf::Mouse::getPosition(window).x <= 1060 && sf::Mouse::getPosition(window).y <= 705)
-				{
-					//score
-					window.draw(menu4);
-					if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
+					if (sf::Mouse::getPosition(window).x >= 995 && sf::Mouse::getPosition(window).y >= 640 && sf::Mouse::getPosition(window).x <= 1060 && sf::Mouse::getPosition(window).y <= 705)
 					{
-
+						//score
+						window.draw(menu4);
+						if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
+						{
+							leadState = true;
+							menu = false;
+							start = false;
+						}
 					}
 				}
 			}
 				if (howto == true)
 				{
-					window.draw(score1);
-					if (sf::Mouse::getPosition(window).x >= 995 && sf::Mouse::getPosition(window).y >= 640 && sf::Mouse::getPosition(window).x <= 1060 && sf::Mouse::getPosition(window).y <= 705)
+					window.draw(howtoplay);
+					if (sf::Mouse::getPosition(window).x >= 444 && sf::Mouse::getPosition(window).y >= 543 && sf::Mouse::getPosition(window).x <= 640 && sf::Mouse::getPosition(window).y <= 635)
 					{
+						window.draw(howtoplay2);
 						if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
 						{
 							howto = false;
+							guiClock.restart();
 						}
 					}
-
 				}
-			
 			window.display();
 		}
+
+		while (leadState == true)
+		{
+			sf::Event event;
+			while (window.pollEvent(event))
+			{
+				switch (event.type)
+				{
+				case sf::Event::Closed:
+					window.close();
+					break;
+				}
+			}
+			if (countLead == 0)
+			{
+				view.setCenter(540, 360);
+			}
+			
+			sf::Vector2f mouesPosition = sf::Vector2f(0.0f, 0.0f);
+			mouesPosition = window.mapPixelToCoords(sf::Mouse::getPosition(window));
+			std::cout << sf::Mouse::getPosition(window).x << " " << sf::Mouse::getPosition(window).y << std::endl;
+			window.clear();
+			window.draw(menu1);
+			window.draw(leadBord);		
+			if (sf::Mouse::getPosition(window).x >= 444 && sf::Mouse::getPosition(window).y >= 543 && sf::Mouse::getPosition(window).x <= 640 && sf::Mouse::getPosition(window).y <= 635)
+			{
+				window.draw(leadBord2);
+				if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
+				{
+					nameState = false;
+					leadState = false;
+					menu = true;
+					guiClock.restart();
+				}
+			}
+			sf::Text text1("", nameScore);
+			text1.setCharacterSize(45);
+			text1.setFillColor(sf::Color::White);
+			fileReader.open("Textures/leaderbordScore.txt");
+			do
+			{
+				fileReader >> word;
+				std::string first_token = word.substr(0, word.find(','));
+				int second_token = std::stoi(word.substr(word.find(',') + 1, word.length()));
+				keepscore[second_token] = first_token;
+			} while (fileReader.good());
+			fileReader.close();
+			std::map<int, std::string>::iterator end = keepscore.end();
+			std::map<int, std::string>::iterator beg = keepscore.begin();
+			end--;
+			beg--;
+			int currentDisplay = 0;
+			for (std::map<int, std::string>::iterator it = end; it != beg; it--) {
+				text1.setString(it->second);//name
+				text1.setPosition(view.getCenter().x - 195, 250 + 80 * currentDisplay);
+				window.draw(text1);
+				text1.setString(std::to_string(it->first)); //score
+				text1.setPosition(view.getCenter().x + 75, 250 + 80 * currentDisplay);
+				window.draw(text1);
+				currentDisplay++;
+				if (currentDisplay == 5)
+				{
+					break;
+				}
+			}
+			window.display();
+		}
+
+		while (nameState == true) 
+		{
+			countNames += deltaTime;
+			sf::Vector2f mouesPosition = sf::Vector2f(0.0f, 0.0f);
+			mouesPosition = window.mapPixelToCoords(sf::Mouse::getPosition(window));
+			std::cout << sf::Mouse::getPosition(window).x << " " << sf::Mouse::getPosition(window).y << std::endl;
+			sf::Event event;
+			while (window.pollEvent(event)) 
+			{
+				switch (event.type)
+				{
+					case sf::Event::Closed:
+						window.close();
+						break;				
+				}
+			}
+			if (event.type == sf::Event::TextEntered && last_char != event.text.unicode)
+			{
+				if (event.text.unicode == 13)
+				{ //enter
+					printf("KUY AI SUS");
+					user_name = playerInput;
+					playerInput.clear();
+					menu = true;
+				}
+				else if (event.text.unicode == 8 && playerInput.getSize() >= 0) 
+				{ // backspace delete
+					
+					playerInput = playerInput.substring(0, playerInput.getSize() - 1);
+				}
+				else 
+				{
+					if (playerInput.getSize() < 15) 
+					{
+						playerInput += event.text.unicode;
+						countNames = 0;
+					}
+				}
+				if (sf::Keyboard::isKeyPressed(sf::Keyboard::Enter))
+				{	
+					loadingTime = true;	
+					loadClock.restart();
+				}
+				last_char = event.text.unicode;
+				text.setString(playerInput);
+				cursor.setPosition(430.0f + text.getGlobalBounds().width + 10, 435.0f);
+			}
+			else if (event.type == sf::Event::EventType::KeyReleased && last_char != ' ') 
+			{
+				last_char = ' ';
+			}
+			window.clear();
+			window.draw(enterN);
+			window.draw(Keyname);
+	
+			totalTime_cursor += clock_cursor.restart().asSeconds();
+			if (totalTime_cursor >= 0.5) 
+			{
+				totalTime_cursor = 0;
+				state_cursor = !state_cursor;
+			}
+			if (state_cursor == true) 
+			{
+				window.draw(cursor);
+			}
+			window.draw(text);
+			if (loadingTime == true)
+			{
+				window.draw(loading);
+				if (loadClock.getElapsedTime().asSeconds() > 0.8)
+				{
+					leadState = false;
+					menu = false;
+					nameState = false;
+					start = true;
+				}
+				titleSound.play();
+			}
+			window.display();
+		}
+		deltaTime = 0;
+		clock.restart();
+
 		while (start == true)
 		{
 			mainmenuSound.stop();
@@ -868,14 +1143,14 @@ int main()
 			{
 				bonusScore = countClock - int(nubClock.getElapsedTime().asSeconds());
 				point << "  " << bonusScore;
-				if (countClock - int(nubClock.getElapsedTime().asSeconds()) == 0)
+				/*if (countClock - int(nubClock.getElapsedTime().asSeconds()) == 0)
 				{
 					endGame = true;
 					for (; soundStart < 1; soundStart++)
 					{
 						soundEnd = true;
 					}
-				}/**/
+				}*/
 
 			}
 			if (soundEnd == true)
@@ -913,7 +1188,7 @@ int main()
 					}
 				}
 
-				sf::Text text1("", nameScore);
+				/*sf::Text text1("", nameScore);
 				text1.setCharacterSize(45);
 				text1.setFillColor(sf::Color(168, 11, 14));
 				fileReader.open("Textures/name.txt");
@@ -934,15 +1209,15 @@ int main()
 					text1.setString(it->second);
 					text1.setPosition(view.getCenter().x - 35, view.getCenter().y - 5);//back newline
 					window.draw(text1);
-					/*text1.setString(std::to_string(it->first));
+					text1.setString(std::to_string(it->first));
 					text1.setPosition(view.getCenter().x + 95, view.getCenter().y - 210 + 80 * currentDisplay);
-					window.draw(text1);*/
+					window.draw(text1);
 					currentDisplay++;
 					if (currentDisplay == 5)
 					{
 						break;
 					}
-				}
+				}*/
 				window.draw(youreScore);
 				youreScore.setPosition({ view.getCenter().x - 105,view.getCenter().y + 115 });
 				score1.setPosition({ view.getCenter().x - 540,view.getCenter().y - 360 });
@@ -1159,7 +1434,7 @@ int main()
 			}
 
 
-			if (checkMap == false)
+			/*if (checkMap == false)
 			{
 				player.updateSlimFire(deltaTime, monsterFVector);
 				player.updateSlimP(deltaTime, slimPvector);
@@ -1172,7 +1447,7 @@ int main()
 				player.updateEnermies2(deltaTime, enermyVector, monsterVector, titanrockVector, skeletonVector, slimPvector, animalVector);
 
 			}
-			/**/
+			*/
 
 
 
@@ -1363,22 +1638,48 @@ int main()
 			platform119.GetCollision().CheckCollision(playerCollision, 1.0f);
 			platform120.GetCollision().CheckCollision(playerCollision, 1.0f);
 			platform121.GetCollision().CheckCollision(playerCollision, 1.0f);
-			/*platform122.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform122.GetCollision().CheckCollision(playerCollision, 1.0f);
 			platform123.GetCollision().CheckCollision(playerCollision, 1.0f);
 			platform124.GetCollision().CheckCollision(playerCollision, 1.0f);
 			platform125.GetCollision().CheckCollision(playerCollision, 1.0f);
 			platform126.GetCollision().CheckCollision(playerCollision, 1.0f);
 			platform127.GetCollision().CheckCollision(playerCollision, 1.0f);
 			platform128.GetCollision().CheckCollision(playerCollision, 1.0f);
-			platform29.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform129.GetCollision().CheckCollision(playerCollision, 1.0f);
 			platform130.GetCollision().CheckCollision(playerCollision, 1.0f);
 			platform131.GetCollision().CheckCollision(playerCollision, 1.0f);
-			*/
-
-
-
-
-
+			platform132.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform133.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform134.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform135.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform136.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform137.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform138.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform139.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform140.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform141.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform142.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform143.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform144.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform145.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform146.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform147.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform148.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform149.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform150.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform151.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform152.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform153.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform154.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform155.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform156.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform157.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform158.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform159.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform160.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform161.GetCollision().CheckCollision(playerCollision, 1.0f);
+			platform162.GetCollision().CheckCollision(playerCollision, 1.0f);
+		
 			window.clear();
 		}
 	}	
