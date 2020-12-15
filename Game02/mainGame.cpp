@@ -1,5 +1,7 @@
+#define _CRT_SECURE_NO_WARNINGS
 #include <SFML/Graphics.hpp>
 #include<SFML/Audio.hpp>
+#include<SFML/System.hpp>
 #include <iostream>
 #include"Player.h"
 #include"Platform.h"
@@ -13,6 +15,9 @@
 #include <vector>
 #include <fstream>
 #include <time.h>
+#include <algorithm>
+#include <utility>
+using namespace std;
 
 static const float VIEW_HIGHT = 1080.0f;
 static const float VIEW_WIDE = 720.0f;
@@ -258,8 +263,6 @@ int main()
 	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 1055.0f, 1930.0f));
 	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 1115.0f, 1930.0f));
 	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 1175.0f, 1930.0f));
-	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 216.0f, 1930.0f));
-	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 216.0f, 1930.0f));
 	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 675.0f, 2049.0f));
 	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 735.0f, 2049.0f));
 	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 795.0f, 2049.0f));
@@ -278,28 +281,62 @@ int main()
 	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 795.0f, 2161.0f));
 	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 845.0f, 2161.0f));
 	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 895.0f, 2161.0f));
-
-	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 216.0f, 1215.0f));
-	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 216.0f, 1215.0f));
-	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 216.0f, 1215.0f));
-	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 216.0f, 1215.0f));
-	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 216.0f, 1215.0f));
-	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 216.0f, 1215.0f));
-	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 216.0f, 1215.0f));
-	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 216.0f, 1215.0f));
-	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 216.0f, 1215.0f));
-	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 216.0f, 1215.0f));
-	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 216.0f, 1215.0f));
-	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 216.0f, 1215.0f));
-	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 216.0f, 1215.0f));
-	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 216.0f, 1215.0f));
-	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 216.0f, 1215.0f));
-	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 216.0f, 1215.0f));
-	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 216.0f, 1215.0f));
-	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 216.0f, 1215.0f));
-	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 216.0f, 1215.0f));
-	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 216.0f, 1215.0f));
-	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 216.0f, 1215.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 1195.0f, 2089.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 1195.0f, 2139.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 1195.0f, 2189.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 1195.0f, 2239.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 205.0f, 1736.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 205.0f, 1786.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 205.0f, 1836.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 205.0f, 1886.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 205.0f, 1936.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 205.0f, 1986.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 205.0f, 2036.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 205.0f, 2086.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 205.0f, 2136.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 205.0f, 2186.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 205.0f, 2236.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 205.0f, 2286.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 205.0f, 2336.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 318.0f, 1841.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 318.0f, 1891.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 318.0f, 1941.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 318.0f, 1991.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 318.0f, 2041.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 318.0f, 2091.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 318.0f, 2141.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 318.0f, 2191.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 444.0f, 1841.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 444.0f, 1891.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 444.0f, 1941.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 444.0f, 1991.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 444.0f, 2041.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 444.0f, 2091.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 444.0f, 2141.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 444.0f, 2191.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 137.0f, 1908.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 137.0f, 1958.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 137.0f, 2008.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 137.0f, 2058.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 137.0f, 2108.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 137.0f, 2158.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 137.0f, 2208.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 60.0f, 1886.99f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 60.0f, 1936.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 60.0f, 1986.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 60.0f, 2036.0f));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 65, 2555));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 115, 2555));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 165, 2555));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 215, 2555));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 265, 2555));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 315, 2555));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 69.99, 2597));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 119, 2597));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 169, 2597));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 219, 2597));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 269, 2597));
+	coinVector.push_back(Item(&coin, sf::Vector2u(4, 1), 0.08f, sf::Vector2f(35.0f, 44.0f), 319, 2597));
 	/**/
 
 	//---------------------------clock----------------------------------------------
@@ -307,30 +344,33 @@ int main()
 	ClockVector.push_back(Item(&clocker, sf::Vector2u(4, 1), 0.15f, sf::Vector2f(35.0f, 44.0f), 892.0f, 1093.0f));
 	ClockVector.push_back(Item(&clocker, sf::Vector2u(4, 1), 0.15f, sf::Vector2f(35.0f, 44.0f), (rand() % 70 + 58), 920.0f));
 	ClockVector.push_back(Item(&clocker, sf::Vector2u(4, 1), 0.15f, sf::Vector2f(35.0f, 44.0f), 55.0f, (rand() % 200 + 385)));
-	ClockVector.push_back(Item(&clocker, sf::Vector2u(4, 1), 0.15f, sf::Vector2f(35.0f, 44.0f), (rand() % 40 + 472), 1046.0f));
+	ClockVector.push_back(Item(&clocker, sf::Vector2u(4, 1), 0.15f, sf::Vector2f(35.0f, 44.0f), 60.0f, 2132.0f));
+	ClockVector.push_back(Item(&clocker, sf::Vector2u(4, 1), 0.15f, sf::Vector2f(35.0f, 44.0f), 625.0f, 2259.99f));
 	/**/
 
 	//-------------------------chest------------------------------------------------
 	std::vector<Item>ChestVector;
-	ChestVector.push_back(Item(&chest, sf::Vector2u(3, 2), 0.15f, sf::Vector2f(42.0f, 42.0f), 450.0f, 200.0f));
-	ChestVector.push_back(Item(&chest, sf::Vector2u(3, 2), 0.15f, sf::Vector2f(42.0f, 42.0f), 550.0f, 200.0f));
+	ChestVector.push_back(Item(&chest, sf::Vector2u(3, 2), 0.15f, sf::Vector2f(42.0f, 42.0f), 141.99, 3501));
+	ChestVector.push_back(Item(&chest, sf::Vector2u(3, 2), 0.15f, sf::Vector2f(42.0f, 42.0f), 346.99, 3596));
+	ChestVector.push_back(Item(&chest, sf::Vector2u(3, 2), 0.15f, sf::Vector2f(42.0f, 42.0f), 225, 3890));
+	ChestVector.push_back(Item(&chest, sf::Vector2u(3, 2), 0.15f, sf::Vector2f(42.0f, 42.0f), 638, 3520));
+	ChestVector.push_back(Item(&chest, sf::Vector2u(3, 2), 0.15f, sf::Vector2f(42.0f, 42.0f), 735, 3595));
+	ChestVector.push_back(Item(&chest, sf::Vector2u(3, 2), 0.15f, sf::Vector2f(42.0f, 42.0f), 1057.99, 3373.99));
+	ChestVector.push_back(Item(&chest, sf::Vector2u(3, 2), 0.15f, sf::Vector2f(42.0f, 42.0f), 924.99, 3850));
+	ChestVector.push_back(Item(&chest, sf::Vector2u(3, 2), 0.15f, sf::Vector2f(42.0f, 42.0f), 1178, 3085));
 
 	//diamond
 	sf::Texture diamond;
 	diamond.loadFromFile("Textures/diamond2.png");
-	std::vector<Item>diaVector;
-	diaVector.push_back(Item(&diamond, sf::Vector2u(3, 1), 0.15f, sf::Vector2f(30.0f, 30.0f), 145.0f, 58.0f));
-	diaVector.push_back(Item(&diamond, sf::Vector2u(3, 1), 0.15f, sf::Vector2f(30.0f, 30.0f), 150.0f, 58.0f));
-	diaVector.push_back(Item(&diamond, sf::Vector2u(3, 1), 0.15f, sf::Vector2f(30.0f, 30.0f), 155.0f, 58.0f));
-	diaVector.push_back(Item(&diamond, sf::Vector2u(3, 1), 0.15f, sf::Vector2f(30.0f, 30.0f), 160.0f, 58.0f));
-	diaVector.push_back(Item(&diamond, sf::Vector2u(3, 1), 0.15f, sf::Vector2f(30.0f, 30.0f), 165.0f, 58.0f));
-	diaVector.push_back(Item(&diamond, sf::Vector2u(3, 1), 0.15f, sf::Vector2f(30.0f, 30.0f), 170.0f, 58.0f)); 
-
-	diaVector.push_back(Item(&diamond, sf::Vector2u(3, 1), 0.15f, sf::Vector2f(30.0f, 30.0f), 500.0f, 500.0f));
-	diaVector.push_back(Item(&diamond, sf::Vector2u(3, 1), 0.15f, sf::Vector2f(30.0f, 30.0f), 550.0f, 550.0f));
-	diaVector.push_back(Item(&diamond, sf::Vector2u(3, 1), 0.15f, sf::Vector2f(30.0f, 30.0f), 600.0f, 600.0f));
-	diaVector.push_back(Item(&diamond, sf::Vector2u(3, 1), 0.15f, sf::Vector2f(30.0f, 30.0f), 650.0f, 650.0f));
-	diaVector.push_back(Item(&diamond, sf::Vector2u(3, 1), 0.15f, sf::Vector2f(30.0f, 30.0f), 700.0f, 700.0f));
+	std::vector<Item>diaVector;	
+	diaVector.push_back(Item(&diamond, sf::Vector2u(3, 1), 0.15f, sf::Vector2f(30.0f, 30.0f), 141.99, 3544));
+	diaVector.push_back(Item(&diamond, sf::Vector2u(3, 1), 0.15f, sf::Vector2f(30.0f, 30.0f), 346.99, 3544));
+	diaVector.push_back(Item(&diamond, sf::Vector2u(3, 1), 0.15f, sf::Vector2f(30.0f, 30.0f), 225, 3843));
+	diaVector.push_back(Item(&diamond, sf::Vector2u(3, 1), 0.15f, sf::Vector2f(30.0f, 30.0f), 638, 3565));
+	diaVector.push_back(Item(&diamond, sf::Vector2u(3, 1), 0.15f, sf::Vector2f(30.0f, 30.0f), 735, 3550));
+	diaVector.push_back(Item(&diamond, sf::Vector2u(3, 1), 0.15f, sf::Vector2f(30.0f, 30.0f), 1057.99, 3413.99)); 
+	diaVector.push_back(Item(&diamond, sf::Vector2u(3, 1), 0.15f, sf::Vector2f(30.0f, 30.0f), 924.99, 3807)); 
+	diaVector.push_back(Item(&diamond, sf::Vector2u(3, 1), 0.15f, sf::Vector2f(30.0f, 30.0f), 1178, 3129)); 
 
 	//Firepoint 
 	sf::Texture FirePoint;
@@ -382,15 +422,12 @@ int main()
 	monsterVector.push_back(Monster(&wormE, sf::Vector2u(3, 2), 0.20f, sf::Vector2f(52.0f, 50.0f), 929.0f, 1125.0f));
 	monsterVector.push_back(Monster(&wormE, sf::Vector2u(3, 2), 0.20f, sf::Vector2f(52.0f, 50.0f), 898.0f, 384.0f));
 	
-	std::vector<Monster>monsterFVector;
-	monsterFVector.push_back(Monster(&monstersFire, sf::Vector2u(7, 1), 0.30f, sf::Vector2f(52.0f, 50.0f), 928.0f, 255.0f));
-
 	std::vector<Monster>slimPvector;
 	slimPvector.push_back(Monster(&slimPurple, sf::Vector2u(7, 2), 0.20, sf::Vector2f(52.0f, 50.0f), 500.0f, (rand() % 170 + 500)));
 	slimPvector.push_back(Monster(&slimPurple, sf::Vector2u(7, 2), 0.20, sf::Vector2f(52.0f, 50.0f), 95.0f, (rand() % 80 + 596)));
 	slimPvector.push_back(Monster(&slimPurple, sf::Vector2u(7, 2), 0.20, sf::Vector2f(52.0f, 50.0f), 93.0f, (rand() % 80 + 944)));
 	slimPvector.push_back(Monster(&slimPurple, sf::Vector2u(7, 2), 0.20, sf::Vector2f(52.0f, 50.0f), 911.0f, 920.0f));
-	
+	slimPvector.push_back(Monster(&slimPurple, sf::Vector2u(7, 2), 0.20, sf::Vector2f(52.0f, 50.0f), 496, 201));
 	
 	slimPvector.push_back(Monster(&slimGreen, sf::Vector2u(10, 2), 0.20f, sf::Vector2f(52.0f, 50.0f), 209.0f, 1811.0f));
 	slimPvector.push_back(Monster(&slimGreen, sf::Vector2u(10, 2), 0.20f, sf::Vector2f(52.0f, 50.0f), 664.0f, 2061.0f));
@@ -603,6 +640,7 @@ int main()
 	Platform platform160(nullptr, sf::Vector2f(496.0f, 55.0f), sf::Vector2f(248.0f, 3030.0f));
 	Platform platform161(nullptr, sf::Vector2f(56.0f, 74.0f), sf::Vector2f(415.0f, 3783.99f));
 	Platform platform162(nullptr, sf::Vector2f(110.0f, 2.0f), sf::Vector2f(625.0f, 3205.0f));
+	Platform platform163(nullptr, sf::Vector2f(559.0f, 64.0f), sf::Vector2f(969.0f, 3949.0f));
 
 	//heart
 	sf::RectangleShape heartBar(sf::Vector2f(294.0f, 87.0f));
@@ -729,6 +767,7 @@ int main()
 	cursor.setPosition(430.0f + text.getGlobalBounds().width + 10, 435.0f);
 	float totalTime_cursor = 0;
 	sf::Clock clock_cursor;
+	
 	std::string user_name = "";
 	std::fstream myFile;
 	std::map<int, std::string> keepscore;
@@ -741,6 +780,8 @@ int main()
 	sf::Clock guiClock;
 	sf::Clock loadClock;
 
+
+	bool backMenu = false;
 	bool loadingTime = false;
 	bool leadState = false;
 	bool state_cursor = false;
@@ -772,91 +813,82 @@ int main()
 			mouesPosition = window.mapPixelToCoords(sf::Mouse::getPosition(window));
 			std::cout << sf::Mouse::getPosition(window).x << " " << sf::Mouse::getPosition(window).y << std::endl;
 			sf::Event event;
-			while (window.pollEvent(event))
-			{
+			while (window.pollEvent(event)) {
 				switch (event.type)
 				{
 				case sf::Event::Closed:
 					window.close();
 					break;
-				case sf::Event::Resized:
-					ResizeView(window, view);
-					break;
-				case sf::Event::TextEntered:
-					break;
 				}
 			}
 			
-			window.draw(menu1);
-			if (bordScore == false)
+			window.draw(menu1);	
+			if (howto == false)
 			{
-				if (howto == false)
+				if (sf::Mouse::getPosition(window).x >= 460 && sf::Mouse::getPosition(window).y >= 507 && sf::Mouse::getPosition(window).x <= 620 && sf::Mouse::getPosition(window).y <= 580)
 				{
-					if (sf::Mouse::getPosition(window).x >= 460 && sf::Mouse::getPosition(window).y >= 507 && sf::Mouse::getPosition(window).x <= 620 && sf::Mouse::getPosition(window).y <= 580)
+					//play
+					window.draw(menu2);
+					if (sf::Mouse::isButtonPressed(sf::Mouse::Left) && guiClock.getElapsedTime().asSeconds() > 0.3)
 					{
-						//play
-						window.draw(menu2);
-						if (sf::Mouse::isButtonPressed(sf::Mouse::Left) && guiClock.getElapsedTime().asSeconds() > 0.3)
-						{
-							menu = false;
-							start = false;
-							nameState = true;
-							hitClock.restart();
-						}
+						menu = false;
+						start = false;
+						nameState = true;
+						hitClock.restart();
 					}
-					if (sf::Mouse::getPosition(window).x >= 460 && sf::Mouse::getPosition(window).y >= 600 && sf::Mouse::getPosition(window).x <= 620 && sf::Mouse::getPosition(window).y <= 670)
+				}
+				if (sf::Mouse::getPosition(window).x >= 460 && sf::Mouse::getPosition(window).y >= 600 && sf::Mouse::getPosition(window).x <= 620 && sf::Mouse::getPosition(window).y <= 670)
+				{
+					window.draw(menu3);
+					if (sf::Mouse::isButtonPressed(sf::Mouse::Left) && guiClock.getElapsedTime().asSeconds() > 0.3)
 					{
-						window.draw(menu3);
-						if (sf::Mouse::isButtonPressed(sf::Mouse::Left) && guiClock.getElapsedTime().asSeconds() > 0.3)
-						{
-							//exit
-							window.close();
-							break;
-						}
+						//exit
+						window.close();
+						break;
 					}
-					if (sf::Mouse::getPosition(window).x >= 916 && sf::Mouse::getPosition(window).y >= 640 && sf::Mouse::getPosition(window).x <= 980 && sf::Mouse::getPosition(window).y <= 705)
+				}
+				if (sf::Mouse::getPosition(window).x >= 916 && sf::Mouse::getPosition(window).y >= 640 && sf::Mouse::getPosition(window).x <= 980 && sf::Mouse::getPosition(window).y <= 705)
+				{
+					//how to 
+					window.draw(menu5);
+					if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
 					{
-						//how to 
-						window.draw(menu5);
-						if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
-						{
-							howto = true;
-						}	
+						howto = true;
 					}
-					if (sf::Mouse::getPosition(window).x >= 995 && sf::Mouse::getPosition(window).y >= 640 && sf::Mouse::getPosition(window).x <= 1060 && sf::Mouse::getPosition(window).y <= 705)
+				}
+				if (sf::Mouse::getPosition(window).x >= 995 && sf::Mouse::getPosition(window).y >= 640 && sf::Mouse::getPosition(window).x <= 1060 && sf::Mouse::getPosition(window).y <= 705)
+				{
+					//score
+					window.draw(menu4);
+					if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
 					{
-						//score
-						window.draw(menu4);
-						if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
-						{
-							leadState = true;
-							menu = false;
-							start = false;
-						}
+						leadState = true;
+						menu = false;
+						start = false;
 					}
 				}
 			}
-				if (howto == true)
+			
+			if (howto == true)
+			{
+				window.draw(howtoplay);
+				if (sf::Mouse::getPosition(window).x >= 444 && sf::Mouse::getPosition(window).y >= 543 && sf::Mouse::getPosition(window).x <= 640 && sf::Mouse::getPosition(window).y <= 635)
 				{
-					window.draw(howtoplay);
-					if (sf::Mouse::getPosition(window).x >= 444 && sf::Mouse::getPosition(window).y >= 543 && sf::Mouse::getPosition(window).x <= 640 && sf::Mouse::getPosition(window).y <= 635)
+					window.draw(howtoplay2);
+					if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
 					{
-						window.draw(howtoplay2);
-						if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
-						{
-							howto = false;
-							guiClock.restart();
-						}
+						howto = false;
+						guiClock.restart();
 					}
 				}
+			}
 			window.display();
 		}
 
 		while (leadState == true)
 		{
 			sf::Event event;
-			while (window.pollEvent(event))
-			{
+			while (window.pollEvent(event)) {
 				switch (event.type)
 				{
 				case sf::Event::Closed:
@@ -926,27 +958,30 @@ int main()
 			mouesPosition = window.mapPixelToCoords(sf::Mouse::getPosition(window));
 			std::cout << sf::Mouse::getPosition(window).x << " " << sf::Mouse::getPosition(window).y << std::endl;
 			sf::Event event;
-			while (window.pollEvent(event)) 
+			while (window.pollEvent(event))
 			{
 				switch (event.type)
 				{
-					case sf::Event::Closed:
-						window.close();
-						break;				
+				case sf::Event::Closed:
+					window.close();
+					break;
+				case sf::Event::Resized:
+					ResizeView(window, view);
+					break;
+				case sf::Event::TextEntered:
+					break;
 				}
 			}
 			if (event.type == sf::Event::TextEntered && last_char != event.text.unicode)
 			{
 				if (event.text.unicode == 13)
 				{ //enter
-					printf("KUY AI SUS");
 					user_name = playerInput;
 					playerInput.clear();
 					menu = true;
 				}
 				else if (event.text.unicode == 8 && playerInput.getSize() >= 0) 
 				{ // backspace delete
-					
 					playerInput = playerInput.substring(0, playerInput.getSize() - 1);
 				}
 				else 
@@ -961,6 +996,7 @@ int main()
 				{	
 					loadingTime = true;	
 					loadClock.restart();
+
 				}
 				last_char = event.text.unicode;
 				text.setString(playerInput);
@@ -1004,20 +1040,33 @@ int main()
 
 		while (start == true)
 		{
+			sf::Event event;
+			while (window.pollEvent(event)) {
+				switch (event.type)
+				{
+				case sf::Event::Closed:
+					window.close();
+					break;
+				}
+			}
 			mainmenuSound.stop();
 			deltaTime = clock.restart().asSeconds();
 			sf::Vector2f pos = player.GetPosition();
 			std::cout << pos.x << ' ' << pos.y << '\n';
 			sf::Vector2f mouesPosition = sf::Vector2f(0.0f, 0.0f);
 			mouesPosition = window.mapPixelToCoords(sf::Mouse::getPosition(window));
-			//std::cout << sf::Mouse::getPosition(window).x << " " << sf::Mouse::getPosition(window).y << std::endl;
-
+			//std::cout << sf::Mouse::getPosition(window).x << " " << sf::Mouse::getPosition(window).y << std::endl		
+			
 			window.draw(bg);
 			window.draw(bg2);
 			window.draw(bg3);
-
-
+	
 			//Item
+			for (int i = 0; i < ChestVector.size(); i++)
+			{
+				ChestVector[i].chestHit(deltaTime, player);
+			}
+		
 			for (int i = 0; i < coinVector.size(); i++)
 			{
 				coinVector[i].drawItem(window);
@@ -1034,10 +1083,6 @@ int main()
 			{
 				enermyVector[i].drawMonster(window);
 			}
-			for (int i = 0; i < monsterFVector.size(); i++)
-			{
-				monsterFVector[i].drawMonster(window);
-			}
 			for (int i = 0; i < slimPvector.size(); i++)
 			{
 				slimPvector[i].drawMonster(window);
@@ -1052,22 +1097,53 @@ int main()
 				ChestVector[i].drawItem(window);
 			}
 			if (ChestVector[0].drawDia() == true)
-			{
-				for (int j = 0; j <= 5; j++)
-				{
-
-					diaVector[j].drawItem(window);
+			{				
+					diaVector[0].drawItem(window);
+					diaVector[0].updateDiamond(deltaTime, player);
 					drawDia = true;
-				}
 			}
 			if (ChestVector[1].drawDia() == true)
 			{
-				for (int j = 6; j <= 9; j++)
-				{
-
-					diaVector[j].drawItem(window);
+					diaVector[1].drawItem(window);
+					diaVector[1].updateDiamond(deltaTime, player);
 					drawDia = true;
-				}
+
+			}
+			if (ChestVector[2].drawDia() == true)
+			{
+					diaVector[2].drawItem(window);
+					diaVector[2].updateDiamond(deltaTime, player);
+					drawDia = true;
+			}
+			if (ChestVector[3].drawDia() == true)
+			{
+				diaVector[3].drawItem(window);
+				diaVector[3].updateDiamond(deltaTime, player);
+				drawDia = true;
+			}
+			if (ChestVector[4].drawDia() == true)
+			{
+				diaVector[4].drawItem(window);
+				diaVector[4].updateDiamond(deltaTime, player);
+				drawDia = true;
+			}
+			if (ChestVector[5].drawDia() == true)
+			{
+				diaVector[5].drawItem(window);
+				diaVector[5].updateDiamond(deltaTime, player);
+				drawDia = true;
+			}
+			if (ChestVector[6].drawDia() == true)
+			{
+				diaVector[6].drawItem(window);
+				diaVector[6].updateDiamond(deltaTime, player);
+				drawDia = true;
+			}
+			if (ChestVector[7].drawDia() == true)
+			{
+				diaVector[7].drawItem(window);
+				diaVector[7].updateDiamond(deltaTime, player);
+				drawDia = true;
 			}
 			for (int i = 0; i < titanrockVector.size(); i++)
 			{
@@ -1097,7 +1173,7 @@ int main()
 			}
 			else if (player.hpHeart() == 3)
 			{
-				endGame = true;
+				//endGame = true;
 				window.draw(heartBar4);
 				for (; dieStart < 1; dieStart++)
 				{
@@ -1143,14 +1219,14 @@ int main()
 			{
 				bonusScore = countClock - int(nubClock.getElapsedTime().asSeconds());
 				point << "  " << bonusScore;
-				/*if (countClock - int(nubClock.getElapsedTime().asSeconds()) == 0)
+				if (countClock - int(nubClock.getElapsedTime().asSeconds()) == 0)
 				{
 					endGame = true;
 					for (; soundStart < 1; soundStart++)
 					{
 						soundEnd = true;
 					}
-				}*/
+				}/**/
 
 			}
 			if (soundEnd == true)
@@ -1172,7 +1248,27 @@ int main()
 
 				if (sf::Mouse::getPosition(window).x >= 444 && sf::Mouse::getPosition(window).y >= 574 && sf::Mouse::getPosition(window).x <= 495 && sf::Mouse::getPosition(window).y <= 620)
 				{
+				
 					window.draw(score2);
+					if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
+					{
+				
+						printf("STUPID JING JING E KWAI");
+						vector<pair<int, string> > score;
+						string temp, tempString;
+						int tempInt = 0, X = 1;
+						while (window.pollEvent(event))
+						{
+							printf("....12345............");
+							if (event.type == sf::Event::Closed)
+								window.close();
+							fileWriter.open("Textures/leaderbordScore.txt", std::ios::out | std::ios::app);
+							fileWriter << "\n" << user_name << "," << countCoin + countDimond;
+							fileWriter.close();
+							playerInput.clear();
+						}
+						myFile.close();
+					}
 				}
 				if (sf::Mouse::getPosition(window).x >= 512 && sf::Mouse::getPosition(window).y >= 574 && sf::Mouse::getPosition(window).x <= 564 && sf::Mouse::getPosition(window).y <= 620)
 				{
@@ -1188,36 +1284,6 @@ int main()
 					}
 				}
 
-				/*sf::Text text1("", nameScore);
-				text1.setCharacterSize(45);
-				text1.setFillColor(sf::Color(168, 11, 14));
-				fileReader.open("Textures/name.txt");
-				do {
-					fileReader >> word;
-					std::string first_token = word.substr(0, word.find(','));
-					int second_token = std::stoi(word.substr(word.find(',') + 1, word.length()));
-					keepscore[second_token] = first_token;
-				} while (fileReader.good());
-				fileReader.close();
-				std::map<int, std::string>::iterator end = keepscore.end();
-				std::map<int, std::string>::iterator beg = keepscore.begin();
-				end--;
-				beg--;
-				int currentDisplay = 0;//new line 
-				for (std::map<int, std::string>::iterator it = end; it != beg; it--)
-				{
-					text1.setString(it->second);
-					text1.setPosition(view.getCenter().x - 35, view.getCenter().y - 5);//back newline
-					window.draw(text1);
-					text1.setString(std::to_string(it->first));
-					text1.setPosition(view.getCenter().x + 95, view.getCenter().y - 210 + 80 * currentDisplay);
-					window.draw(text1);
-					currentDisplay++;
-					if (currentDisplay == 5)
-					{
-						break;
-					}
-				}*/
 				window.draw(youreScore);
 				youreScore.setPosition({ view.getCenter().x - 105,view.getCenter().y + 115 });
 				score1.setPosition({ view.getCenter().x - 540,view.getCenter().y - 360 });
@@ -1242,42 +1308,10 @@ int main()
 			heartBar2.setPosition({ view.getCenter().x + 360,view.getCenter().y - 290 });
 			heartBar3.setPosition({ view.getCenter().x + 360,view.getCenter().y - 290 });
 			heartBar4.setPosition({ view.getCenter().x + 360,view.getCenter().y - 290 });
-			//platformDraw
-			/*platform1.Draw(window);
-			platform2.Draw(window);
-			platform3.Draw(window);
-			platform4.Draw(window);
-			platform5.Draw(window);
-			platform6.Draw(window);
-			platform7.Draw(window);
-			platform8.Draw(window);
-			platform9.Draw(window);
-			platform10.Draw(window);
-			platform11.Draw(window);
-			platform12.Draw(window);
-			platform13.Draw(window);
-			platform.Draw(window);
-			platform80.Draw(window);
-			platform77.Draw(window);
-	*/
-
+			
 			window.setView(view);
 			window.display();
-			sf::Event event;
-			while (window.pollEvent(event))
-			{
-				switch (event.type)
-				{
-				case sf::Event::Closed:
-					window.close();
-					break;
-				case sf::Event::Resized:
-					ResizeView(window, view);
-					break;
-				case sf::Event::TextEntered:
-					break;
-				}
-			}
+
 			view.setCenter(player.GetPosition());//x=y
 			if (view.getCenter().x - 540.0f <= 0.0f)//front center window behide pic
 			{
@@ -1466,10 +1500,6 @@ int main()
 				{
 					ClockVector[i].updateItem(deltaTime, player);
 				}
-				for (int i = 0; i < monsterFVector.size(); i++)
-				{
-					monsterFVector[i].updateX(deltaTime);
-				}
 				for (int i = 0; i < slimPvector.size(); i++)
 				{
 					slimPvector[i].updateXslim(deltaTime);
@@ -1482,18 +1512,7 @@ int main()
 				{
 					enermyVector[i].updateEnermy(deltaTime);
 				}
-				for (int i = 0; i < ChestVector.size(); i++)
-				{
-					ChestVector[i].chestHit(deltaTime, player);
-				}
-				if (drawDia == true)
-				{
-					for (int i = 0; i < diaVector.size(); i++)
-					{
-						diaVector[i].updateDiamond(deltaTime, player);
-					}
-					drawDia = false;
-				}
+			
 					
 				for (int i = 0; i < fireVector.size(); i++)
 				{
@@ -1679,7 +1698,8 @@ int main()
 			platform160.GetCollision().CheckCollision(playerCollision, 1.0f);
 			platform161.GetCollision().CheckCollision(playerCollision, 1.0f);
 			platform162.GetCollision().CheckCollision(playerCollision, 1.0f);
-		
+			platform163.GetCollision().CheckCollision(playerCollision, 1.0f);
+
 			window.clear();
 		}
 	}	
